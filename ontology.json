@@ -1,0 +1,86 @@
+[
+   {
+      "sosName":"ICT GW",
+      "sosId":"1"
+   },
+   {
+      "sosName":"AI Investment",
+      "sosId":"2"
+   },
+   {
+      "sosName":"Smart Microfactory",
+      "sosId":"3"
+   },
+   {
+      "sosName":"Autonomous Navigation",
+      "sosId":"4",
+      "devices":[
+         {
+            "deviceName":"ROBOT UNIT 1 (RU1)",
+            "deviceId":"1",
+            "components":[
+               {
+                  "componentName":"Local Planner_1",
+                  "componentId":"1",
+                  "skills":[
+                     {
+                        "skillName":"Connectivity",
+                        "skillId":"1"
+                     }
+                  ]
+               },
+               {
+                  "componentName":"Global Planner_1",
+                  "componentId":"2"
+               },
+               {
+                  "componentName":"ROS_Bridge Server_1",
+                  "componentId":"3"
+               },
+               {
+                  "componentName":"Navigator_1",
+                  "componentId":"4"
+               },
+               {
+                  "componentName":"Robot State Publisher_1",
+                  "componentId":"5"
+               },
+               {
+                  "componentName":"Robot Localization_1",
+                  "componentId":"6"
+               },
+               {
+                  "componentName":"Local Costmap_1",
+                  "componentId":"7",
+                  "skills":[
+                     {
+                        "skillName":"Movement",
+                        "skillId":"1"
+                     }
+                  ]
+               },
+               {
+                  "componentName":"Global Costmap_1 ",
+                  "componentId":"8"
+               }
+            ]
+         },
+         {
+            "deviceName":"ROBOT UNIT 2 (RU2)",
+            "deviceId":"2"
+         },
+         {
+            "deviceName":"Station 1 (S1)",
+            "deviceId":"3"
+         },
+         {
+            "deviceName":"Station 2 (S2)",
+            "deviceId":"4"
+         },
+         {
+            "deviceName":"Task Manager (ROS) ",
+            "deviceId":"5"
+         }
+      ]
+   }
+]

@@ -1,0 +1,1346 @@
+﻿{
+"MontologyUpdated":[
+ {
+  "SoS ID": "Comments Ideas (25.03.2022)",
+  "SysystemOfSystem": null,
+  "DeviceID": null
+ },
+ {
+  "SoS ID": "Class",
+  "SysystemOfSystem": "SubClass",
+  "DeviceID": null
+ },
+ {
+  "SoS ID": "Rule",
+  "SysystemOfSystem": null,
+  "DeviceID": null
+ },
+ {
+  "SoS ID": null,
+  "SysystemOfSystem": "StandardRule",
+  "DeviceID": null
+ },
+ {
+  "SoS ID": null,
+  "SysystemOfSystem": "PredictableRule",
+  "DeviceID": null
+ },
+ {
+  "SoS ID": "Class",
+  "SysystemOfSystem": "DigitalTwin",
+  "DeviceID": null
+ },
+ {
+  "SoS ID": "Component",
+  "SysystemOfSystem": "Component DT",
+  "DeviceID": null
+ },
+ {
+  "SoS ID": "Device",
+  "SysystemOfSystem": "Device DT",
+  "DeviceID": null
+ },
+ {
+  "SoS ID": "SoS",
+  "SysystemOfSystem": "SoS DT",
+  "DeviceID": null
+ }
+],
+"UseCases":[
+ {
+  "UC ID": 1,
+  "UC Name": "UC1"
+ },
+ {
+  "UC ID": 2,
+  "UC Name": "UC2"
+ },
+ {
+  "UC ID": 3,
+  "UC Name": "UC3"
+ },
+ {
+  "UC ID": 4,
+  "UC Name": "UNINOVA"
+ }
+],
+
+"SoS":[
+ {
+  "SoS ID": 1,
+  "UseCaseID": 1,
+  "SoS Name": "ICT GW",
+  "Description for GUI DEMO18": null,
+  "Justification": null
+ },
+ {
+  "SoS ID": 2,
+  "UseCaseID": 2,
+  "SoS Name": "AI Investment",
+  "Description for GUI DEMO18": null,
+  "Justification": null
+ },
+ {
+  "SoS ID": 3,
+  "UseCaseID": 3,
+  "SoS Name": "Smart Microfactory",
+  "Description for GUI DEMO18": null,
+  "Justification": null
+ },
+ {
+  "SoS ID": 4,
+  "UseCaseID": 4,
+  "SoS Name": "Autonomous Navigation",
+  "Description for GUI DEMO18": "Autonomous navigation environment composed of 2 robotic units + 2 stations ",
+  "Justification": "Common use case for design and runtime"
+ }
+],
+
+"Device":[
+ {
+  "DevID": 1,
+  "SoSExternalID": 4,
+  "Device": "ROBOT UNIT 1 (RU1)",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "DevID": 2,
+  "SoSExternalID": 4,
+  "Device": "ROBOT UNIT 2 (RU1)",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "DevID": 3,
+  "SoSExternalID": 4,
+  "Device": "Station 1 (S1)",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "DevID": 4,
+  "SoSExternalID": 4,
+  "Device": "Station 2 (S2)",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "DevID": 5,
+  "SoSExternalID": 4,
+  "Device": "Task Manager (ROS)",
+  "Description for GUI DEMO18": null
+ }
+],
+"Component":[
+ {
+  "CompID": 1,
+  "DeviceExternalID": 1,
+  "Component": "Local Planner_1",
+  "Column4": "SWR1",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 2,
+  "DeviceExternalID": 1,
+  "Component": "Global Planner_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 3,
+  "DeviceExternalID": 1,
+  "Component": "ROS_Bridge Server_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 4,
+  "DeviceExternalID": 1,
+  "Component": "Navigator_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 5,
+  "DeviceExternalID": 1,
+  "Component": "Robot State Publisher_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 6,
+  "DeviceExternalID": 1,
+  "Component": "Robot Localization_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 7,
+  "DeviceExternalID": 1,
+  "Component": "Local Costmap_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 8,
+  "DeviceExternalID": 1,
+  "Component": "Global Costmap_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 9,
+  "DeviceExternalID": 1,
+  "Component": "…",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 21,
+  "DeviceExternalID": 2,
+  "Component": "Local Planner_2",
+  "Column4": "SWR2",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 22,
+  "DeviceExternalID": 2,
+  "Component": "Global Planner_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 23,
+  "DeviceExternalID": 2,
+  "Component": "ROS_Bridge Server_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 24,
+  "DeviceExternalID": 2,
+  "Component": "Navigator_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 25,
+  "DeviceExternalID": 2,
+  "Component": "Robot State Publisher_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 26,
+  "DeviceExternalID": 2,
+  "Component": "Robot Localization_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 27,
+  "DeviceExternalID": 2,
+  "Component": "Local Costmap_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 28,
+  "DeviceExternalID": 2,
+  "Component": "Global Costmap_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 29,
+  "DeviceExternalID": 2,
+  "Component": "…",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": null,
+  "DeviceExternalID": null,
+  "Component": null,
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 31,
+  "DeviceExternalID": 3,
+  "Component": "Station Controller_1",
+  "Column4": "SWC1",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 32,
+  "DeviceExternalID": 4,
+  "Component": "Station Controller_2",
+  "Column4": "SWC2",
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 33,
+  "DeviceExternalID": 1,
+  "Component": "Robot_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 34,
+  "DeviceExternalID": 2,
+  "Component": "Robot_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 35,
+  "DeviceExternalID": 1,
+  "Component": "Gripper_1",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ },
+ {
+  "CompID": 36,
+  "DeviceExternalID": 2,
+  "Component": "Gripper_2",
+  "Column4": null,
+  "Description for GUI DEMO18": null
+ }
+],
+"ComponentAttribute":[
+ {
+  "ComAttrID": 1,
+  "ComponentExternalID": 1,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": "Local Planner_1",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 2,
+  "ComponentExternalID": 1,
+  "AttributeExternalID": 2,
+  "ComponentAttribute": "Trajectory",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 3,
+  "ComponentExternalID": 1,
+  "AttributeExternalID": 4,
+  "ComponentAttribute": "Score",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 4,
+  "ComponentExternalID": 1,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 5,
+  "ComponentExternalID": 2,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": "Global Planner_1",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 6,
+  "ComponentExternalID": 2,
+  "AttributeExternalID": 3,
+  "ComponentAttribute": "Plan",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 7,
+  "ComponentExternalID": 2,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 8,
+  "ComponentExternalID": 3,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": "ROS_Bridge_Server_1",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 9,
+  "ComponentExternalID": 3,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 10,
+  "ComponentExternalID": 4,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": "Navigator_1",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 11,
+  "ComponentExternalID": 4,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 12,
+  "ComponentExternalID": 4,
+  "AttributeExternalID": 6,
+  "ComponentAttribute": "Goals",
+  "Column5": null,
+  "Column6": "Semantic Localization (Receives goal \"Go to station 1\" -> outputs the X,Y of the station 1 to the global planner)"
+ },
+ {
+  "ComAttrID": "…",
+  "ComponentExternalID": null,
+  "AttributeExternalID": null,
+  "ComponentAttribute": null,
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": null,
+  "ComponentExternalID": null,
+  "AttributeExternalID": null,
+  "ComponentAttribute": null,
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": null,
+  "ComponentExternalID": null,
+  "AttributeExternalID": null,
+  "ComponentAttribute": null,
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 31,
+  "ComponentExternalID": 21,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": "Local Planner_2",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 32,
+  "ComponentExternalID": 21,
+  "AttributeExternalID": 2,
+  "ComponentAttribute": "Trajectory",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 33,
+  "ComponentExternalID": 21,
+  "AttributeExternalID": 4,
+  "ComponentAttribute": "Score",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 34,
+  "ComponentExternalID": 21,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 35,
+  "ComponentExternalID": 22,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": "Global Planner_2",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 36,
+  "ComponentExternalID": 22,
+  "AttributeExternalID": 3,
+  "ComponentAttribute": "Plan",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 37,
+  "ComponentExternalID": 22,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 38,
+  "ComponentExternalID": 23,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": "ROS_Bridge_Server_2",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 39,
+  "ComponentExternalID": 23,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 40,
+  "ComponentExternalID": 24,
+  "AttributeExternalID": 1,
+  "ComponentAttribute": "Connection",
+  "Column5": "Navigator_2",
+  "Column6": null
+ },
+ {
+  "ComAttrID": 41,
+  "ComponentExternalID": 24,
+  "AttributeExternalID": 5,
+  "ComponentAttribute": "Communication",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "ComAttrID": 42,
+  "ComponentExternalID": 24,
+  "AttributeExternalID": 6,
+  "ComponentAttribute": "Goals",
+  "Column5": null,
+  "Column6": "Semantic Localization (Receives goal \"Go to station 1\" -> outputs the X,Y of the station 1 to the global planner)"
+ }
+],
+"SoSAttribute":[
+ {
+  "SoSAttributeID": 1,
+  "SoSExternalID": 4,
+  "SoSAttribute": 1,
+  "COMMENT for DEMO18": "SoS attribute will not be visualized during the demo of M 18"
+ },
+ {
+  "SoSAttributeID": 2,
+  "SoSExternalID": 4,
+  "SoSAttribute": 2,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 3,
+  "SoSExternalID": 4,
+  "SoSAttribute": 3,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 4,
+  "SoSExternalID": 4,
+  "SoSAttribute": 4,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 5,
+  "SoSExternalID": 4,
+  "SoSAttribute": 5,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 6,
+  "SoSExternalID": 4,
+  "SoSAttribute": 6,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 7,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 8,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 9,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 10,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 11,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 12,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 13,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 14,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 15,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 16,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 17,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 18,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 19,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 20,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ },
+ {
+  "SoSAttributeID": 21,
+  "SoSExternalID": null,
+  "SoSAttribute": null,
+  "COMMENT for DEMO18": null
+ }
+],
+"Attribute":[
+ {
+  "AttrID": 1,
+  "RuleExternalID": null,
+  "Attribute": "Connection",
+  "Description": null
+ },
+ {
+  "AttrID": 2,
+  "RuleExternalID": null,
+  "Attribute": "Trajectory",
+  "Description": "Trajectory (composed of linear + angular velocities) sent to locomotion controller"
+ },
+ {
+  "AttrID": 3,
+  "RuleExternalID": null,
+  "Attribute": "Plan",
+  "Description": "Plan sent from global to local"
+ },
+ {
+  "AttrID": 4,
+  "RuleExternalID": null,
+  "Attribute": "Score",
+  "Description": null
+ },
+ {
+  "AttrID": 5,
+  "RuleExternalID": null,
+  "Attribute": "Communication",
+  "Description": null
+ },
+ {
+  "AttrID": 6,
+  "RuleExternalID": null,
+  "Attribute": "Goals",
+  "Description": null
+ },
+ {
+  "AttrID": 7,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 8,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 9,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 10,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 11,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 12,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 13,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 14,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 15,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 16,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 17,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 18,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ },
+ {
+  "AttrID": 19,
+  "RuleExternalID": null,
+  "Attribute": null,
+  "Description": null
+ }
+],
+"AttributeMetric":[
+ {
+  "ComAttrID": 1,
+  "AttributeExternalID": 1,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 2,
+  "AttributeExternalID": 2,
+  "MetricExternalID": 1,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 3,
+  "AttributeExternalID": 2,
+  "MetricExternalID": 2,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 4,
+  "AttributeExternalID": 3,
+  "MetricExternalID": 1,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 5,
+  "AttributeExternalID": 3,
+  "MetricExternalID": 2,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 6,
+  "AttributeExternalID": 4,
+  "MetricExternalID": 3,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 7,
+  "AttributeExternalID": 5,
+  "MetricExternalID": 4,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 8,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 9,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 10,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 11,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 12,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 13,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 14,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ },
+ {
+  "ComAttrID": 15,
+  "AttributeExternalID": null,
+  "MetricExternalID": null,
+  "Attribute": null
+ }
+],
+"AttributeRule":[
+],
+"Metric":[
+ {
+  "MetricID": 1,
+  "External MeasureID": 1,
+  "Metric": "Linear velocity",
+  "Description?": "Trajectory 2D",
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": null
+ },
+ {
+  "MetricID": 2,
+  "External MeasureID": 3,
+  "Metric": "Angular velocity",
+  "Description?": "Trajectory 2D",
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": null
+ },
+ {
+  "MetricID": 3,
+  "External MeasureID": 4,
+  "Metric": "Score_value",
+  "Description?": "Score",
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": null
+ },
+ {
+  "MetricID": 4,
+  "External MeasureID": 2,
+  "Metric": "Latency",
+  "Description?": null,
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": null
+ },
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ {
+  "MetricID": null,
+  "External MeasureID": null,
+  "Metric": null,
+  "Description?": null,
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": "cost = "
+ },
+ {
+  "MetricID": null,
+  "External MeasureID": null,
+  "Metric": null,
+  "Description?": null,
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": "  pdist_scale * (distance to path from the endpoint of the trajectory in map cells or meters depending on the meter_scoring parameter) "
+ },
+ {
+  "MetricID": null,
+  "External MeasureID": null,
+  "Metric": null,
+  "Description?": null,
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": "  + gdist_scale * (distance to local goal from the endpoint of the trajectory in map cells or meters depending on the meter_scoring parameter) "
+ },
+ {
+  "MetricID": null,
+  "External MeasureID": null,
+  "Metric": null,
+  "Description?": null,
+  "Column5": null,
+  "Column6": null,
+  "Column7": null,
+  "Column8": null,
+  "Column9": "  + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))"
+ }
+],
+"Measure":[
+ {
+  "MeasureID": 1,
+  "Measure": "Length"
+ },
+ {
+  "MeasureID": 2,
+  "Measure": "Time"
+ },
+ {
+  "MeasureID": 3,
+  "Measure": "Euler_angles"
+ },
+ {
+  "MeasureID": 4,
+  "Measure": "Score_val"
+ },
+ {
+  "MeasureID": 5,
+  "Measure": "Goal_val"
+ },
+ {
+  "MeasureID": 6,
+  "Measure": null
+ },
+ {
+  "MeasureID": 7,
+  "Measure": null
+ },
+ {
+  "MeasureID": 8,
+  "Measure": null
+ },
+ {
+  "MeasureID": 9,
+  "Measure": null
+ },
+ {
+  "MeasureID": 10,
+  "Measure": null
+ },
+ {
+  "MeasureID": 11,
+  "Measure": null
+ },
+ {
+  "MeasureID": 12,
+  "Measure": null
+ },
+ {
+  "MeasureID": 13,
+  "Measure": null
+ },
+ {
+  "MeasureID": 14,
+  "Measure": null
+ },
+ {
+  "MeasureID": 15,
+  "Measure": null
+ },
+ {
+  "MeasureID": 16,
+  "Measure": null
+ },
+ {
+  "MeasureID": 17,
+  "Measure": null
+ }
+],
+"Requirement":[
+],
+"Skill":[
+ {
+  "SkilID": 1,
+  "ComponentExternalID": 15,
+  "Skill": "Connectivity",
+  "Decription for GUI DEMO18": null,
+  "Note": "Select a component having both skills (changed 29\/3\/2022 we need the local planner and the ros)"
+ },
+ {
+  "SkilID": 2,
+  "ComponentExternalID": 7,
+  "Skill": "Movement",
+  "Decription for GUI DEMO18": null,
+  "Note": null
+ }
+],
+"Calendar":[
+],
+"Rule":[
+],
+"Monitor":[
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": "CNR_Monitoring_Engine"
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ },
+ {
+  "MinotorID": 1,
+  "ExternalID": null,
+  "Monitor": null
+ }
+],
+"AbstractRule":[
+ {
+  "AbstractRuleID": 1,
+  "SkillExternalID": 1,
+  "AbstractRule": "mean number of established simultaneous connections on a time frame",
+  "category": "standard",
+  "InvolvesDT": 0,
+  "component id ": 15
+ },
+ {
+  "AbstractRuleID": 2,
+  "SkillExternalID": 1,
+  "AbstractRule": "maximum of established simultaneous connections ",
+  "category": "standard",
+  "InvolvesDT": 0,
+  "component id ": 15
+ },
+ {
+  "AbstractRuleID": 3,
+  "SkillExternalID": 1,
+  "AbstractRule": "mean number of requested simultaneous connections on a time frame   ",
+  "category": "standard",
+  "InvolvesDT": 0,
+  "component id ": 15
+ },
+ {
+  "AbstractRuleID": 4,
+  "SkillExternalID": 1,
+  "AbstractRule": "maximum of requested simultaneous connections on a time frame   ",
+  "category": "standard",
+  "InvolvesDT": 0,
+  "component id ": 15
+ },
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": null,
+  "AbstractRule": "Expected number of components compliance",
+  "category": "standard",
+  "InvolvesDT": null,
+  "component id ": null
+ },
+ {
+  "AbstractRuleID": 5,
+  "SkillExternalID": null,
+  "AbstractRule": "Optimal communication frequency between components ",
+  "category": "standard",
+  "InvolvesDT": null,
+  "component id ": null
+ },
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": 2,
+  "AbstractRule": "trajectory compliance checked through Score on a time frame (parameter?)",
+  "category": "Pure Predictive",
+  "InvolvesDT": 1,
+  "component id ": 1
+ },
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": 2,
+  "AbstractRule": "Expected communication pattern through an ordered list of message types",
+  "category": "Pure Predictive",
+  "InvolvesDT": 1,
+  "component id ": 1
+ },
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": 2,
+  "AbstractRule": "velocity compliance (",
+  "category": "Hybrid Predictive",
+  "InvolvesDT": 1,
+  "component id ": 1
+ },
+ null,
+ null,
+ null,
+ null,
+ null,
+ {
+  "AbstractRuleID": 33,
+  "SkillExternalID": null,
+  "AbstractRule": null,
+  "category": null,
+  "InvolvesDT": null,
+  "component id ": null
+ },
+ {
+  "AbstractRuleID": 34,
+  "SkillExternalID": null,
+  "AbstractRule": null,
+  "category": null,
+  "InvolvesDT": null,
+  "component id ": null
+ },
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ null,
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": null,
+  "AbstractRule": null,
+  "category": null,
+  "InvolvesDT": "Component2",
+  "component id ": null
+ },
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": null,
+  "AbstractRule": "More than one connection between <Component1 > and <component2>  on port <number > are established; ",
+  "category": "Component 1-> ID7",
+  "InvolvesDT": "---",
+  "component id ": "Number-> from blueprint or empty"
+ },
+ {
+  "AbstractRuleID": null,
+  "SkillExternalID": null,
+  "AbstractRule": "Communication delay between <Component1> and <component2> exceed <time boundary> ",
+  "category": "Component 1-> ID7",
+  "InvolvesDT": "Component2 -> to be selected from the component list",
+  "component id ": "time boundary-> from blueprint or empty"
+ }
+],
+"WellDefinedRule":[
+ {
+  "WellDefinedRuleID": 1,
+  "AbstractRuleExternalID": 1,
+  "WellDefinedRule": "<maximum number> of established simultaneous connections on the <Component ID:7>",
+  "Boundary value": "time frame -> from blueprint or inserted by the user",
+  "Column5": "mean number -> from blueprint or inserted by the user",
+  "Column6": null
+ },
+ null,
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": null,
+  "WellDefinedRule": null,
+  "Boundary value": "associated to this well defined rule there are:",
+  "Column5": null,
+  "Column6": null
+ },
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": null,
+  "WellDefinedRule": null,
+  "Boundary value": null
+ },
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": null,
+  "WellDefinedRule": null,
+  "Boundary value": null
+ },
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": null,
+  "WellDefinedRule": null,
+  "Boundary value": null
+ },
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": 33,
+  "WellDefinedRule": "<total_number_components> expected to be running on a <time frame> in <device ID> ",
+  "Boundary value": "1) istruction to derive the DT (altready probed)"
+ },
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": null,
+  "WellDefinedRule": null,
+  "Boundary value": "2)1 probe to be included in the SUA "
+ },
+ {
+  "WellDefinedRuleID": null,
+  "AbstractRuleExternalID": 34,
+  "WellDefinedRule": "communication frequency  between <component1> and <component2> exceed <frequency boundary> ",
+  "Boundary value": "3) Meta rule to be instantiated into th monitor"
+ }
+],
+"InstantiatedRule":[
+ {
+  "InstantiatedRuleID": null,
+  "ExternalID": "<mean number.value> of established simultaneous connections on a <time frame.value> on the <Component ID:7:(# probe_Id)>",
+  "InstantiatedRule": null
+ },
+ {
+  "InstantiatedRuleID": null,
+  "ExternalID": "Expected communication pattern through an ordered list of message types required data:  <Component ID:7:(# probe_Id); DT_Probe_id>",
+  "InstantiatedRule": null
+ }
+],
+"Boundary":[
+ {
+  "BoundaryID": 1,
+  "WellDefinedRuleExternalID": 1,
+  "BoundaryName": "TimeFrame",
+  "BoundaryValue": 30,
+  "BundaryFromDT (each SecondUpdate)": null
+ },
+ {
+  "BoundaryID": 2,
+  "WellDefinedRuleExternalID": 1,
+  "BoundaryName": "MeanValue",
+  "BoundaryValue": 10,
+  "BundaryFromDT (each SecondUpdate)": null
+ }
+],
+"Events":[
+]
+}
