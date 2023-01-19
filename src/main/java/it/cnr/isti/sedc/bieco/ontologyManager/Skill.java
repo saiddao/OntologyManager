@@ -1,10 +1,7 @@
 package it.cnr.isti.sedc.bieco.ontologyManager;
 
-import java.util.Set;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 @XmlRootElement(name = "skill")

@@ -1,7 +1,6 @@
 package it.cnr.isti.sedc.bieco.ontologyManager;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class OntologyManagerTest {
 

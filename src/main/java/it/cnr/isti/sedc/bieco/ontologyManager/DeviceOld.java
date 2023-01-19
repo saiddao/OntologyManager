@@ -1,8 +1,5 @@
 package it.cnr.isti.sedc.bieco.ontologyManager;
 
-import java.util.Set;
-
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class DeviceOld {
