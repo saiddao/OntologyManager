@@ -6,4 +6,4 @@ COPY /* /
 # the port numbers the container should expose
 EXPOSE 62626 8282
 # Entrypoint to run the Ontology Manager
-ENTRYPOINT ["java","-cp", "OntologyManagerRest-1.0.jar", "it.cnr.isti.labsedc.concern.rest.Main"]
+ENTRYPOINT ["java","-jar", "OntologyManagerRest-1.0.jar", "it.cnr.isti.labsedc.concern.rest.Main"]
