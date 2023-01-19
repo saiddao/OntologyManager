@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.cnr.isti.sedc.bieco</groupId>
-	<artifactId>ontologyManager</artifactId>
-	<packaging>war</packaging>
+	<artifactId>OntologyManager</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ontologyManager</name>
+	<name>OntologyManager</name>
 	<build>
-		<finalName>ontologyManager</finalName>
+		<finalName>OntologyManager</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -19,13 +19,13 @@
 					<target>1.9</target>
 				</configuration>
 			</plugin>
-			<plugin>
+						<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.2.1</version>
 				<executions>
 					<execution>
-						<phase>install</phase>
+					<phase>install</phase>
 						<goals>
 							<goal>java</goal>
 						</goals>
@@ -40,6 +40,28 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
 			</plugin>
+			<plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>it.cnr.isti.sedc.bieco.ontologyManager.rest.Main</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+      <executions>
+        <execution>
+          <id>make-assembly</id> <!-- this is used for inheritance merges -->
+          <phase>package</phase> <!-- bind to the packaging phase -->
+          <goals>
+            <goal>single</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
 		</plugins>
 	</build>
 	<dependencyManagement>
@@ -74,11 +96,25 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20220924</version>
+</dependency>
+
 		<dependency>
 			<groupId>jakarta.activation</groupId>
 			<artifactId>jakarta.activation-api</artifactId>
 			<version>2.0.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+		
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
