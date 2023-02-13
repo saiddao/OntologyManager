@@ -42,6 +42,34 @@
     	},
     "crc":1234567
 }
+,{
+    "jobID": "1234",
+    "timestamp":"",
+    "messageType": "Data",
+    "sourceID":"4",
+    "event": { "OntologyRequest" :{ 
+    	"operationName": "getrules",
+    	"sosId" : "4",
+    	"deviceId" : "1",
+    	"componentId" : "1",
+    	"skillId":"" }
+    	},
+    "crc":1234567
+},
+{
+    "jobID": "1234",
+    "timestamp":"",
+    "messageType": "Data",
+    "sourceID":"4",
+    "event": { "OntologyRequest" :{ 
+    	"operationName": "getrules",
+    	"sosId" : "4",
+    	"deviceId" : "1",
+    	"componentId" : "1",
+    	"skillId":"" }
+    	},
+    "crc":1234567
+}
 ]
 
 

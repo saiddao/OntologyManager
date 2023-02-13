@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -23,6 +24,7 @@ import it.cnr.isti.sedc.bieco.ontologyManager.Component;
 import it.cnr.isti.sedc.bieco.ontologyManager.CoreOntology;
 import it.cnr.isti.sedc.bieco.ontologyManager.Device;
 import it.cnr.isti.sedc.bieco.ontologyManager.OntologyEntitiesNames;
+import it.cnr.isti.sedc.bieco.ontologyManager.Rule;
 import it.cnr.isti.sedc.bieco.ontologyManager.Skill;
 import it.cnr.isti.sedc.bieco.ontologyManager.SoS;
 import it.cnr.isti.sedc.bieco.ontologyManager.Student;
@@ -54,7 +56,6 @@ public class OntologyManager {
 	 */
 
 	@GET
-
 	@Produces({ MediaType.TEXT_HTML })
 	public String getIt() {
 		return homePage();
@@ -72,7 +73,6 @@ public class OntologyManager {
 	}
 
 	@POST
-
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response biecointerface(String jsonMessage, @Context HttpHeaders headers) {
 
@@ -144,7 +144,13 @@ public class OntologyManager {
 		} else {
 			output = Response.status(401).entity("invalid access token").build();
 		}
-
+		
+		//System.out.println(homePage().toString());
+//		output = Response.status(401).entity(homePage()).build(); 
+		
+		System.out.println(output);
+		System.out.println(output.getEntity());
+		
 		return output;
 	}
 
@@ -395,9 +401,7 @@ public class OntologyManager {
 
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Skill> getSkills(@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
-
 			@QueryParam(OntologyEntitiesNames.DEVICE_ID) String deviceID,
-
 			@QueryParam(OntologyEntitiesNames.COMPONENT_ID) String componentID) {
 
 		List<Skill> skills = new ArrayList<Skill>();
@@ -462,6 +466,121 @@ public class OntologyManager {
 		}
 		return skills;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 
+	 * "OntologyRequest" :{ 
+	 * 		"operationName": "getrules", 
+	 * 		"sosId" : "", 
+	 * 		"deviceId" : "", 
+	 * 		"componentId" : "", 
+	 * 		"skillId":""} 
+	 * 
+	 * @param sosID
+	 * @param deviceID
+	 * @param componentID
+	 * @param skillID
+	 * @return
+	 */
+	@GET
+	@Path("/getrules")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Rule> getRules(@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
+			@QueryParam(OntologyEntitiesNames.DEVICE_ID) String deviceID,
+			@QueryParam(OntologyEntitiesNames.COMPONENT_ID) String componentID,
+			@QueryParam(OntologyEntitiesNames.SKILL_ID) String skillID){
+
+		List<Rule> rules = new ArrayList<Rule>();
+		
+		
+		JSONParser parser = new JSONParser();
+		System.out.println("########### Start ###########");
+		try (FileReader registro = new FileReader("ontology.json");) {
+			JSONArray array = (JSONArray) parser.parse(registro);
+			// for each SoS
+			for (Object joSoS : array) {
+				SoS currentSoS = SoS.fromJSON((JSONObject) joSoS);
+				// if the currentSoS is the one we search
+
+				if (currentSoS.getSosId().equals(sosID)) {
+					JSONArray devicesJson = (JSONArray) ((JSONObject) joSoS).get(OntologyEntitiesNames.DEVICES);
+					if (devicesJson != null) {
+						System.out.println(devicesJson.toJSONString());
+						// for each Device associated with the SoS
+						for (Object deviceObject : devicesJson) {
+							Device currentDevice = Device.fromJSON((JSONObject) deviceObject);
+							// if current device is the one we search
+							if (currentDevice.getDeviceId().equals(deviceID)) {
+								JSONArray componentsJson = (JSONArray) ((JSONObject) deviceObject)
+										.get(OntologyEntitiesNames.COMPONENTS);
+								if (componentsJson != null) {
+									System.out.println(componentsJson.toJSONString()); // for each Device associated
+																						// with the SoS
+									for (Object componentObject : componentsJson) {
+										Component currentComponent = Component.fromJSON((JSONObject) componentObject); 
+										// retrieve the component with id "componentID"
+										if (currentComponent.getComponentId().equals(componentID)) {
+											JSONArray skillsJson = (JSONArray) ((JSONObject) componentObject)
+													.get(OntologyEntitiesNames.SKILLS);
+
+											if (skillsJson != null) {
+												System.out.println(skillsJson.toJSONString()); 
+												// for each Skill associated with the component
+												for (Object skillObject : skillsJson) {
+													
+													Skill currentSkill = Skill.fromJSON((JSONObject) skillObject);
+													// retreive the Skill with ID "skillID"
+													if(currentSkill.getSkillId().equals(skillID)) {
+														JSONArray rulesJson = (JSONArray) ((JSONObject) skillObject)
+																.get(OntologyEntitiesNames.RULES);
+														
+														
+														System.err.println(rulesJson.toJSONString());
+																												
+														
+														if (rulesJson != null) {
+															for (Object ruleObject : rulesJson) {
+																Rule currentRule = Rule.fromJSON((JSONObject) ruleObject);
+																
+																rules.add(currentRule);
+																System.out.println(rules.get(rules.size() - 1));
+																System.out.println(rules.get(rules.size() - 1).toJson());
+															}
+														}												
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return rules;
+	}
+	
+	
+	
+	
+	
 
 	private static List<SoS> loadOntDatabase() {
 		List<SoS> soSs = new ArrayList<SoS>();
@@ -578,6 +697,7 @@ public class OntologyManager {
 		String sosID;
 		String deviceID;
 		String componentID;
+		String skillID;
 
 		switch (operationName) {
 		case "getsoss":
@@ -621,6 +741,31 @@ public class OntologyManager {
 
 			output = Response.status(200).entity(result).build();
 			break;
+			
+		case "getrules":
+			
+			sosID = (String) ontologyRequest.get(OntologyEntitiesNames.SOS_ID);
+			System.out.println(sosID);
+
+			deviceID = (String) ontologyRequest.get(OntologyEntitiesNames.DEVICE_ID);
+			System.out.println(deviceID);
+
+			componentID = (String) ontologyRequest.get(OntologyEntitiesNames.COMPONENT_ID);
+			System.out.println(componentID);
+			
+			skillID = (String) ontologyRequest.get(OntologyEntitiesNames.SKILL_ID);
+			System.out.println(skillID);
+
+			result = getRules(sosID, deviceID, componentID, skillID).toString();
+
+			output = Response.status(200).entity(result).build();
+			
+			
+			
+			
+			break;
+			
+			
 		default:
 			output = Response.status(404).entity("Invalid data request: " + ontologyRequest).build();
 		}

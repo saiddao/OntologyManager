@@ -1,4 +1,4 @@
-[
+{"SoSs":[
    {
       "sosName":"ICT GW",
       "sosId":"1"
@@ -59,12 +59,11 @@
                         "rules":[ 
                         {
                         	"ruleName":"Maximum number of established simultaneous connections",
-                        	"ruleDescrption":"The rule allows monitoring the number of simultaneous connections allowed for a specific component.",
                         	"ruleId":"1",
                         	"ruleType":"Standard",
-                        	"parameters":[ 
+                        	"paremters":[ 
                         		{ "#maximum_number":"",
-                        		  "#PROBE_ID":""
+                        		"#PROBE_ID":""
                         		}
                         	]
                         }
@@ -96,4 +95,4 @@
          }
       ]
    }
-]
+]}
