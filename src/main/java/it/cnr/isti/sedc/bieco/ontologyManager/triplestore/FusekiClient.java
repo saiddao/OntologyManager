@@ -49,10 +49,10 @@ public class FusekiClient {
         //SPARQL UPDATE example
         String updateString = "INSERT DATA { <http://example/s1> <http://example/p1> <http://example/o1> }";
         UpdateRequest update = UpdateFactory.create(updateString);
-        try (UpdateExecutionFactory uef = UpdateExecutionFactory.newRemoteForm(update, updateEndpoint)) {
-            UpdateProcessor proc = uef.create();
-            proc.execute();
-        }
+        // try (UpdateExecutionFactory uef = UpdateExecutionFactory.newRemoteForm(update, updateEndpoint)) {
+        //   UpdateProcessor proc = uef.create();
+        //   proc.execute();
+        //}
     }
     
     
@@ -67,9 +67,9 @@ public class FusekiClient {
     	  
     	  DatasetGraph dsg = TDBFactory.createDatasetGraph();
     	  DataService dataService = new DataService(dsg) ;
-    	  dataService.addEndpoint(OperationName.GSP_RW, "");
-    	  dataService.addEndpoint(OperationName.Query, "");
-    	  dataService.addEndpoint(OperationName.Update, "");
+//    	  dataService.addEndpoint(OperationName.GSP_RW, "");
+    	  //    	  dataService.addEndpoint(OperationName.Query, "");
+    	  //    	  dataService.addEndpoint(OperationName.Update, "");
     	  
     	  
     	  FusekiServer server = FusekiServer.create()
@@ -81,16 +81,7 @@ public class FusekiClient {
     			
     			// Add some data while live.
     			// Write transaction.
-    			Txn.execWrite(dsg, ()->RDFDataMgr.read(dsg, "D.trig")) ;
-    			
-    			
-    			
-    			
-    			
-    			
-    			
-    			
-    			
+    			//   			Txn.execWrite(dsg, ()->RDFDataMgr.read(dsg, "D.trig")) ;
     			
     			
     			server.stop() ;

@@ -9,9 +9,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+
 @XmlRootElement(name = "sos")
 public class SoS {
-	private String soSname, sosId;
+	private String soSname, sosId, description;
 	
 	private List<Device> devices;
 	private JSONObject sosJsonOnject;
@@ -25,6 +26,14 @@ public class SoS {
 		
 		this.devices = new ArrayList<Device>();
 		
+	}
+	
+	public SoS(String fname, String lname, String sDescription) {
+		this.soSname = fname;
+		this.sosId = lname;
+		this.description = sDescription;
+		
+		this.devices = new ArrayList<Device>();
 	}
 
 
@@ -55,7 +64,7 @@ public class SoS {
 	}
 
 	public static SoS fromJSON(JSONObject object) {
-		return new SoS((String) object.get(OntologyEntitiesNames.SOS_NAME), (String) object.get(OntologyEntitiesNames.SOS_ID));
+		return new SoS((String) object.get(OntologyEntitiesNames.SOS_NAME), (String) object.get(OntologyEntitiesNames.SOS_ID), (String) object.get(OntologyEntitiesNames.DESCRIPTION));
 				
 				/**
 				 * (String) ((JSONObject) object.get("address")).get("street"),
@@ -69,6 +78,7 @@ public class SoS {
 		
 		result.put(OntologyEntitiesNames.SOS_NAME, this.soSname);
 		result.put(OntologyEntitiesNames.SOS_ID, this.sosId);
+		result.put(OntologyEntitiesNames.DESCRIPTION, this.description);
 /**
  * 
 
@@ -155,6 +165,20 @@ public class SoS {
 		// TODO Auto-generated method stub
 		return toJson().toJSONString();
 	}
+	
+	public String getHTML() {
+		
+		return "<option value=\""+this.soSname+"\">"+this.soSname+"</option>";
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 	
 	
 }

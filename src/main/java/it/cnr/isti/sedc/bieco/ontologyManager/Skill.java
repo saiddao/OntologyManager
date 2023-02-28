@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 
 @XmlRootElement(name = "skill")
 public class Skill {
-	private String skillName, skillId;
+	private String skillName, skillId, description;
 	private JSONObject skillJsonObject;
 	
 	public Skill() {
@@ -19,13 +19,21 @@ public class Skill {
 		
 		this.skillName = new String();
 		this.skillId = new String();
-		
+		this.description = new String();
 	}
 
 	public Skill(String sName, String sID) {
 		// TODO Auto-generated constructor stub
 		this.skillName = sName;
 		this.skillId = sID;
+
+	}
+	
+	public Skill(String sName, String sID, String sDescription) {
+		// TODO Auto-generated constructor stub
+		this.skillName = sName;
+		this.skillId = sID;
+		this.description = sDescription;
 
 	}
 
@@ -35,12 +43,13 @@ public class Skill {
 		
 		result.put(OntologyEntitiesNames.SKILL_NAME, this.skillName);
 		result.put(OntologyEntitiesNames.SKILL_ID, this.skillId);
+		result.put(OntologyEntitiesNames.DESCRIPTION, this.description);
 		return result;
 	}
 	
 	
 	public static Skill fromJSON(JSONObject object) {
-		return new Skill((String) object.get(OntologyEntitiesNames.SKILL_NAME), (String) object.get(OntologyEntitiesNames.SKILL_ID));			
+		return new Skill((String) object.get(OntologyEntitiesNames.SKILL_NAME), (String) object.get(OntologyEntitiesNames.SKILL_ID), (String) object.get(OntologyEntitiesNames.DESCRIPTION));			
 	}
 
 	public String getSkillName() {
@@ -70,6 +79,14 @@ public class Skill {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return toJson().toJSONString();
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

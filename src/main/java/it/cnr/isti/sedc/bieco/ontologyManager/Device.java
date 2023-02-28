@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 
 @XmlRootElement(name = "device")
 public class Device {
-	private String deviceName, deviceId;
+	private String deviceName, deviceId, description;
 	private JSONObject deviceJsonObject;
 	
 	public Device() {
@@ -27,6 +27,12 @@ public class Device {
 		this.deviceName = dName;
 		this.deviceId = dID;
 
+	}
+	public Device(String dName, String dID, String dDescription) {
+		// TODO Auto-generated constructor stub
+		this.deviceName = dName;
+		this.deviceId = dID;
+		this.description = dDescription;
 	}
 
 	public JSONObject getDeviceJsonObject() {
@@ -52,6 +58,8 @@ public class Device {
 		
 		result.put(OntologyEntitiesNames.DEVICE_NAME, this.deviceName);
 		result.put(OntologyEntitiesNames.DEVICE_ID, this.deviceId);
+		result.put(OntologyEntitiesNames.DESCRIPTION, this.description);
+		
 		return result;
 	}
 	
@@ -72,16 +80,21 @@ public class Device {
 		this.deviceName = deviceName;
 	}
 	
-	
-	
-	
 	public static Device fromJSON(JSONObject object) {
-		return new Device((String) object.get(OntologyEntitiesNames.DEVICE_NAME), (String) object.get(OntologyEntitiesNames.DEVICE_ID));			
+		return new Device((String) object.get(OntologyEntitiesNames.DEVICE_NAME), (String) object.get(OntologyEntitiesNames.DEVICE_ID), (String) object.get(OntologyEntitiesNames.DESCRIPTION));			
 	}
 	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return toJson().toJSONString();
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 
 @XmlRootElement(name = "component")
 public class Component {
-	private String componentName, componentId;
+	private String componentName, componentId, description;
 	private JSONObject componentJsonObject;
 	
 	public Component() {
@@ -26,7 +26,12 @@ public class Component {
 		// TODO Auto-generated constructor stub
 		this.componentName = cName;
 		this.componentId = cID;
-
+	}
+	public Component(String cName, String cID, String cDescription) {
+		// TODO Auto-generated constructor stub
+		this.componentName = cName;
+		this.componentId = cID;
+		this.description = cDescription;
 	}
 
 
@@ -35,12 +40,13 @@ public class Component {
 		
 		result.put(OntologyEntitiesNames.COMPONENT_NAME, this.componentName);
 		result.put(OntologyEntitiesNames.COMPONENT_ID, this.componentId);
+		result.put(OntologyEntitiesNames.DESCRIPTION, this.description);
 		return result;
 	}
 	
 	
 	public static Component fromJSON(JSONObject object) {
-		return new Component((String) object.get(OntologyEntitiesNames.COMPONENT_NAME), (String) object.get(OntologyEntitiesNames.COMPONENT_ID));			
+		return new Component((String) object.get(OntologyEntitiesNames.COMPONENT_NAME), (String) object.get(OntologyEntitiesNames.COMPONENT_ID), (String) object.get(OntologyEntitiesNames.DESCRIPTION));			
 	}
 
 	public String getComponentName() {
@@ -71,5 +77,13 @@ public class Component {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return toJson().toJSONString();
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
