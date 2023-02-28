@@ -9,7 +9,7 @@
                             {
                                 "skillName": "Skill_1",
                                 "skillId": "1",
-                                "description": "Description of ",
+                                "description": "Description of Skill_1",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -27,7 +27,7 @@
                             }
                         ],
                         "componentId": "1",
-                        "description": "Description of ",
+                        "description": "Description of Component_1_1_1",
                         "componentName": "Component_1_1_1"
                     },
                     {
@@ -35,7 +35,7 @@
                             {
                                 "skillName": "Skill_1_1_2_1",
                                 "skillId": "1",
-                                "description": "Description of ",
+                                "description": "Description of Skill_1_1_2_1",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -53,7 +53,7 @@
                             }
                         ],
                         "componentId": "2",
-                        "description": "Description of ",
+                        "description": "Description of Component_1_1_2",
                         "componentName": "Component_1_1_2"
                     },
                     {
@@ -61,7 +61,7 @@
                             {
                                 "skillName": "Connectivity",
                                 "skillId": "1",
-                                "description": "Description of ",
+                                "description": "Description of Connectivity skill of Components_3",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -79,11 +79,11 @@
                             }
                         ],
                         "componentId": "3",
-                        "description": "Description of ",
+                        "description": "Description of Component_3",
                         "componentName": "Component_3"
                     }
                 ],
-                "description": "Description of ",
+                "description": "Description of Device_1_1",
                 "deviceName": "Device_1_1",
                 "deviceId": "1"
             },
@@ -94,7 +94,7 @@
                             {
                                 "skillName": "Skill_1",
                                 "skillId": "1",
-                                "description": "Description of ",
+                                "description": "Description of Skill_1 of Component_1_2_1",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -112,7 +112,7 @@
                             }
                         ],
                         "componentId": "1",
-                        "description": "Description of ",
+                        "description": "Description of Component_1_2_1",
                         "componentName": "Component_1_2_1"
                     },
                     {
@@ -120,7 +120,7 @@
                             {
                                 "skillName": "Skill_1_2",
                                 "skillId": "1",
-                                "description": "Description of ",
+                                "description": "Description of Skill_1_2 of Component_1_2_2",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -138,7 +138,7 @@
                             }
                         ],
                         "componentId": "2",
-                        "description": "Description of ",
+                        "description": "Description of Component_1_2_2",
                         "componentName": "Component_1_2_2"
                     },
                     {
@@ -146,7 +146,7 @@
                             {
                                 "skillName": "Connectivity",
                                 "skillId": "1",
-                                "description": "Description of ",
+                                "description": "Description of Connectivity Skill of Component_1_2_3",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -177,7 +177,7 @@
                             {
                                 "skillName": "Connectivity",
                                 "skillId": "2",
-                                "description": "Description of ",
+                                "description": "Description of Connectivity 2 of Component_1_2_3",
                                 "rules": [
                                     {
                                         "paremters": [
@@ -239,11 +239,11 @@
                             }
                         ],
                         "componentId": "3",
-                        "description": "Description of ",
+                        "description": "Description of Component_1_2_3",
                         "componentName": "Component_1_2_3"
                     }
                 ],
-                "description": "Description of ",
+                "description": "Description of Device_2",
                 "deviceName": "Device_2",
                 "deviceId": "2"
             }

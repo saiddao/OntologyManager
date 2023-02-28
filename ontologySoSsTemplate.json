@@ -7,17 +7,17 @@
          "devices": [
             {
                "deviceName": "Device_1_1",
-               "description": "Description of ",
+               "description": "Description of Device_1_1",
                "deviceId": "1",
                "components": [
                   {
                      "componentName": "Component_1_1_1",
-                     "description": "Description of ",
+                     "description": "Description of Component_1_1_1",
                      "componentId": "1",
                      "skills": [
                         {
                            "skillName": "Skill_1",
-                           "description": "Description of ",
+                           "description": "Description of Skill_1",
                            "skillId": "1",
                            "rules": [
                               {
@@ -38,12 +38,12 @@
                   },
                   {
                      "componentName": "Component_1_1_2",
-                     "description": "Description of ",
+                     "description": "Description of Component_1_1_2",
                      "componentId": "2",
                      "skills": [
                         {
                            "skillName": "Skill_1_1_2_1",
-                           "description": "Description of ",
+                           "description": "Description of Skill_1_1_2_1",
                            "skillId": "1",
                            "rules": [
                               {
@@ -64,12 +64,12 @@
                   },
                   {
                      "componentName": "Component_3",
-                     "description": "Description of ",
+                     "description": "Description of Component_3",
                      "componentId": "3",
                      "skills": [
                         {
                            "skillName": "Connectivity",
-                           "description": "Description of ",
+                           "description": "Description of Connectivity skill of Components_3",
                            "skillId": "1",
                            "rules": [
                               {
@@ -92,17 +92,17 @@
             },
             {
                "deviceName": "Device_2",
-               "description": "Description of ",
+               "description": "Description of Device_2",
                "deviceId": "2",
                "components": [
                   {
                      "componentName": "Component_1_2_1",
-                     "description": "Description of ",
+                     "description": "Description of Component_1_2_1",
                      "componentId": "1",
                      "skills": [
                         {
                            "skillName": "Skill_1",
-                           "description": "Description of ",
+                           "description": "Description of Skill_1 of Component_1_2_1",
                            "skillId": "1",
                            "rules": [
                               {
@@ -123,12 +123,12 @@
                   },
                   {
                      "componentName": "Component_1_2_2",
-                     "description": "Description of ",
+                     "description": "Description of Component_1_2_2",
                      "componentId": "2",
                      "skills": [
                         {
                            "skillName": "Skill_1_2",
-                           "description": "Description of ",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
                            "skillId": "1",
                            "rules": [
                               {
@@ -149,12 +149,12 @@
                   },
                   {
                      "componentName": "Component_1_2_3",
-                     "description": "Description of ",
+                     "description": "Description of Component_1_2_3",
                      "componentId": "3",
                      "skills": [
                         {
                            "skillName": "Connectivity",
-                           "description": "Description of ",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
                            "skillId": "1",
                            "rules": [
                               {
@@ -185,7 +185,7 @@
                         },
                         {
                            "skillName": "Connectivity",
-                           "description": "Description of ",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
                            "skillId": "2",
                            "rules": [
                               {
