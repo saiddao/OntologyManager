@@ -22,7 +22,7 @@ public abstract class OntologyEntitiesNames {
 	public static final String Rule_ID = "ruleId";
 	
 	public static final Object ABSTRACT_RULE = "abstractrule";
-	public static final Object WELL_DEFINED_RULE = "welldefined";
+	public static final Object WELL_DEFINED_RULE = "welldefinedrule";
 	public static final Object RULE_TYPE = "ruleType";
 	
 	
