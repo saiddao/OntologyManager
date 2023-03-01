@@ -139,7 +139,7 @@
     },
     "OM_Response": [
       {
-        "paremters": [
+        "paramters": [
           {
             "#maximum_number": "",
             "#PROBE_ID": ""
@@ -151,7 +151,7 @@
         "ruleId": "1"
       },
       {
-        "paremters": [
+        "paramters": [
           {
             "#PROBE_ID": "",
             "#minimum_number": ""

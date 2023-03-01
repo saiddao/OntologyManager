@@ -8,6 +8,12 @@ import org.json.simple.JSONObject;
 public class Rule {
 	private String ruleName, ruleId;
 	private JSONObject ruleJsonObject;
+	private String ruleID;
+	private String ruleTYPE;
+	private String abstractRULE;
+	private String wellDefinedRULE;
+	private String descriptionRule;
+	private String skillId;
 	
 	public Rule() {
 		// TODO Auto-generated constructor stub
@@ -29,6 +35,20 @@ public class Rule {
 
 	}
 
+
+	public Rule(String ruleID2, String ruleTYPE, String abstractRULE, String wellDefinedRULE, String descriptionRule, String skillId) {
+		// TODO Auto-generated constructor stub
+		
+		this.ruleID = ruleID2; 
+		this.ruleTYPE = ruleTYPE;
+		this.abstractRULE = abstractRULE; 
+		this.wellDefinedRULE = wellDefinedRULE; 
+		this.descriptionRule = descriptionRule; 
+		this.skillId = skillId;
+		
+		System.out.println("Rule.Rule()");
+		
+	}
 
 	public JSONObject toJson() {
 		
@@ -83,7 +103,94 @@ public class Rule {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return toJson().toJSONString();
+		return toJsonAbstractRule().toJSONString();
+	}
+
+	private JSONObject toJsonAbstractRule() {
+		// TODO Auto-generated method stub
+		JSONObject result = new JSONObject();
+		result.put(OntologyEntitiesNames.Rule_ID, this.ruleID);
+		result.put(OntologyEntitiesNames.DESCRIPTION, this.descriptionRule);
+		result.put(OntologyEntitiesNames.RULE_TYPE, this.ruleTYPE);
+		result.put(OntologyEntitiesNames.ABSTRACT_RULE, this.abstractRULE);
+		result.put(OntologyEntitiesNames.WELL_DEFINED_RULE, this.wellDefinedRULE);
+		result.put(OntologyEntitiesNames.SKILL_ID, this.skillId);
+		
+		System.out.println("Rule.toJsonAbstractRule()");
+		return result;
+	}
+
+	public static Rule fromJSONAbstractRule(JSONObject ruleObject, String skillId) {
+		// TODO Auto-generated method stub
+		
+		
+		/**
+		 * {
+        "ruleType": "Standard",
+        "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+        "abstractrule": "Maximum number of established simultaneous connections",
+        "welldefinedrule":"#maximum_number of established simultaneous connections",
+        "ruleId": "1",
+        "skillId": "1"
+      }
+
+		 */
+		
+		String ruleID = (String) ruleObject.get(OntologyEntitiesNames.Rule_ID);
+		String descriptionRule = (String) ruleObject.get(OntologyEntitiesNames.DESCRIPTION);
+		String ruleTYPE = (String) ruleObject.get(OntologyEntitiesNames.RULE_TYPE);
+		String abstractRULE = (String) ruleObject.get(OntologyEntitiesNames.ABSTRACT_RULE);
+		String wellDefinedRULE = (String) ruleObject.get(OntologyEntitiesNames.WELL_DEFINED_RULE);
+		
+		return new Rule(ruleID, ruleTYPE, abstractRULE, wellDefinedRULE, descriptionRule, skillId);
+	}
+
+	public String getRuleID() {
+		return ruleID;
+	}
+
+	public void setRuleID(String ruleID) {
+		this.ruleID = ruleID;
+	}
+
+	public String getRuleTYPE() {
+		return ruleTYPE;
+	}
+
+	public void setRuleTYPE(String ruleTYPE) {
+		this.ruleTYPE = ruleTYPE;
+	}
+
+	public String getAbstractRULE() {
+		return abstractRULE;
+	}
+
+	public void setAbstractRULE(String abstractRULE) {
+		this.abstractRULE = abstractRULE;
+	}
+
+	public String getWellDefinedRULE() {
+		return wellDefinedRULE;
+	}
+
+	public void setWellDefinedRULE(String wellDefinedRULE) {
+		this.wellDefinedRULE = wellDefinedRULE;
+	}
+
+	public String getDescriptionRule() {
+		return descriptionRule;
+	}
+
+	public void setDescriptionRule(String descriptionRule) {
+		this.descriptionRule = descriptionRule;
+	}
+
+	public String getSkillId() {
+		return skillId;
+	}
+
+	public void setSkillId(String skillId) {
+		this.skillId = skillId;
 	}
 	
 }

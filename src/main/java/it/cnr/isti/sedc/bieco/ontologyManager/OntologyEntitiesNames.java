@@ -16,8 +16,16 @@ public abstract class OntologyEntitiesNames {
 	public static final String SKILL_NAME = "skillName";
 	public static final String SKILL_ID = "skillId";
 	
+	public static final String SKILL_IDS = "skillIds";
+	
 	public static final Object RULE_NAME = "ruleName";
 	public static final String Rule_ID = "ruleId";
+	
+	public static final Object ABSTRACT_RULE = "abstractrule";
+	public static final Object WELL_DEFINED_RULE = "welldefined";
+	public static final Object RULE_TYPE = "ruleType";
+	
+	
 	
 	public static final String DEVICES = "devices";
 	public static final String COMPONENTS = "components";

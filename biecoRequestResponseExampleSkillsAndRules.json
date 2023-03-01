@@ -1,0 +1,147 @@
+[
+  {
+    "OM_Request": {
+      "jobID": "1234",
+      "timestamp": "",
+      "messageType": "Data",
+      "sourceID": "4",
+      "event": {
+        "OntologyRequest": {
+          "operationName": "getskills",
+          "sosId": "1",
+          "deviceId": "2",
+          "componentId": "3"
+        }
+      },
+      "crc": 1234567
+    },
+    "OM_Response": [
+      {
+        "skillName": "Connectivity",
+        "skillId": "1",
+        "description": "Description of "
+      },
+      {
+        "skillName": "Connectivity",
+        "skillId": "2",
+        "description": "Description of "
+      },
+      {
+        "skillName": "Sequence Execution",
+        "skillId": "3",
+        "description": "Description of "
+      }
+    ]
+  },
+  
+  {
+    "OM_Request": {
+      {
+        "jobID": "1234",
+        "timestamp": "",
+        "messageType": "Data",
+        "sourceID": "4",
+        "event": {
+          "OntologyRequest": {
+            "operationName": "putwelldefinedrule",
+            "sosId": "4",
+            "deviceId": "1",
+            "componentId": "1",
+            "skillId": "",
+            "rule": {
+              "ruleId": "1",
+            }
+          },
+          "crc": 1234567
+        }}}
+      },
+        
+        {
+          "OM_Request": {
+            "jobID": "1234",
+            "timestamp": "",
+            "messageType": "Data",
+            "sourceID": "4",
+            "event": {
+              "OntologyRequest": {
+                "operationName": "getabstractrules",
+                "sosId": "1",
+                "deviceId": "2",
+                "componentId": "3",
+                "skillIds": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            "crc": 1234567
+          },
+          "OM_Response": [
+            {
+              "ruleType": "Standard",
+              "ruleName": "Maximum number of established simultaneous connections",
+              "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+              "abstractrule": "Maximum number of established simultaneous connections",
+              "refinedrule": "#maximum_number of established simultaneous connections",
+              "ruleId": "1"
+            },
+            {
+              "ruleType": "Standard",
+              "ruleName": "Mean number of established simultaneous connections on a time frame",
+              "description": "",
+              "abstractrule": "#PARAMETR_1_Name Rule 1 about Skill_1 of component Component_1_1_1.",
+              "refinedrule": "#PARAMETR_1_Name Rule 1 about Skill_1 of component Component_1_1_1.",
+              "ruleId": "1",
+              "skillId": "1"
+            },
+            {
+              "ruleType": "Standard",
+              "ruleName": "Maximum number of established simultaneous connections",
+              "description": "",
+              "ruleId": "2",
+              "skillId": "1"
+            },
+            {
+              "ruleType": "Standard",
+              "ruleName": "Mean number of requested simultaneous connections on a time frame",
+              "description": "",
+              "ruleId": "3",
+              "skillId": "1"
+            },
+            {
+              "ruleType": "Standard",
+              "ruleName": "Maximum of requested simultaneous connections on a time frame",
+              "description": "",
+              "ruleId": "4",
+              "skillId": "1"
+            },
+            {
+              "ruleType": "Standard",
+              "ruleName": "Expected number of components compliance",
+              "description": "",
+              "ruleId": "5",
+              "skillId": "1"
+            },
+            {
+              "ruleType": "Standard",
+              "ruleName": "Optimal communication frequency between components ",
+              "description": "",
+              "ruleId": "6",
+              "skillId": "1"
+            },
+            {
+              "paremters": [
+                {
+                  "#PROBE_ID": "",
+                  "#minimum_number": ""
+                }
+              ],
+              "ruleType": "Standard",
+              "ruleName": "Minimum number of established simultaneous connections",
+              "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+              "ruleId": "2"
+            }
+          ]
+        }
+      ]
