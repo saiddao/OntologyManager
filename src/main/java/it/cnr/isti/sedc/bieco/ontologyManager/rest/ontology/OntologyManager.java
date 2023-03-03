@@ -85,7 +85,7 @@ public class OntologyManager {
 		+ "    <title>Form</title>"
 		+ "</head>"
 		+ "<body>"
-		+ "    <form action=\"http://localhost:8283/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+		+ "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
 		+ "        <button>Get SoSs</button>"
 		+ "    </form>"
 		+ "</body>"
@@ -127,7 +127,7 @@ public class OntologyManager {
 				+ "<body>");
 			
 		
-		resultHTML.append("<form action=\"http://localhost:8283/ontologymanager/biecointerface/getComponentsHTML\">"
+		resultHTML.append("<form action=\"http://localhost:8282/ontologymanager/biecointerface/getComponentsHTML\">"
 		+"  <label for=\"soss\">Choose SoS:</label>"
 		+"  <select name=\"soss\" id=\"soss\">");
 		
@@ -145,7 +145,7 @@ public class OntologyManager {
 				
 				
 				
-		resultHTML.append( "    <form action=\"http://localhost:8283/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+		resultHTML.append( "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
 				+ "        <button>Get SoSs</button>"
 				+ "    </form>"
 				+ "</body>"
@@ -644,22 +644,12 @@ public class OntologyManager {
 	}
 	
 	
-	/**
-	 * Added 2023.03.01: new operation based on what current implementation of BIECO UI
-	 * @param sosID
-	 * @param deviceID
-	 * @param componentID
-	 * @param skillIDs
-	 * @return
-	 */
-	@GET
-	@Path("/getabstractrules")
-	@Produces(MediaType.APPLICATION_JSON)
-	private Object getAbstractRules(
-		@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
-		@QueryParam(OntologyEntitiesNames.DEVICE_ID) String deviceID,
-		@QueryParam(OntologyEntitiesNames.COMPONENT_ID) String componentID,
-		@QueryParam(OntologyEntitiesNames.SKILL_IDS) JSONArray skillIDs){
+
+	public Object getAbstractRules(
+		String sosID,
+		String deviceID,
+		String componentID,
+		JSONArray skillIDs){
 
 	List<Rule> rules = new ArrayList<Rule>();
 	
@@ -1062,14 +1052,12 @@ public class OntologyManager {
 	
 	
 	
-	@Path("/admin")
+	@Path("/omadmin")
 	public class MyResource {
-
 	    @GET
 	    @Produces(MediaType.TEXT_HTML)
 	    public String getHtml() {
 	        // return HTML page here
-	    	
 	    	
 	    	String result = "<!DOCTYPE html>"
 			+ "<html lang=\"en\">"
@@ -1080,15 +1068,13 @@ public class OntologyManager {
 			+ "    <title>Ontology Manager Administrator</title>"
 			+ "</head>"
 			+ "<body>"
-			+ "    <form action=\"http://localhost:8283/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+			+ "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
 			+ "        <button>Get SoSs</button>"
 			+ "    </form>"
 			+ "</body>"
 			+ "</html>";
 			
 			return result;
-	    	
-	    	
 	    }
 	}
 	

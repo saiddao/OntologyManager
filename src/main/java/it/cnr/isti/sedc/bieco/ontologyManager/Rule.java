@@ -15,6 +15,9 @@ public class Rule {
 	private String descriptionRule;
 	private String skillId;
 	
+	/**
+	 * 
+	 */
 	public Rule() {
 		// TODO Auto-generated constructor stub
 	}
