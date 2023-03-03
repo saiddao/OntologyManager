@@ -48,7 +48,7 @@ public class Main {
             
             
             server.getServerConfiguration().addHttpHandler(
-                staticHandler, "/html"
+                staticHandler, "/admin"
             );
             server.start();
 

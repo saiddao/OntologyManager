@@ -18,12 +18,12 @@
     
 	<servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>/html/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
     </servlet-mapping>
     
     <context-param>
         <param-name>jersey.config.servlet.filter.staticContentRegex</param-name>
-        <param-value>/html/.*</param-value>
+        <param-value>/admin/.*</param-value>
     </context-param>
     
     

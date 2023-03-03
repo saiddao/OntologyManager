@@ -1062,7 +1062,7 @@ public class OntologyManager {
 	
 	
 	
-	@Path("/html")
+	@Path("/admin")
 	public class MyResource {
 
 	    @GET
@@ -1071,21 +1071,13 @@ public class OntologyManager {
 	        // return HTML page here
 	    	
 	    	
-	    	String result =  "<!DOCTYPE html><head><meta charset=\"utf-8\"><title>OntologyManager</title>" + "</head><style>\n"
-					+ "body {\n" + "  background-color: #ddebef;\n" + "}\n"
-					+ "</style><body><h2>OntologyManager</h2><h3>Status: " + OntologyStatus() + "</h3>"
-					+ "<h4>Ontology logs:</h4><textarea id=\"logs\" name=\"debugLog\" rows=\"30\" cols=\"200\">\n"
-					+ getLoggerData() + "</textarea></body></html>";
-			
-			
-			
-			result = "<!DOCTYPE html>"
+	    	String result = "<!DOCTYPE html>"
 			+ "<html lang=\"en\">"
 			+ "<head>"
 			+ "    <meta charset=\"UTF-8\">"
 			+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
 			+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-			+ "    <title>Form</title>"
+			+ "    <title>Ontology Manager Administrator</title>"
 			+ "</head>"
 			+ "<body>"
 			+ "    <form action=\"http://localhost:8283/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
