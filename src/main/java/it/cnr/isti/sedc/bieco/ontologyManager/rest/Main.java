@@ -47,9 +47,10 @@ public class Main {
             final StaticHttpHandler staticHandler = new StaticHttpHandler("src/main/webapp");
             
             
-            server.getServerConfiguration().addHttpHandler(
-                staticHandler, "/admin"
-            );
+            //server.getServerConfiguration().addHttpHandler(new StaticHttpHandler("src/main/webapp/admin"), "/admin");
+            
+            server.getServerConfiguration().addHttpHandler(staticHandler, "/admin");
+            
             server.start();
 
             System.out.println(String.format("Jersey app started with endpoints available at " + "%s%nHit Ctrl-C to stop it...", BASE_URI));

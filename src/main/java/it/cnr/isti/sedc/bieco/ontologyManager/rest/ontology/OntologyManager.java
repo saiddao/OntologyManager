@@ -616,7 +616,12 @@ public class OntologyManager {
 														
 														if (rulesJson != null) {
 															for (Object ruleObject : rulesJson) {
-																Rule currentRule = Rule.fromJSON((JSONObject) ruleObject);
+																//Rule currentRule = Rule.fromJSON((JSONObject) ruleObject);
+																
+																
+																
+																Rule currentRule = Rule.fromJSONAbstractRule((JSONObject) ruleObject, currentSkill.getSkillId());
+																
 																
 																rules.add(currentRule);
 																System.out.println(rules.get(rules.size() - 1));

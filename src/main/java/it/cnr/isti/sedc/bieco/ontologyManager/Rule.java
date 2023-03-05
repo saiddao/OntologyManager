@@ -39,7 +39,7 @@ public class Rule {
 	}
 
 
-	public Rule(String ruleID2, String ruleTYPE, String abstractRULE, String wellDefinedRULE, String descriptionRule, String skillId) {
+	public Rule(String ruleID2, String ruleNamePar, String ruleTYPE, String abstractRULE, String wellDefinedRULE, String descriptionRule, String skillId) {
 		// TODO Auto-generated constructor stub
 		
 		this.ruleID = ruleID2; 
@@ -48,6 +48,7 @@ public class Rule {
 		this.wellDefinedRULE = wellDefinedRULE; 
 		this.descriptionRule = descriptionRule; 
 		this.skillId = skillId;
+		this.ruleName = ruleNamePar;
 		
 		System.out.println("Rule.Rule()");
 		
@@ -113,6 +114,7 @@ public class Rule {
 		// TODO Auto-generated method stub
 		JSONObject result = new JSONObject();
 		result.put(OntologyEntitiesNames.Rule_ID, this.ruleID);
+		result.put(OntologyEntitiesNames.RULE_NAME, this.ruleName);
 		result.put(OntologyEntitiesNames.DESCRIPTION, this.descriptionRule);
 		result.put(OntologyEntitiesNames.RULE_TYPE, this.ruleTYPE);
 		result.put(OntologyEntitiesNames.ABSTRACT_RULE, this.abstractRULE);
@@ -140,12 +142,13 @@ public class Rule {
 		 */
 		
 		String ruleID = (String) ruleObject.get(OntologyEntitiesNames.Rule_ID);
+		String ruleName = (String) ruleObject.get(OntologyEntitiesNames.RULE_NAME);
 		String descriptionRule = (String) ruleObject.get(OntologyEntitiesNames.DESCRIPTION);
 		String ruleTYPE = (String) ruleObject.get(OntologyEntitiesNames.RULE_TYPE);
 		String abstractRULE = (String) ruleObject.get(OntologyEntitiesNames.ABSTRACT_RULE);
 		String wellDefinedRULE = (String) ruleObject.get(OntologyEntitiesNames.WELL_DEFINED_RULE);
 		
-		return new Rule(ruleID, ruleTYPE, abstractRULE, wellDefinedRULE, descriptionRule, skillId);
+		return new Rule(ruleID, ruleName, ruleTYPE, abstractRULE, wellDefinedRULE, descriptionRule, skillId);
 	}
 
 	public String getRuleID() {
