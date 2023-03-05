@@ -30,6 +30,7 @@ import it.cnr.isti.sedc.bieco.ontologyManager.Skill;
 import it.cnr.isti.sedc.bieco.ontologyManager.SoS;
 import it.cnr.isti.sedc.bieco.ontologyManager.Student;
 import it.cnr.isti.sedc.bieco.ontologyManager.utils.BiecoMessageTypes;
+import it.cnr.isti.sedc.bieco.ontologyManager.utils.OntlologyManagerUtils;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -644,16 +645,36 @@ public class OntologyManager {
 	}
 	
 	
-
-	public Object getAbstractRules(
-		String sosID,
-		String deviceID,
-		String componentID,
-		JSONArray skillIDs){
+	/**
+	 * 
+	 * @param sosID
+	 * @param deviceID
+	 * @param componentID
+	 * @param skillIDs
+	 * @return
+	 */
+	@GET
+	@Path("/getabstractrules")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Object getAbstractRules (@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
+			@QueryParam(OntologyEntitiesNames.DEVICE_ID) String deviceID,
+			@QueryParam(OntologyEntitiesNames.COMPONENT_ID) String componentID,
+			@QueryParam(OntologyEntitiesNames.SKILL_IDS) String skillIDsAsString) {
+	
+	//(
+	//	String sosID,
+	//	String deviceID,
+	//	String componentID,
+	//	JSONArray skillIDs){
 
 	List<Rule> rules = new ArrayList<Rule>();
 	
 	ArrayList<String> arrayListSkillsIDs = new ArrayList<String>();
+	
+	JSONParser parserSkills = new JSONParser();
+	JSONArray skillIDs;
+	try {
+		skillIDs = (JSONArray) parserSkills.parse(skillIDsAsString);
 	
 	for (Object skillObject : skillIDs) {
 		System.out.println("skillIDs -> "+skillObject);
@@ -662,6 +683,10 @@ public class OntologyManager {
 	        arrayListSkillsIDs.add(skillID);
 	    }
 		System.out.println("arrayListSkillsIDs -> "+arrayListSkillsIDs);
+	}
+	} catch (ParseException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
 	}
 	
 	//System.out.println("Array -> "+(String[]) skillIDs.toArray());
@@ -977,7 +1002,8 @@ public class OntologyManager {
 			JSONArray skillIDs = (JSONArray) ontologyRequest.get(OntologyEntitiesNames.SKILL_IDS);
 			System.out.println(skillIDs.toJSONString());
 
-			result = getAbstractRules(sosID, deviceID, componentID, skillIDs).toString();
+//			result = getAbstractRules(sosID, deviceID, componentID, skillIDs).toString();
+			result = getAbstractRules(sosID, deviceID, componentID, skillIDs.toJSONString()).toString();
 
 			output = Response.status(200).entity(result).build();
 			
