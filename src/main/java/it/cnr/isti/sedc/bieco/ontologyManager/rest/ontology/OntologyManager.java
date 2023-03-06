@@ -1,12 +1,11 @@
 package it.cnr.isti.sedc.bieco.ontologyManager.rest.ontology;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -21,6 +20,11 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import it.cnr.isti.sedc.bieco.ontologyManager.Component;
 import it.cnr.isti.sedc.bieco.ontologyManager.CoreOntology;
 import it.cnr.isti.sedc.bieco.ontologyManager.Device;
@@ -30,14 +34,6 @@ import it.cnr.isti.sedc.bieco.ontologyManager.Skill;
 import it.cnr.isti.sedc.bieco.ontologyManager.SoS;
 import it.cnr.isti.sedc.bieco.ontologyManager.Student;
 import it.cnr.isti.sedc.bieco.ontologyManager.utils.BiecoMessageTypes;
-import it.cnr.isti.sedc.bieco.ontologyManager.utils.OntlologyManagerUtils;
-
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import com.google.gson.JsonObject;
 
 
 
@@ -60,7 +56,7 @@ public class OntologyManager {
 	 */
 
 	@GET
-	@Produces({ MediaType.TEXT_HTML })
+	@Produces({MediaType.TEXT_HTML })
 	public String getIt() {
 		return homePage();
 
@@ -1111,6 +1107,97 @@ public class OntologyManager {
 	
 	
 	
+	
+	
+	
+	
+	@GET
+	@Path("/admin")
+	@Produces({ MediaType.TEXT_HTML })
+	public Response getAdminHTML() {
+		List<SoS> soss = this.loadOntDatabaseSoSs();
+		
+		StringBuilder resultHTML = new StringBuilder();
+		resultHTML.append("<!DOCTYPE html>"
+				+ "<html lang=\"en\">"
+				+ "<head>"
+				+ "    <meta charset=\"UTF-8\">"
+				+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+				+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+				+ "    <title>Form</title>"
+				+ "</head>"
+				+ "<body>");
+			
+		
+		resultHTML.append("<form action=\"http://localhost:8282/ontologymanager/biecointerface/getComponentsHTML\">"
+		+"  <label for=\"soss\">Choose SoS:</label>"
+		+"  <select name=\"soss\" id=\"soss\">");
+		
+		for (SoS soS : soss) {
+			resultHTML.append(soS.getHTML());
+			
+		}
+		
+		 		  
+		resultHTML.append("</select>"
+		  +"  <br><br>"
+		  +"<input type=\"getcomponents\" value=\"GetComponents\">"
+		  +"</form>");
+		
+				
+				
+				
+		resultHTML.append( "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+				+ "        <button>Get SoSs</button>"
+				+ "    </form>"
+				+ "</body>"
+				+ "</html>");
+		
+		
+		
+		
+		
+		String currentDir = System.getProperty("user.dir");
+
+        // Create a File object representing the current directory
+        File directory = new File(currentDir);
+
+        // Get all files in the directory
+        File[] files = directory.listFiles();
+
+        // Loop through the files and print their names and paths
+        for (File file : files) {
+            if (file.isFile()) {
+                System.out.println(file.getAbsolutePath());
+            }
+        }
+		
+		
+		
+        return Response.ok("").build();
+
+
+		
+		
+		
+		
+		
+		
+		
+//		return resultHTML.toString();
+	}
+
+private String cleanDocPath(String docPath)
+{
+    if (docPath.startsWith("/"))
+    {
+        return docPath.substring(1);
+    }
+    else
+    {
+        return docPath;
+    }
+}	
 	
 	
 	
