@@ -38,7 +38,7 @@ public class CoreOntology extends Thread {
 
 	public static String getLoggerData() {
 		
-		System.out.println(System.getProperty("user.dir"));
+		//System.out.println(System.getProperty("user.dir"));
 		
 		return Sub.readFile(System.getProperty("user.dir") + "/logs/ontologyManager-debug.log");
 	}

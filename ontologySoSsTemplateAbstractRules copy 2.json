@@ -1,0 +1,18 @@
+{
+   "Rule": {
+      "ruleName": "RuleNae",
+      "description": "Description of Rule 1",
+      "ruleId": "1",
+      "ruleType": "Standard",
+      "abstractrule": "Maximum number of established simultaneous connections",
+      "welldefined": "#PAR_1, #PAR_2, #PAR_3.",
+      "parameters": [
+         {
+            "parameter": {
+               "parName": "#parname",
+               "parValue": "currentValue"
+            }
+         }
+      ]
+   }
+}
