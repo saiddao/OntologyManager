@@ -44,7 +44,7 @@ public class Main {
         try {
             server = startServer(BASE_URI);
             
-            final StaticHttpHandler staticHandler = new StaticHttpHandler("main/webapp");
+            final StaticHttpHandler staticHandler = new StaticHttpHandler("main/webapp/admin");
             
             
             //server.getServerConfiguration().addHttpHandler(new StaticHttpHandler("src/main/webapp/admin"), "/admin");
