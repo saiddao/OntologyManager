@@ -252,6 +252,22 @@ input[type="file"]::-webkit-file-upload-button {
 	outline: none;
 	box-shadow: 0 0 5px #0074D9;
   }
+
+
+  #skills-section{
+	text-align: center; /*contenuto centrato*/
+	margin-top: 50px; /*spazio superiore*/
+	}
+	.skill{
+	/*larghezza dei div skill, in pagina ne abbiamo 3 quindi 100 / 3
+	lasciando un po' di spazio per i margini
+	*/
+	width: 28%;
+	display: inline-block; /*questi div saranno posti uno a fianco all'altro*/
+	margin: 2%; /*un po di spazio tra i div*/
+	color: #2d3e50;
+	}
+	
   
   /* Alternative CSS
   

@@ -17,6 +17,7 @@
 			<li><a href="#navigate" id="navigate-ontology">Navigate</a></li>
 			<li><a href="#delete" id="delete-ontology">Delete</a></li>
 			<li><a href="#update" id="update-ontology">Update</a></li>
+			<li><a href="#sosBlockly" id="map-sos-blockly-ontology">Map SoS Blockly Profile</a></li>
 		</ul>
 	</nav>
 	<main>
@@ -329,11 +330,120 @@
 				<button type="button" onclick="addRule()">Add</button>
 				<button type="button" onclick="modifyRule()">Modify</button>
 			</form>
+		</section>
+		
+		<section id="map-sos-blockly-section">
+			<h2>Map SoS Blockly Profile</h2>
+			
+			
+			<p>Use this functionality for importing and mapping the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.
+			Please Upload the .ecore file exported from Blockly4SoS.</p>
+
+
+
+
+			<div id='skills-section'>
+				<!-- solito container -->
+				<div class="container">
+					<h3>I miei servizi</h3>
+					<div id='skills'>
+						<div class="skill">
+							<h4>Web design</h4>
+							<p>Lorem</p>
+						</div>
+						<div class="skill">
+							<h4>Web marketing</h4>
+							<p>Lorem</p>
+						</div>
+						<div class="skill">
+							<h4>Branding</h4>
+							<p>Lorem</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+
+				<h2>Map AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology</h2>
+				<p>Select a file to import and map the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.</p>
+			  
+				<div class="container">
+					<div class="row d-flex justify-content-between">
+					  <div class="col-md-6">
+						<h3>Imported/Loaded File</h3>
+						<div class="form-control">
+						  <label for="imported-file">Selected file:</label>
+						  <input type="file" id="imported-file" name="imported-file">
+						</div>
+						<div class="form-control">
+						  <label>File content:</label>
+						  <pre id="imported-file-content"></pre>
+						</div>
+						<button id="upload-file" type="button" class="btn">Upload File</button>
+					  </div>
+					  <div class="col-md-6">
+						<h3>Analysis Result</h3>
+						<div class="form-control">
+						  <label for="analysis-result">Result of analysis:</label>
+						  <textarea id="analysis-result" name="analysis-result"></textarea>
+						</div>
+						<button id="upload-content" type="button" class="btn">Upload Content</button>
+					  </div>
+					</div>
+				  </div>
+
+				<script>
+				  const importedFileInput = document.getElementById('imported-file');
+				  const importedFileContent = document.getElementById('imported-file-content');
+				  const analysisResult = document.getElementById('analysis-result');
+			  
+				  importedFileInput.addEventListener('change', (event) => {
+					const file = event.target.files[0];
+					const reader = new FileReader();
+					reader.onload = (event) => {
+					  importedFileContent.textContent = event.target.result;
+					};
+					reader.readAsText(file);
+				  });
+			  
+				  function analyzeImportedFile() {
+					// Analyze the imported file and update the analysisResult textarea
+					// with the result of the analysis.
+					// ...
+				  }
+			  
+				  function uploadFile() {
+					// Upload the selected file to the server.
+					// ...
+				  }
+			  
+				  function uploadContent() {
+					// Upload the content of the imported file preview area or the analysis result
+					// preview area to the server.
+					// ...
+				  }
+			  
+				  document.getElementById('upload-file').addEventListener('click', uploadFile);
+				  document.getElementById('upload-content').addEventListener('click', uploadContent);
+				</script>
+			  
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 		</section>
+		
 	</main>
 	<script>
 		// Get menu links and sections
@@ -347,12 +457,16 @@
 		const deleteSection = document.getElementById('delete-section');
 		const updateLink = document.getElementById('update-ontology');
 		const updateSection = document.getElementById('update-section');
+		
+		const mappingSoSblocklyLink = document.getElementById('map-sos-blockly-ontology');
+		const mappingSoSblocklySection = document.getElementById('map-sos-blockly-section');
 
 		// Hide all sections except the home section on page load
 		uploadSection.style.display = 'none';
 		navigateSection.style.display = 'none';
 		deleteSection.style.display = 'none';
 		updateSection.style.display = 'none';
+		mappingSoSblocklySection.style.display = 'none';
 
 		// Add event listeners to menu links to show their respective sections
 		homeLink.addEventListener('click', () => {
@@ -361,6 +475,7 @@
 			navigateSection.style.display = 'none';
 			deleteSection.style.display = 'none';
 			updateSection.style.display = 'none';
+			mappingSoSblocklySection.style.display = 'none';
 		});
 
 		uploadLink.addEventListener('click', () => {
@@ -369,6 +484,7 @@
 			navigateSection.style.display = 'none';
 			deleteSection.style.display = 'none';
 			updateSection.style.display = 'none';
+			mappingSoSblocklySection.style.display = 'none';
 		});
 
 		navigateLink.addEventListener('click', () => {
@@ -377,6 +493,7 @@
 			navigateSection.style.display = 'block';
 			deleteSection.style.display = 'none';
 			updateSection.style.display = 'none';
+			mappingSoSblocklySection.style.display = 'none';
 		});
 
 		deleteLink.addEventListener('click', () => {
@@ -385,6 +502,7 @@
 			navigateSection.style.display = 'none';
 			deleteSection.style.display = 'block';
 			updateSection.style.display = 'none';
+			mappingSoSblocklySection.style.display = 'none';
 		});
 
 		updateLink.addEventListener('click', () => {
@@ -393,6 +511,16 @@
 			navigateSection.style.display = 'none';
 			deleteSection.style.display = 'none';
 			updateSection.style.display = 'block';
+			mappingSoSblocklySection.style.display = 'none';
+		});
+		
+		mappingSoSblocklyLink.addEventListener('click', () => {
+			homeSection.style.display = 'none';
+			uploadSection.style.display = 'none';
+			navigateSection.style.display = 'none';
+			deleteSection.style.display = 'none';
+			updateSection.style.display = 'none';
+			mappingSoSblocklySection.style.display = 'block';
 		});
 	</script>
 </body>

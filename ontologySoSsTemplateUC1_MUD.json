@@ -1,0 +1,860 @@
+﻿{
+    "ietf-mud:mud": {
+        "mud-version": 1,
+        "mud-url": "https://dct.bieco.org/mud-files/ictgw.txt",
+        "mud-signature": "https://dct.bieco.org/mud-files/ictgw.p7s",
+        "last-update": "2023-09-16T14:54:23+00:00",
+        "cache-validity": 48,
+        "is-supported": true,
+        "mfg-name": "resiltech",
+        "model-name": "ictgw",
+        "from-device-policy": {
+            "access-lists": {
+                "access-list": [
+                    {
+                        "name": "ICTGW_to_HD"
+                    },
+                    {
+                        "name": "ICTGW_to_DB"
+                    },
+                    {
+                        "name": "ICTGW_to_AL"
+                    }
+                ]
+            }
+        },
+        "to-device-policy": {
+            "access-list": [
+                {
+                    "name": "HD_to_ICTGW"
+                },
+                {
+                    "name": "BD_to_ICTGW"
+                },
+                {
+                    "name": "AL_to_ICTGW"
+                }
+            ]
+        },
+        "weaknesses": [
+            {
+                "id": "CWE-648",
+                "name": "CWE-648",
+                "description": "The application does not conform to the API requirements for a function call that requires extra privileges.This could allow attackers to gain privileges by causing the function to be called incorrectly.",
+                "date": "2008-01-30",
+                "last_modified": "2018-03-27",
+                "likelihood": "low",
+                "impact": "high",
+                "risk": "moderate"
+            }
+        ]
+    },
+    "ietf-access-control-list:acls": {
+        "acl": [
+            {
+                "name": "ICTGW_to_HD",
+                "type": "mixed-ipv4-tcp",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "ami_api_and_ami_infrastructure",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "model": "urn:ietf:params:mud:HD"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "ami_api_to_ami_infrastructure",
+                                    "ietf-acldns:dst-dnsname": "ami_infrastructure_to_ami_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "em_api_and_em_infrastructure",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "model": "urn:ietf:params:mud:HD"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "em_api_to_em_infrastructure",
+                                    "ietf-acldns:dst-dnsname": "em_infrastructure_to_em_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "inv_api_and_inv_infrastructure",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "model": "urn:ietf:params:mud:HD"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "inv_api_to_inv_infrastructure",
+                                    "ietf-acldns:dst-dnsname": "inv_infrastructure_to_inv_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "topology_api_and_topology_infrastructure",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "model": "urn:ietf:params:mud:HD"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "topology_api_to_topology_infrastructure",
+                                    "ietf-acldns:dst-dnsname": "topology_infrastructure_to_topology_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "HD_to_ICTGW",
+                "type": "mixed-ipv4-tcp",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "ami_api_and_ami_infrastructure2",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "ami_api_to_ami_infrastructure",
+                                    "ietf-acldns:src-dnsname": "ami_infrastructure_to_ami_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "em_api_and_em_infrastructure2",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "em_api_to_em_infrastructure",
+                                    "ietf-acldns:src-dnsname": "em_infrastructure_to_em_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "inv_api_and_inv_infrastructure2",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "inv_api_to_inv_infrastructure",
+                                    "ietf-acldns:src-dnsname": "inv_infrastructure_to_inv_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "topology_api_and_topology_infrastructure2",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "topology_api_to_topology_infrastructure",
+                                    "ietf-acldns:src-dnsname": "topology_infrastructure_to_topology_api",
+                                    "protocol": 6
+                                },
+                                "tcp": {
+                                    "source-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    },
+                                    "destination-port": {
+                                        "operator": "eq",
+                                        "port": 7776
+                                    }
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ICTGW_to_DB",
+                "type": "mixed-ipv4",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "database_api_create_and_database_create",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "database_api_create_to_database_create",
+                                    "ietf-acldns:dst-dnsname": "database_create_to_database_api_create",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "database_api_create_and_database_create",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "database_api_read_to_database_read",
+                                    "ietf-acldns:dst-dnsname": "database_read_to_database_api_read",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "database_api_update_and_database_update",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "database_api_update_to_database_update",
+                                    "ietf-acldns:dst-dnsname": "database_update_to_database_api_update",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "database_api_delete_and_database_create",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "database_api_delete_to_database_create",
+                                    "ietf-acldns:dst-dnsname": "database_delete_to_database_api_delete",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DB_to_ICTGW",
+                "type": "mixed-ipv4",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "database_api_create_and_database_create2",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "database_api_create_to_database_create",
+                                    "ietf-acldns:src-dnsname": "database_create_to_database_api_create",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "database_api_create_and_database_create2",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "database_api_read_to_database_read",
+                                    "ietf-acldns:src-dnsname": "database_read_to_database_api_read",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "database_api_update_and_database_update2",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "database_api_update_to_database_update",
+                                    "ietf-acldns:src-dnsname": "database_update_to_database_api_update",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "database_api_delete_and_database_create2",
+                            "matches": {
+                                "ietf-mud:mud": {
+                                    "database": "urn:ietf:params:mud:DB"
+                                },
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "database_api_delete_to_database_create",
+                                    "ietf-acldns:src-dnsname": "database_delete_to_database_api_delete",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ICTGW_to_AL",
+                "type": "mixed-ipv4-tcp-ap",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "http_gui_rest_api_and_http_gui_rest_client",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "http_gui_rest_api_to_http_gui_rest_client",
+                                    "ietf-acldns:dst-dnsname": "http_gui_rest_client_to_http_gui_rest_api",
+                                    "protocol": 6
+                                },
+                                "application-protocol": [
+                                    {
+                                        "protocol": "HTTP",
+                                        "version": "1.1",
+                                        "resource": [
+                                            {
+                                                "url": "/icg/v1/rest/gui/getAllNotifications",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/getLastNotifications",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/getNotReadNotificationsCount",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/toggleNotificationsRead/{notificationId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/markAllNotificationsRead",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/device/installationInfo",
+                                                "method": [
+                                                    "post"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/device/uninstall",
+                                                "method": [
+                                                    "post"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/gui/device/install",
+                                                "method": [
+                                                    "post"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/listAllTopologies",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/listAllElementsInTopology/{topologyId}/",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getElementDetails",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getElementDetails/{gridElementId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getElementsDetails/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getGuiElements/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getAllSubElements/{topologyId}/{gridElementId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getCablesAndCoordinates/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getCableDetails/{gridElementId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getCableCapacities/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getTransformerCapacities/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getNodeWithParent/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/tree/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/topology/getRootNodeDsoId/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_grid_status_application",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "application_rest_api_to_grid_status_application",
+                                    "ietf-acldns:dst-dnsname": "grid_status_application_to_application_rest_api",
+                                    "protocol": 6
+                                },
+                                "application-protocol": [
+                                    {
+                                        "protocol": "HTTP",
+                                        "version": "1.1"
+                                    }
+                                ]
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_mqtt",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "application_rest_api_to_mqtt",
+                                    "ietf-acldns:dst-dnsname": "mqtt_publish_interface",
+                                    "protocol": 6
+                                },
+                                "application-protocol": [
+                                    {
+                                        "protocol": "HTTP",
+                                        "version": "1.1"
+                                    }
+                                ]
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_security_resilience",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "application_rest_api_to_security_resilience",
+                                    "ietf-acldns:dst-dnsname": "security_resilience_to_ application_rest_api",
+                                    "protocol": 6
+                                },
+                                "application-protocol": [
+                                    {
+                                        "protocol": "HTTP",
+                                        "version": "1.1",
+                                        "resource": [
+                                            {
+                                                "url": "/icg/v1/rest/egc/getMeasurements/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/getMeasurementById/{id}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/getVoltage/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/getActiveEnergy/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/getEvents/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/getDevices",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/getHeadend/{id}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/generateEvent",
+                                                "method": [
+                                                    "post"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/egc/ping",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/getMeasurement/onDemand/{applicationId}/{gridNodeId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/getMeasurement/event/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/historical/SolarWeb/{fromDateTime}/{toDateTime}/{topologyId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/getActiveAndReactiveEnergy/{topologyId}/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/getActiveAndReactivePower/{topologyId}/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/getVoltage/{topologyId}/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/getMediumVoltage/{topologyId}/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/getCurrent/{topologyId}/{fromDateTime}/{toDateTime}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/measurement/setpoints/{port}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_gui",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "application_rest_api_to_gui",
+                                    "ietf-acldns:dst-dnsname": "gui_to_application_rest_api",
+                                    "protocol": 6
+                                },
+                                "application-protocol": [
+                                    {
+                                        "protocol": "HTTP",
+                                        "version": "1.1",
+                                        "resource": [
+                                            {
+                                                "url": "/icg/v1/rest/application/getFeederNodes/{gridNodeId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            },
+                                            {
+                                                "url": "/icg/v1/rest/application/getFeederCables/{gridNodeId}",
+                                                "method": [
+                                                    "get"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "AL_to_ICTGW",
+                "type": "mixed-ipv4-tcp-ap",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "http_gui_rest_api_and_http_gui_rest_client",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "http_gui_rest_api_to_http_gui_rest_client",
+                                    "ietf-acldns:src-dnsname": "http_gui_rest_client_to_http_gui_rest_api",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_grid_status_application",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "application_rest_api_to_grid_status_application",
+                                    "ietf-acldns:src-dnsname": "grid_status_application_to_application_rest_api",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_mqtt",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "application_rest_api_to_mqtt",
+                                    "ietf-acldns:src-dnsname": "mqtt_publish_interface",
+                                    "protocol": 6
+                                },
+                                "application-protocol": [
+                                    {
+                                        "protocol": "MQTT",
+                                        "version": "1.1",
+                                        "resource": [
+                                            {
+                                                "url": "ict-gateway",
+                                                "method": [
+                                                    "post"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_security_resilience",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "application_rest_api_to_security_resilience",
+                                    "ietf-acldns:src-dnsname": "security_resilience_to_ application_rest_api",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "application_rest_api_and_gui",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "application_rest_api_to_gui",
+                                    "ietf-acldns:src-dnsname": "gui_to_application_rest_api",
+                                    "protocol": 6
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

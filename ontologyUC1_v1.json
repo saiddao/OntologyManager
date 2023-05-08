@@ -1,0 +1,2117 @@
+﻿{
+   "SoSs": [
+      {
+         "sosName": "ICT Ggateway UC",
+         "description": "Description of SoS SoS 1 Name",
+         "sosId": "1",
+         "devices": [
+            {
+               "deviceName": "ICT Gateway",
+               "description": "Description of Device_1_1",
+               "deviceId": "1",
+               "components": [
+                  {
+                     "componentName": "SL_Grid Model",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "SL_Application",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "SL_Publish/Subscribe Manager",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Actuation",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Pn demand Access",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Data Access",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Event Generation & Correlation",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_AdapterRegistration",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Grid Topology Mapping",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_AMI Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_EM Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_INV Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_Topology Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "Observability",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },{
+               "deviceName": "Application Layer",
+               "description": "Description of Device_2",
+               "deviceId": "3",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },{
+               "deviceName": "AMI Headend",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },{
+               "deviceName": "EM Headend",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },{
+               "deviceName": "INV Headend",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },{
+               "deviceName": "Grid Topology Headend",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },{
+         "sosName": "Smart_Grid_Ecosystem",
+         "description": "Description of SoS SoS 1 Name",
+         "sosId": "2",
+         "devices": [
+            {
+               "deviceName": "ICTGW",
+               "description": "Description of Device_1_1",
+               "deviceId": "1",
+               "components": [
+                  {
+                     "componentName": "SL_Grid Model",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "SL_Application",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "SL_Publish/Subscribe Manager",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Actuation",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Pn demand Access",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Data Access",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Event Generation & Correlation",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_AdapterRegistration",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "DML_Grid Topology Mapping",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_AMI Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_EM Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_INV Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },{
+                     "componentName": "AL_Topology Adapter",
+                     "description": "Description of Component_1_1_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1 and its parameters",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "GUI_REST_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "APPLICATION_REST_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "DATABASE_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "AMI_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "EM_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "INV_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "deviceName": "TOPOLOGY_API",
+               "description": "Description of Device_2",
+               "deviceId": "2",
+               "components": [
+                  {
+                     "componentName": "Component_1_2_1",
+                     "description": "Description of Component_1_2_1",
+                     "componentId": "1",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1",
+                           "description": "Description of Skill_1 of Component_1_2_1",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1",
+                                 "description": "Description of Rule 1",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_2",
+                     "description": "Description of Component_1_2_2",
+                     "componentId": "2",
+                     "skills": [
+                        {
+                           "skillName": "Skill_1_2",
+                           "description": "Description of Skill_1_2 of Component_1_2_2",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Name of Rule 1_2",
+                                 "description": "Description of Rule 1_2",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#PARAMETR_1_Name": "par1Value",
+                                       "#PARAMETR_2_Name": "par2Value"
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "componentName": "Component_1_2_3",
+                     "description": "Description of Component_1_2_3",
+                     "componentId": "3",
+                     "skills": [
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity Skill of Component_1_2_3",
+                           "skillId": "1",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },
+                        {
+                           "skillName": "Connectivity",
+                           "description": "Description of Connectivity 2 of Component_1_2_3",
+                           "skillId": "2",
+                           "rules": [
+                              {
+                                 "ruleName": "Maximum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "1",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#maximum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        },{
+                           "skillName": "Sequence Execution",
+                           "description": "Description of ",
+                           "skillId": "3",
+                           "rules": [
+                              {
+                                 "ruleName": "Ordered Sequence of Events (Operations)",
+                                 "description": "This is a Standard Rule that allows monitoring that a sequence of operations or events or activities is performed fllowing a predefined order.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "Event1": "Operation 1",
+                                       "Event2": "Operation 2",
+                                       "Event3": "Operation 3"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "ruleName": "Minimum number of established simultaneous connections",
+                                 "description": "This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.",
+                                 "ruleId": "2",
+                                 "ruleType": "Standard",
+                                 "paremters": [
+                                    {
+                                       "#minimum_number": "",
+                                       "#PROBE_ID": ""
+                                    }
+                                 ]
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
