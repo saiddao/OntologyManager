@@ -197,6 +197,8 @@
 					}
 				}
 
+
+				// var for Selctors and related Buttons
 				const sosSelectEl = document.getElementById('sos-selector');
 				const sosSelectButton = document.getElementById('sos-selector-button');
 
@@ -212,17 +214,14 @@
 				const ruleSelectEl = document.getElementById('rule-selector');
 				const ruleSelectButton = document.getElementById('rule-selector-button');
 				
-
-
-
+				// fetching data for SoSs :. think about adding specific button for performing this operation
 				fetchData('getsoss', 'sosId', 'sosName', sosSelectEl);
 
 				
 				sosSelectEl.addEventListener('change', () => {
-					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
+//					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
 					resetSelectorsRSCD();
 				});
-
 
 				sosSelectButton.addEventListener('click', () => {
 					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
@@ -231,7 +230,7 @@
 
 
 				deviceSelectEl.addEventListener('change', () => {
-					fetchData('getcomponents', 'componentId', 'componentName', componentSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value);
+//					fetchData('getcomponents', 'componentId', 'componentName', componentSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value);
 					resetSelectorsRSC();
 				});
 				deviceSelectButton.addEventListener('click', () => {
@@ -240,7 +239,7 @@
 				});
 
 				componentSelectEl.addEventListener('change', () => {
-					fetchData('getskills', 'skillId', 'skillName', skillSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value);
+//					fetchData('getskills', 'skillId', 'skillName', skillSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value);
 					resetSelectorsRS();
 				});
 
@@ -251,23 +250,20 @@
 
 
 				skillSelectEl.addEventListener('change', () => {
-					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
+//					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
 					resetSelectorsR();
 				});
 
 				skillSelectButton.addEventListener('click', () => {
-					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
+					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, 'skillId', skillSelectEl.value);
 					resetSelectorsR();
 				});
 
 
 				ruleSelectButton.addEventListener('click', () => {
-					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
+					fetchDataRule('getrulesForMonitoring', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, 'skillId', skillSelectEl.value, 'ruleID', ruleSelectEl.value);
 					resetSelectorsR();
 				});
-
-
-
 
 
 				function fetchData(operationName, valueKey, textKey, selectEl, ...args) {
@@ -326,8 +322,72 @@
 							});
 						})
 						.catch(error => console.error(error));
-				}
+				};
 
+
+
+				function fetchDataRule(operationName, valueKey, textKey, selectEl, ...args) {
+					const logArea = document.getElementById('logArea');
+
+					const payload = {
+						jobID: '1234',
+						timestamp: '',
+						messageType: 'Data',
+						sourceID: '4',
+						event: {
+							OntologyRequest: {
+								operationName
+							}
+						},
+						crc: 1234567
+					};
+
+					if (args.length % 2 !== 0) {
+						console.error('Invalid number of arguments');
+						return;
+					}
+
+					for (let i = 0; i < args.length; i += 2) {
+						payload.event.OntologyRequest[args[i]] = args[i + 1];
+					}
+
+
+					// for testing purposes
+					logArea.innerText = JSON.stringify(payload, null, 2);
+
+
+					fetch('http://localhost:8282/ontologymanager/biecointerface/', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'qJACs1J0apruOOJCg'
+						},
+						body: JSON.stringify(payload)
+					})
+						.then(response => response.json())
+						.then(data => {
+							// Remove previous options from the select element
+							selectEl.innerHTML = '';
+
+							// Concatenate payload and data and log in logArea
+							const logData = {
+								OM_Request: payload,
+								OM_Response: data
+							};
+
+							logArea.innerText = JSON.stringify(logData, null, 2);
+
+
+							// Add options to the select element
+							data.forEach(item => {
+								const optionEl = document.createElement('option');
+								optionEl.value = item[valueKey];
+								optionEl.text = item[textKey];
+								selectEl.appendChild(optionEl);
+							});
+						})
+						.catch(error => console.error(error));
+				}
 
 			</script>
 
