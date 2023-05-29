@@ -112,22 +112,45 @@
 			<h1>Select a System of Systems</h1>
 			<select id="sos-selector">
 			</select>
+			<div id="sos-selectorDiv">
+				<button id="sos-selector-button">Get Devices</button>
+			</div>
+
+
 
 			<h1>Select a Device</h1>
 			<select id="device-selector">
 			</select>
+			<div id="device-selectorDiv">
+				<button id="device-selector-button">Get Components</button>
+			</div>
+
+
 
 			<h1>Select a Component</h1>
 			<select id="component-selector">
 			</select>
 
+			<div id="component-selectorDiv">
+				<button id="component-selector-button">Get Skills</button>
+			</div>
+
 			<h1>Select a Skill</h1>
 			<select id="skill-selector">
 			</select>
 
+			<div id="skill-selectorDiv">
+				<button id="skill-selector-button">Get Rules</button>
+			</div>
+
 			<h1>Select a Rule</h1>
 			<select id="rule-selector">
 			</select>
+
+			<div id="rule-selectorDiv">
+				<button id="rule-selector-button">Send Selected Rule To Runtime Monitor</button>
+			</div>
+
 
 			<h1>Log Area</h1>
 			<!-- 
@@ -175,21 +198,43 @@
 				}
 
 				const sosSelectEl = document.getElementById('sos-selector');
+				const sosSelectButton = document.getElementById('sos-selector-button');
+
 				const deviceSelectEl = document.getElementById('device-selector');
+				const deviceSelectButton = document.getElementById('device-selector-button');
+				
 				const componentSelectEl = document.getElementById('component-selector');
+				const componentSelectButton = document.getElementById('component-selector-button');
+				
 				const skillSelectEl = document.getElementById('skill-selector');
+				const skillSelectButton = document.getElementById('skill-selector-button');
+				
 				const ruleSelectEl = document.getElementById('rule-selector');
+				const ruleSelectButton = document.getElementById('rule-selector-button');
+				
 
 
 
 				fetchData('getsoss', 'sosId', 'sosName', sosSelectEl);
 
+				
 				sosSelectEl.addEventListener('change', () => {
 					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
 					resetSelectorsRSCD();
 				});
 
+
+				sosSelectButton.addEventListener('click', () => {
+					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
+					resetSelectorsRSCD();
+				});
+
+
 				deviceSelectEl.addEventListener('change', () => {
+					fetchData('getcomponents', 'componentId', 'componentName', componentSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value);
+					resetSelectorsRSC();
+				});
+				deviceSelectButton.addEventListener('click', () => {
 					fetchData('getcomponents', 'componentId', 'componentName', componentSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value);
 					resetSelectorsRSC();
 				});
@@ -199,11 +244,29 @@
 					resetSelectorsRS();
 				});
 
+				componentSelectButton.addEventListener('click', () => {
+					fetchData('getskills', 'skillId', 'skillName', skillSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value);
+					resetSelectorsRS();
+				});
+
 
 				skillSelectEl.addEventListener('change', () => {
 					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
 					resetSelectorsR();
 				});
+
+				skillSelectButton.addEventListener('click', () => {
+					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
+					resetSelectorsR();
+				});
+
+
+				ruleSelectButton.addEventListener('click', () => {
+					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
+					resetSelectorsR();
+				});
+
+
 
 
 
@@ -340,44 +403,19 @@
 			Please Upload the .ecore file exported from Blockly4SoS.</p>
 
 
-
-
-			<div id='skills-section'>
-				<!-- solito container -->
-				<div class="container">
-					<h3>I miei servizi</h3>
-					<div id='skills'>
-						<div class="skill">
-							<h4>Web design</h4>
-							<p>Lorem</p>
-						</div>
-						<div class="skill">
-							<h4>Web marketing</h4>
-							<p>Lorem</p>
-						</div>
-						<div class="skill">
-							<h4>Branding</h4>
-							<p>Lorem</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-
-
-				<h2>Map AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology</h2>
-				<p>Select a file to import and map the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.</p>
+				<!-- <h2>Map AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology</h2>
+				<p>Select a file to import and map the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.</p> -->
 			  
 				<div class="container">
 					<div class="row d-flex justify-content-between">
 					  <div class="col-md-6">
-						<h3>Imported/Loaded File</h3>
+						<h3>Select the AMADEOS SoS profile File  obtained from using Blockly4SoS</h3>
 						<div class="form-control">
 						  <label for="imported-file">Selected file:</label>
 						  <input type="file" id="imported-file" name="imported-file">
 						</div>
 						<div class="form-control">
-						  <label>File content:</label>
+						  <label>Ecore File content:</label>	
 						  <pre id="imported-file-content"></pre>
 						</div>
 						<button id="upload-file" type="button" class="btn">Upload File</button>
@@ -392,6 +430,7 @@
 					  </div>
 					</div>
 				  </div>
+
 
 				<script>
 				  const importedFileInput = document.getElementById('imported-file');
@@ -428,18 +467,6 @@
 				  document.getElementById('upload-content').addEventListener('click', uploadContent);
 				</script>
 			  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		</section>
