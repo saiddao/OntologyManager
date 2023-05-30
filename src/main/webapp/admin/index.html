@@ -466,6 +466,19 @@
 				<!-- <h2>Map AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology</h2>
 				<p>Select a file to import and map the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.</p> -->
 			  
+
+				<section id="containerTwoColumns">
+					<div class="one">
+						<h2>Section 1</h2>
+						<p>This is the content of Section 1.</p>
+					</div>
+					<div class="two">
+						<h2>Section 2</h2>
+						<p>This is the content of Section 2.</p>
+					</div>
+				</section>
+
+
 				<div class="container">
 					<div class="row d-flex justify-content-between">
 					  <div class="col-md-6">
@@ -505,6 +518,46 @@
 					};
 					reader.readAsText(file);
 				  });
+
+
+				  importedFileInput.addEventListener('submit', (event) => {
+					event.preventDefault();
+					const file = fileInput.files[0];
+					const reader = new FileReader();
+					reader.onload = (event) => {
+						const content = event.target.result;
+						fileContent.textContent = content;
+						const xhr = new XMLHttpRequest();
+						xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
+						xhr.setRequestHeader('Content-Type', 'application/json');
+						xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
+						xhr.onload = function () {
+							if (xhr.status === 200) {
+								status.textContent = 'Upload successful!';
+							} else {
+								status.textContent = 'Upload failed: ' + xhr.status;
+							}
+						};
+						const data = {
+							jobID: '1234',
+							timestamp: '',
+							messageType: 'Data',
+							sourceID: '4',
+							event: {
+								OntologyRequest: {
+									operationName: 'parseAMADEOSSoSProfile',
+									ontologyContent: content
+								}
+							},
+							crc: 1234567
+						};
+						xhr.send(JSON.stringify(data));
+					};
+					reader.readAsText(file);
+				});
+
+
+
 			  
 				  function analyzeImportedFile() {
 					// Analyze the imported file and update the analysisResult textarea
@@ -526,6 +579,24 @@
 				  document.getElementById('upload-file').addEventListener('click', uploadFile);
 				  document.getElementById('upload-content').addEventListener('click', uploadContent);
 				</script>
+			  
+
+			  <div class="column">
+				<h2>Column 1</h2>
+				<button id="button1">Button 1</button>
+				<button id="button2">Button 2</button>
+			  </div>
+			  <div class="column">
+				<h2>Column 2</h2>
+				<button id="button3">Button 3</button>
+				<button id="button4">Button 4</button>
+			  </div>
+
+
+
+
+
+
 			  
 
 

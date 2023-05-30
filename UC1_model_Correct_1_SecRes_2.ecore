@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smart_grid_ecosystem_v06_duplicated_om"
+    nsURI="http://com.smart_grid_ecosystem_v06_duplicated_om" nsPrefix="smart_grid_ecosystem_v06_duplicated_om">
+  <eClassifiers xsi:type="ecore:EClass" name="READ_Database_Data" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Topology_Data_on_Map" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GUI_to_APPLICATION_REST_API" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_APPLICATION_REST_API-to-APPLICATION_REST_API_to_GUI"
+        eType="#//APPLICATION_REST_API_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_APPLICATION_REST_API-to-Grid_Monitoring_Data_Req"
+        eType="#//Grid_Monitoring_Data_Req"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_Anomalies_detected_from_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APPLICATION_REST_API_to_MQTT" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_MQTT-to-Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT"
+        eType="#//Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_MQTT-to-MQTT_Publish_Interface"
+        eType="#//MQTT_Publish_Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_MQTT-to-GRID_STATUS_APPLICATION_Results_Data_Pub"
+        eType="#//GRID_STATUS_APPLICATION_Results_Data_Pub"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Provides_Topology_Data_JSON" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OnlineMessage_of_ICT_GW" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publish_Alert_Anomalies_detected_on_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete_Record_&amp;_Send_Ack" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_electrical_measures_from_APPLICATION_REST_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MQTT_Notify_to_GUI" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI"
+        eType="#//Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-Send_OffLine_Message_of_ICT_GW_to_GUI"
+        eType="#//Send_OffLine_Message_of_ICT_GW_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-Send_Anomalies_detected_to_GUI"
+        eType="#//Send_Anomalies_detected_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-Send_OnlineMessage_of_ICT_GW_to_GUI"
+        eType="#//Send_OnlineMessage_of_ICT_GW_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-Anomalies_detected"
+        eType="#//Anomalies_detected"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-GUI_to_MQTT_Notify"
+        eType="#//GUI_to_MQTT_Notify"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-GRID_STATUS_APPLICATION_Result_Data"
+        eType="#//GRID_STATUS_APPLICATION_Result_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-OffLine_Message_of_ICT_GW"
+        eType="#//OffLine_Message_of_ICT_GW"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Notify_to_GUI-to-OnlineMessage_of_ICT_GW"
+        eType="#//OnlineMessage_of_ICT_GW"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="credentials" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UPDATE_Database_Data" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Topology_Information" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Electrical_Measurements" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_API_READ_Results_Data" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TOPOLOGY_INFRASTRUCTURE" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_INFRASTRUCTURE-to-Send_Topology_Information_to_TOPOLOGY_API"
+        eType="#//Send_Topology_Information_to_TOPOLOGY_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_INFRASTRUCTURE-to-TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API"
+        eType="#//TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publish_Alert_OfflineMessage_of_ICTGW_on_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Measurements_to_EM_API" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Smart_Grid_Ecosystem" instanceTypeName="SoS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-Smart_Grid_Ecosystem-to-ICTGW"
+        eType="#//ICTGW"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Update_Ack" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Grid_Monitoring_Data_Req" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="INV_API_to_INV_INFRASTRUCTURE" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_API_to_INV_INFRASTRUCTURE-to-INV_INFRASTRUCTURE_to_INV_API"
+        eType="#//INV_INFRASTRUCTURE_to_INV_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_API_to_INV_INFRASTRUCTURE-to-Receives_INV_Infrastructure_PhotoVoltaic_Data"
+        eType="#//Receives_INV_Infrastructure_PhotoVoltaic_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_API_to_INV_INFRASTRUCTURE-to-PhotoVoltaic_Data_to_INV_Infrastructure_Request"
+        eType="#//PhotoVoltaic_Data_to_INV_Infrastructure_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Database_Read_Data_Request" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GUI_Subscribe_to_MQTT" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_Subscribe_to_MQTT-to-MQTT_Suscribe_Interface"
+        eType="#//MQTT_Suscribe_Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_Subscribe_to_MQTT-to-Makes_Subscribe_Topic"
+        eType="#//Makes_Subscribe_Topic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_Subscribe_to_MQTT-to-Subscribe_Topic"
+        eType="#//Subscribe_Topic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GUI_REST_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_REST_API-to-HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT"
+        eType="#//HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_REST_API-to-Provides_Topology_Data_JSON"
+        eType="#//Provides_Topology_Data_JSON"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhotoVoltaic_Data" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API-to-HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT"
+        eType="#//HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API-to-Receives_Topology_Data_from_GUI_REST_API"
+        eType="#//Receives_Topology_Data_from_GUI_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API-to-Tolopogy_ID_Req"
+        eType="#//Tolopogy_ID_Req"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AMI_API_to_AMI_INFRASTRUCTURE" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_API_to_AMI_INFRASTRUCTURE-to-AMI_INFRASTRUCTURE_to_AMI_API"
+        eType="#//AMI_INFRASTRUCTURE_to_AMI_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_API_to_AMI_INFRASTRUCTURE-to-Receives_AMI_Infrastructure_Electrical_Measurements"
+        eType="#//Receives_AMI_Infrastructure_Electrical_Measurements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_API_to_AMI_INFRASTRUCTURE-to-Electrical_Measurements_to_AMI_Infrastructure_Request"
+        eType="#//Electrical_Measurements_to_AMI_Infrastructure_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Measurements" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tolopogy_ID_Req" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CREATE_Database_Data" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Result_Data_to_DATABASE_API_READ"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Update_Electrical_Grid_Information_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Update_Record_&amp;_Send_Ack" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-Create_New_Record_&amp;_Send_Ack"
+        eType="#//Create_New_Record_%26_Send_Ack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-DATABASE_CREATE_to_DATABASE_API_CREATE"
+        eType="#//DATABASE_CREATE_to_DATABASE_API_CREATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-DATABASE_DELETE_to_DATABASE_API_DELETE"
+        eType="#//DATABASE_DELETE_to_DATABASE_API_DELETE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-DATABASE_READ_to_DATABASE_API_READ"
+        eType="#//DATABASE_READ_to_DATABASE_API_READ"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-DATABASE_UPDATE_to_DATABASE_API_UPDATE"
+        eType="#//DATABASE_UPDATE_to_DATABASE_API_UPDATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-Delete_Record_&amp;_Send_Ack"
+        eType="#//Delete_Record_%26_Send_Ack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-Send_Result_Data_to_DATABASE_API_READ"
+        eType="#//Send_Result_Data_to_DATABASE_API_READ"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE-to-Update_Record_&amp;_Send_Ack"
+        eType="#//Update_Record_%26_Send_Ack"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_CREATE_to_DATABASE_API_CREATE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_CREATE_to_DATABASE_API_CREATE-to-Create_New_Record_&amp;_Send_Ack"
+        eType="#//Create_New_Record_%26_Send_Ack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_CREATE_to_DATABASE_API_CREATE-to-DATABASE_API_CREATE_to_DATABASE_CREATE"
+        eType="#//DATABASE_API_CREATE_to_DATABASE_CREATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_CREATE_to_DATABASE_API_CREATE-to-Create_Ack"
+        eType="#//Create_Ack"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APPLICATION_REST_API_to_GUI" instanceTypeName="RUMI"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_API_READ_to_DATABASE_READ"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_READ_to_DATABASE_READ-to-READ_Database_Data"
+        eType="#//READ_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_READ_to_DATABASE_READ-to-Database_Read_Data_Request"
+        eType="#//Database_Read_Data_Request"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_READ_to_DATABASE_READ-to-DATABASE_READ_to_DATABASE_API_READ"
+        eType="#//DATABASE_READ_to_DATABASE_API_READ"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EM_INFRASTRUCTURE" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_INFRASTRUCTURE-to-EM_INFRASTRUCTURE_to_EM_API"
+        eType="#//EM_INFRASTRUCTURE_to_EM_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_INFRASTRUCTURE-to-Send_Measurements_to_EM_API"
+        eType="#//Send_Measurements_to_EM_API"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OfflineMessage_of_ICTGW" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_API_UPDATE_to_DATABASE_UPDATE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_UPDATE_to_DATABASE_UPDATE-to-UPDATE_Database_Data"
+        eType="#//UPDATE_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_UPDATE_to_DATABASE_UPDATE-to-DATABASE_UPDATE_to_DATABASE_API_UPDATE"
+        eType="#//DATABASE_UPDATE_to_DATABASE_API_UPDATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_UPDATE_to_DATABASE_UPDATE-to-Update_Electrical_Grid_Information_Request"
+        eType="#//Update_Electrical_Grid_Information_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GUI_to_User" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_User-to-Authentication"
+        eType="#//Authentication"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_User-to-Show_Topology_Data_on_Map_to_User"
+        eType="#//Show_Topology_Data_on_Map_to_User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_User-to-User_to_GUI"
+        eType="#//User_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_User-to-Topology_Data_on_Map"
+        eType="#//Topology_Data_on_Map"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="electrical_measures" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhotoVoltaic_Data_to_INV_Infrastructure_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_Topology_Infrastructure_topology_information"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete_Ack" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ping_Online_Message" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnlineMessage_of_ICTGW" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EM_API_to_EM_INFRASTRUCTURE" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_API_to_EM_INFRASTRUCTURE-to-EM_INFRASTRUCTURE_to_EM_API"
+        eType="#//EM_INFRASTRUCTURE_to_EM_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_API_to_EM_INFRASTRUCTURE-to-Receives_EM_Infrastructure_Measurements"
+        eType="#//Receives_EM_Infrastructure_Measurements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_API_to_EM_INFRASTRUCTURE-to-Measurements_to_EM_Infrastructure_Request"
+        eType="#//Measurements_to_EM_Infrastructure_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Create_Ack" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GRID_STATUS_APPLICATION" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION-to-GRID_STATUS_APPLICATION_to_APPLICATION_REST_API"
+        eType="#//GRID_STATUS_APPLICATION_to_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION-to-Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API"
+        eType="#//Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION-to-Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API"
+        eType="#//Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Create_Electrical_Grid_Information_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AMI_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_API-to-AMI_API_to_AMI_INFRASTRUCTURE"
+        eType="#//AMI_API_to_AMI_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_API-to-Receives_AMI_Infrastructure_Electrical_Measurements"
+        eType="#//Receives_AMI_Infrastructure_Electrical_Measurements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Electrical_Measurements_to_AMI_Infrastructure_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AMI_INFRASTRUCTURE" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_INFRASTRUCTURE-to-AMI_INFRASTRUCTURE_to_AMI_API"
+        eType="#//AMI_INFRASTRUCTURE_to_AMI_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_INFRASTRUCTURE-to-Send_Electrical_Measurements_to_AMI_API"
+        eType="#//Send_Electrical_Measurements_to_AMI_API"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_OffLine_Message_of_ICT_GW_to_GUI"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Measurements_to_EM_Infrastructure_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_OnlineMessage_from_APPLICATION_REST_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-CREATE_Database_Data"
+        eType="#//CREATE_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-DATABASE_API_CREATE_to_DATABASE_CREATE"
+        eType="#//DATABASE_API_CREATE_to_DATABASE_CREATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-DATABASE_API_DELETE_to_DATABASE_DELETE"
+        eType="#//DATABASE_API_DELETE_to_DATABASE_DELETE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-DATABASE_API_READ_to_DATABASE_READ"
+        eType="#//DATABASE_API_READ_to_DATABASE_READ"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-DATABASE_API_UPDATE_to_DATABASE_UPDATE"
+        eType="#//DATABASE_API_UPDATE_to_DATABASE_UPDATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-DELETE_Database_Data"
+        eType="#//DELETE_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-READ_Database_Data"
+        eType="#//READ_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API-to-UPDATE_Database_Data"
+        eType="#//UPDATE_Database_Data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APPLICATION_REST_API_to_SECURITY_RESILIENCE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_SECURITY_RESILIENCE-to-SECURITY_RESILIENCE_to_APPLICATION_REST_API"
+        eType="#//SECURITY_RESILIENCE_to_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_SECURITY_RESILIENCE-to-Send_electrical_measures_to_Security&amp;Resilience"
+        eType="#//Send_electrical_measures_to_Security%26Resilience"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_SECURITY_RESILIENCE-to-Send_Ping_Online_Message_to_Security&amp;Resilience"
+        eType="#//Send_Ping_Online_Message_to_Security%26Resilience"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_SECURITY_RESILIENCE-to-electrical_measures"
+        eType="#//electrical_measures"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_SECURITY_RESILIENCE-to-Ping_Online_Message"
+        eType="#//Ping_Online_Message"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Topology_Information_to_Topology_Infrastructure_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Browser" instanceTypeName="HMI"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_EM_Infrastructure_Measurements"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_OffLine_Message_of_ICT_GW_from_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APPLICATION_REST_API_to_GRID_STATUS_APPLICATION"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_GRID_STATUS_APPLICATION-to-Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION"
+        eType="#//Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_GRID_STATUS_APPLICATION-to-GRID_STATUS_APPLICATION_to_APPLICATION_REST_API"
+        eType="#//GRID_STATUS_APPLICATION_to_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API_to_GRID_STATUS_APPLICATION-to-Grid_Monitoring_Data_Request"
+        eType="#//Grid_Monitoring_Data_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GRID_STATUS_APPLICATION_to_APPLICATION_REST_API"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION_to_APPLICATION_REST_API-to-Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API"
+        eType="#//Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION_to_APPLICATION_REST_API-to-Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API"
+        eType="#//Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION_to_APPLICATION_REST_API-to-APPLICATION_REST_API_to_GRID_STATUS_APPLICATION"
+        eType="#//APPLICATION_REST_API_to_GRID_STATUS_APPLICATION"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GRID_STATUS_APPLICATION_to_APPLICATION_REST_API-to-Results_Data"
+        eType="#//Results_Data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Electrical_Measurements_to_AMI_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Authentication" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="INV_INFRASTRUCTURE_to_INV_API" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_INFRASTRUCTURE_to_INV_API-to-INV_API_to_INV_INFRASTRUCTURE"
+        eType="#//INV_API_to_INV_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_INFRASTRUCTURE_to_INV_API-to-Send_PhotoVoltaic_Data_to_INV_API"
+        eType="#//Send_PhotoVoltaic_Data_to_INV_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_INFRASTRUCTURE_to_INV_API-to-PhotoVoltaic_Data"
+        eType="#//PhotoVoltaic_Data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="INV_INFRASTRUCTURE" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_INFRASTRUCTURE-to-INV_INFRASTRUCTURE_to_INV_API"
+        eType="#//INV_INFRASTRUCTURE_to_INV_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_INFRASTRUCTURE-to-Send_PhotoVoltaic_Data_to_INV_API"
+        eType="#//Send_PhotoVoltaic_Data_to_INV_API"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AMI_INFRASTRUCTURE_to_AMI_API" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_INFRASTRUCTURE_to_AMI_API-to-AMI_API_to_AMI_INFRASTRUCTURE"
+        eType="#//AMI_API_to_AMI_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_INFRASTRUCTURE_to_AMI_API-to-Send_Electrical_Measurements_to_AMI_API"
+        eType="#//Send_Electrical_Measurements_to_AMI_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-AMI_INFRASTRUCTURE_to_AMI_API-to-Electrical_Measurements"
+        eType="#//Electrical_Measurements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Anomalies_detected_to_GUI" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="User" instanceTypeName="Prime_Mover">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-User-to-User_to_GUI"
+        eType="#//User_to_GUI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alert_Anomalies_detected" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_READ_to_DATABASE_API_READ"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_READ_to_DATABASE_API_READ-to-DATABASE_API_READ_to_DATABASE_READ"
+        eType="#//DATABASE_API_READ_to_DATABASE_READ"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_READ_to_DATABASE_API_READ-to-DATABASE_API_READ_Results_Data"
+        eType="#//DATABASE_API_READ_Results_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_READ_to_DATABASE_API_READ-to-Send_Result_Data_to_DATABASE_API_READ"
+        eType="#//Send_Result_Data_to_DATABASE_API_READ"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_AMI_Infrastructure_Electrical_Measurements"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Ping_Online_Message_to_Security&amp;Resilience"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GUI_to_MQTT_Notify" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_MQTT_Notify-to-Receives_OffLine_Message_of_ICT_GW_from_MQTT"
+        eType="#//Receives_OffLine_Message_of_ICT_GW_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_MQTT_Notify-to-MQTT_Notify_to_GUI"
+        eType="#//MQTT_Notify_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_MQTT_Notify-to-Receives_OnLine_Message_of_ICT_GW_from_MQTT"
+        eType="#//Receives_OnLine_Message_of_ICT_GW_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_MQTT_Notify-to-Receives_Anomalies_detected_from_MQTT"
+        eType="#//Receives_Anomalies_detected_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI_to_MQTT_Notify-to-Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT"
+        eType="#//Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT-to-Provides_Topology_Data_JSON"
+        eType="#//Provides_Topology_Data_JSON"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT-to-HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API"
+        eType="#//HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT-to-Tolopogy_Data_JSON"
+        eType="#//Tolopogy_Data_JSON"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_UPDATE_to_DATABASE_API_UPDATE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_UPDATE_to_DATABASE_API_UPDATE-to-Update_Record_&amp;_Send_Ack"
+        eType="#//Update_Record_%26_Send_Ack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_UPDATE_to_DATABASE_API_UPDATE-to-DATABASE_API_UPDATE_to_DATABASE_UPDATE"
+        eType="#//DATABASE_API_UPDATE_to_DATABASE_UPDATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_UPDATE_to_DATABASE_API_UPDATE-to-Update_Ack"
+        eType="#//Update_Ack"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Makes_Subscribe_Topic" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_PhotoVoltaic_Data_to_INV_API" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_API_CREATE_to_DATABASE_CREATE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_CREATE_to_DATABASE_CREATE-to-DATABASE_CREATE_to_DATABASE_API_CREATE"
+        eType="#//DATABASE_CREATE_to_DATABASE_API_CREATE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_CREATE_to_DATABASE_CREATE-to-CREATE_Database_Data"
+        eType="#//CREATE_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_CREATE_to_DATABASE_CREATE-to-Create_Electrical_Grid_Information_Request"
+        eType="#//Create_Electrical_Grid_Information_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE-to-TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API"
+        eType="#//TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE-to-Receives_Topology_Infrastructure_topology_information"
+        eType="#//Receives_Topology_Infrastructure_topology_information"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE-to-Topology_Information_to_Topology_Infrastructure_Request"
+        eType="#//Topology_Information_to_Topology_Infrastructure_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GRID_STATUS_APPLICATION_Result_Data"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_Alert_Anomalies_from_SECURITY_RESILIENCE"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SECURITY_RESILIENCE_to_MQTT" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-Publish_Alert_OfflineMessage_of_ICTGW_on_MQTT"
+        eType="#//Publish_Alert_OfflineMessage_of_ICTGW_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-Publish_Alert_OnlineMessage_of_ICTGW_on_MQTT"
+        eType="#//Publish_Alert_OnlineMessage_of_ICTGW_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-Publish_Alert_Anomalies_detected_on_MQTT"
+        eType="#//Publish_Alert_Anomalies_detected_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-Alert_Anomalies_detected"
+        eType="#//Alert_Anomalies_detected"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-MQTT_Publish_Interface"
+        eType="#//MQTT_Publish_Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-OfflineMessage_of_ICTGW"
+        eType="#//OfflineMessage_of_ICTGW"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_MQTT-to-OnlineMessage_of_ICTGW"
+        eType="#//OnlineMessage_of_ICTGW"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_Subscribe_from_GUI" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Publish_Alert_OnlineMessage_of_ICTGW_on_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_Topology_Data_from_GUI_REST_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SECURITY_RESILIENCE" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-Publish_Alert_Anomalies_detected_on_MQTT"
+        eType="#//Publish_Alert_Anomalies_detected_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-Publish_Alert_OfflineMessage_of_ICTGW_on_MQTT"
+        eType="#//Publish_Alert_OfflineMessage_of_ICTGW_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-Publish_Alert_OnlineMessage_of_ICTGW_on_MQTT"
+        eType="#//Publish_Alert_OnlineMessage_of_ICTGW_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-Receives_electrical_measures_from_APPLICATION_REST_API"
+        eType="#//Receives_electrical_measures_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-Receives_OnlineMessage_from_APPLICATION_REST_API"
+        eType="#//Receives_OnlineMessage_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-SECURITY_RESILIENCE_to_APPLICATION_REST_API"
+        eType="#//SECURITY_RESILIENCE_to_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE-to-SECURITY_RESILIENCE_to_MQTT"
+        eType="#//SECURITY_RESILIENCE_to_MQTT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete_Electrical_Grid_Information_Request"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MQTT_BROKER" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-MQTT_Notify_to_GUI"
+        eType="#//MQTT_Notify_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-MQTT_Publish_Interface"
+        eType="#//MQTT_Publish_Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-MQTT_Suscribe_Interface"
+        eType="#//MQTT_Suscribe_Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Receives_Alert_Anomalies_from_SECURITY_RESILIENCE"
+        eType="#//Receives_Alert_Anomalies_from_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API"
+        eType="#//Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE"
+        eType="#//Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE"
+        eType="#//Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Receives_Subscribe_from_GUI"
+        eType="#//Receives_Subscribe_from_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Send_Anomalies_detected_to_GUI"
+        eType="#//Send_Anomalies_detected_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI"
+        eType="#//Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Send_OffLine_Message_of_ICT_GW_to_GUI"
+        eType="#//Send_OffLine_Message_of_ICT_GW_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_BROKER-to-Send_OnlineMessage_of_ICT_GW_to_GUI"
+        eType="#//Send_OnlineMessage_of_ICT_GW_to_GUI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_OnlineMessage_of_ICT_GW_to_GUI"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ping_request" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Show_Topology_Data_on_Map_to_User" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_INV_Infrastructure_PhotoVoltaic_Data"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OffLine_Message_of_ICT_GW" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API-to-TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE"
+        eType="#//TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API-to-Send_Topology_Information_to_TOPOLOGY_API"
+        eType="#//Send_Topology_Information_to_TOPOLOGY_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API-to-Topology_Information"
+        eType="#//Topology_Information"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MQTT_Publish_Interface" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Publish_Interface-to-Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE"
+        eType="#//Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Publish_Interface-to-Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API"
+        eType="#//Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Publish_Interface-to-Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE"
+        eType="#//Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Publish_Interface-to-Receives_Alert_Anomalies_from_SECURITY_RESILIENCE"
+        eType="#//Receives_Alert_Anomalies_from_SECURITY_RESILIENCE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receives_OnLine_Message_of_ICT_GW_from_MQTT"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_DELETE_to_DATABASE_API_DELETE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_DELETE_to_DATABASE_API_DELETE-to-Delete_Record_&amp;_Send_Ack"
+        eType="#//Delete_Record_%26_Send_Ack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_DELETE_to_DATABASE_API_DELETE-to-DATABASE_API_DELETE_to_DATABASE_DELETE"
+        eType="#//DATABASE_API_DELETE_to_DATABASE_DELETE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_DELETE_to_DATABASE_API_DELETE-to-Delete_Ack"
+        eType="#//Delete_Ack"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User_to_GUI" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-User_to_GUI-to-GUI_to_User"
+        eType="#//GUI_to_User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-User_to_GUI-to-credentials"
+        eType="#//credentials"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Create_New_Record_&amp;_Send_Ack" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tolopogy_Data_JSON" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Grid_Monitoring_Data_Request" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GRID_STATUS_APPLICATION_Results_Data_Pub"
+      instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TOPOLOGY_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_API-to-Receives_Topology_Infrastructure_topology_information"
+        eType="#//Receives_Topology_Infrastructure_topology_information"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-TOPOLOGY_API-to-TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE"
+        eType="#//TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GUI" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Authentication"
+        eType="#//Authentication"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Browser" eType="#//Browser"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-GUI_Subscribe_to_MQTT"
+        eType="#//GUI_Subscribe_to_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-GUI_to_APPLICATION_REST_API"
+        eType="#//GUI_to_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-GUI_to_MQTT_Notify"
+        eType="#//GUI_to_MQTT_Notify"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-GUI_to_User"
+        eType="#//GUI_to_User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API"
+        eType="#//HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Makes_Subscribe_Topic"
+        eType="#//Makes_Subscribe_Topic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Receives_Anomalies_detected_from_MQTT"
+        eType="#//Receives_Anomalies_detected_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT"
+        eType="#//Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Receives_OffLine_Message_of_ICT_GW_from_MQTT"
+        eType="#//Receives_OffLine_Message_of_ICT_GW_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Receives_OnLine_Message_of_ICT_GW_from_MQTT"
+        eType="#//Receives_OnLine_Message_of_ICT_GW_from_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Receives_Topology_Data_from_GUI_REST_API"
+        eType="#//Receives_Topology_Data_from_GUI_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-GUI-to-Show_Topology_Data_on_Map_to_User"
+        eType="#//Show_Topology_Data_on_Map_to_User"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APPLICATION_REST_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-APPLICATION_REST_API_to_GRID_STATUS_APPLICATION"
+        eType="#//APPLICATION_REST_API_to_GRID_STATUS_APPLICATION"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-APPLICATION_REST_API_to_GUI"
+        eType="#//APPLICATION_REST_API_to_GUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-APPLICATION_REST_API_to_MQTT"
+        eType="#//APPLICATION_REST_API_to_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-APPLICATION_REST_API_to_SECURITY_RESILIENCE"
+        eType="#//APPLICATION_REST_API_to_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT"
+        eType="#//Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION"
+        eType="#//Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-Send_electrical_measures_to_Security&amp;Resilience"
+        eType="#//Send_electrical_measures_to_Security%26Resilience"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-APPLICATION_REST_API-to-Send_Ping_Online_Message_to_Security&amp;Resilience"
+        eType="#//Send_Ping_Online_Message_to_Security%26Resilience"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Anomalies_detected" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EM_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_API-to-EM_API_to_EM_INFRASTRUCTURE"
+        eType="#//EM_API_to_EM_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_API-to-Receives_EM_Infrastructure_Measurements"
+        eType="#//Receives_EM_Infrastructure_Measurements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application_Layer" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_electrical_measures_to_Security&amp;Resilience"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EM_INFRASTRUCTURE_to_EM_API" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_INFRASTRUCTURE_to_EM_API-to-EM_API_to_EM_INFRASTRUCTURE"
+        eType="#//EM_API_to_EM_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_INFRASTRUCTURE_to_EM_API-to-Send_Measurements_to_EM_API"
+        eType="#//Send_Measurements_to_EM_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-EM_INFRASTRUCTURE_to_EM_API-to-Measurements"
+        eType="#//Measurements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subscribe_Topic" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MQTT_Suscribe_Interface" instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Suscribe_Interface-to-GUI_Subscribe_to_MQTT"
+        eType="#//GUI_Subscribe_to_MQTT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-MQTT_Suscribe_Interface-to-Receives_Subscribe_from_GUI"
+        eType="#//Receives_Subscribe_from_GUI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SECURITY_RESILIENCE_to_APPLICATION_REST_API"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_APPLICATION_REST_API-to-Receives_electrical_measures_from_APPLICATION_REST_API"
+        eType="#//Receives_electrical_measures_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_APPLICATION_REST_API-to-APPLICATION_REST_API_to_SECURITY_RESILIENCE"
+        eType="#//APPLICATION_REST_API_to_SECURITY_RESILIENCE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_APPLICATION_REST_API-to-Receives_OnlineMessage_from_APPLICATION_REST_API"
+        eType="#//Receives_OnlineMessage_from_APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_APPLICATION_REST_API-to-electrical_measures_request"
+        eType="#//electrical_measures_request"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-SECURITY_RESILIENCE_to_APPLICATION_REST_API-to-ping_request"
+        eType="#//ping_request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DELETE_Database_Data" instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="electrical_measures_request" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API"
+      instanceTypeName="Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Results_Data" instanceTypeName="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_field" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trans_type" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="INV_API" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_API-to-INV_API_to_INV_INFRASTRUCTURE"
+        eType="#//INV_API_to_INV_INFRASTRUCTURE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-INV_API-to-Receives_INV_Infrastructure_PhotoVoltaic_Data"
+        eType="#//Receives_INV_Infrastructure_PhotoVoltaic_Data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ICTGW" instanceTypeName="CS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sys_type" defaultValueLiteral="autonomous"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-AMI_API"
+        eType="#//AMI_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-APPLICATION_REST_API"
+        eType="#//APPLICATION_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-DATABASE_API"
+        eType="#//DATABASE_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-EM_API" eType="#//EM_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-GUI_REST_API"
+        eType="#//GUI_REST_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-INV_API"
+        eType="#//INV_API"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-ICTGW-to-TOPOLOGY_API"
+        eType="#//TOPOLOGY_API"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DATABASE_API_DELETE_to_DATABASE_DELETE"
+      instanceTypeName="RUMI">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_DELETE_to_DATABASE_DELETE-to-DELETE_Database_Data"
+        eType="#//DELETE_Database_Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_DELETE_to_DATABASE_DELETE-to-DATABASE_DELETE_to_DATABASE_API_DELETE"
+        eType="#//DATABASE_DELETE_to_DATABASE_API_DELETE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from-DATABASE_API_DELETE_to_DATABASE_DELETE-to-Delete_Electrical_Grid_Information_Request"
+        eType="#//Delete_Electrical_Grid_Information_Request"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Topology_Information_to_TOPOLOGY_API"
+      instanceTypeName="Service"/>
+</ecore:EPackage>

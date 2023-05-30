@@ -97,8 +97,12 @@ public class UC1Parser {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 		File file = new File("UC1_model.ecore");
+		
+		file = new File("UC1_model_Correct_1_secRes_2.ecore");
+		
+		
 		String filePath = file.getAbsolutePath();
 		String fileName = file.getName();
 		
@@ -183,15 +187,28 @@ public class UC1Parser {
 
 	private static void parseSoSs() {
 		// TODO Auto-generated method stub
+		
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append("{\"SoSs\":[");
+		
+		
 		for (EClassifiers sos : SOSs) {
 			sos.parseNode();
-			System.out.println(sos.getOMJson());	
+			
+			String sosAsString = sos.getOMJson();
+			System.out.println(sosAsString);	
+			builder.append(sosAsString);
 		}
+		
+		builder.append("]}");
+		System.err.println(builder.toString());
 	}
 
 	private static void parseCSs() {
 		// TODO Auto-generated method stub
 		for (EClassifiers cs : CSs) {
+			System.out.println(cs.getName());
 			cs.parseNode();
 			System.out.println(cs.getOMJson());	
 		}

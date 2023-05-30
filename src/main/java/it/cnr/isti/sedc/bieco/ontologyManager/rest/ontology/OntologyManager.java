@@ -1052,6 +1052,48 @@ public class OntologyManager {
 			break;
 			
 			
+			
+			case "parseAMADEOSSoSProfile":
+			
+			
+			try {
+				
+			String ontologyContent = (String) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);
+			System.out.println("Content of the Uploaded Ontology File -> "+ontologyContent);
+			
+			System.out.println("JSONObject jsonObjectSOSs = (JSONObject) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);");
+			
+			JSONParser parser = new JSONParser();
+			JSONObject content = (JSONObject) parser.parse(ontologyContent);
+			
+			
+			
+			JSONArray sossArray = (JSONArray) content.get(OntologyEntitiesNames.ONTOLOGY_SOSS); 
+			
+			if (sossArray == null) {
+				System.err.println("PLEASE see this:: SoSs Array is null"+sossArray);;
+			}
+			
+			System.out.println(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
+			
+			System.out.println(sossArray.toJSONString());
+			
+			dumpOntologyDatabase(sossArray);
+			
+			output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
+			
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
+				
+			}
+
+			
+			break;
+			
+			
+			
 		default:
 			output = Response.status(404).entity("Invalid data request: " + ontologyRequest).build();
 		}
@@ -1070,12 +1112,6 @@ public class OntologyManager {
 		
 		System.out.println("END ::::::::: Upload Entire Database");
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	

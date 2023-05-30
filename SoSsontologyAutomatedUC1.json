@@ -1,0 +1,863 @@
+{
+    "SoSs": [
+        {
+            "sosName": "Smart_Grid_Ecosystem",
+            "sosId": "0",
+            "description": "Smart_Grid_Ecosystem",
+            "devices": [
+                {
+                    "deviceName": "Application_Layer",
+                    "deviceId": "15",
+                    "description": "Application_Layer",
+                    "components": []
+                },
+                {
+                    "deviceName": "TOPOLOGY_INFRASTRUCTURE",
+                    "deviceId": "0",
+                    "description": "TOPOLOGY_INFRASTRUCTURE",
+                    "components": [
+                        {
+                            "componentName": "TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API",
+                            "componentId": "25",
+                            "description": "TOPOLOGY_INFRASTRUCTURE_to_TOPOLOGY_API",
+                            "skills": [
+                                {
+                                    "skillName": "Send_Topology_Information_to_TOPOLOGY_API",
+                                    "skillId": "44",
+                                    "description": "Send_Topology_Information_to_TOPOLOGY_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "TOPOLOGY_API",
+                    "deviceId": "11",
+                    "description": "TOPOLOGY_API",
+                    "components": [
+                        {
+                            "componentName": "TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE",
+                            "componentId": "23",
+                            "description": "TOPOLOGY_API_to_TOPOLOGY_INFRASTRUCTURE",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_Topology_Infrastructure_topology_information",
+                                    "skillId": "15",
+                                    "description": "Receives_Topology_Infrastructure_topology_information",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "SECURITY_RESILIENCE ",
+                    "deviceId": "9",
+                    "description": "SECURITY_RESILIENCE ",
+                    "components": []
+                },
+                {
+                    "deviceName": "AMI_INFRASTRUCTURE",
+                    "deviceId": "6",
+                    "description": "AMI_INFRASTRUCTURE",
+                    "components": [
+                        {
+                            "componentName": "AMI_INFRASTRUCTURE_to_AMI_API",
+                            "componentId": "17",
+                            "description": "AMI_INFRASTRUCTURE_to_AMI_API",
+                            "skills": [
+                                {
+                                    "skillName": "Send_Electrical_Measurements_to_AMI_API",
+                                    "skillId": "22",
+                                    "description": "Send_Electrical_Measurements_to_AMI_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "DATABASE",
+                    "deviceId": "2",
+                    "description": "DATABASE",
+                    "components": [
+                        {
+                            "componentName": "DATABASE_READ_to_DATABASE_API_READ",
+                            "componentId": "18",
+                            "description": "DATABASE_READ_to_DATABASE_API_READ",
+                            "skills": [
+                                {
+                                    "skillName": "Send_Result_Data_to_DATABASE_API_READ",
+                                    "skillId": "12",
+                                    "description": "Send_Result_Data_to_DATABASE_API_READ",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "DATABASE_CREATE_to_DATABASE_API_CREATE",
+                            "componentId": "7",
+                            "description": "DATABASE_CREATE_to_DATABASE_API_CREATE",
+                            "skills": []
+                        },
+                        {
+                            "componentName": "DATABASE_UPDATE_to_DATABASE_API_UPDATE",
+                            "componentId": "21",
+                            "description": "DATABASE_UPDATE_to_DATABASE_API_UPDATE",
+                            "skills": []
+                        },
+                        {
+                            "componentName": "DATABASE_DELETE_to_DATABASE_API_DELETE",
+                            "componentId": "27",
+                            "description": "DATABASE_DELETE_to_DATABASE_API_DELETE",
+                            "skills": []
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "GRID_STATUS_APPLICATION",
+                    "deviceId": "4",
+                    "description": "GRID_STATUS_APPLICATION",
+                    "components": [
+                        {
+                            "componentName": "GRID_STATUS_APPLICATION_to_APPLICATION_REST_API",
+                            "componentId": "15",
+                            "description": "GRID_STATUS_APPLICATION_to_APPLICATION_REST_API",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API",
+                                    "skillId": "38",
+                                    "description": "Receives_Grid_Monitoring_Data_Request_from_APPLICATION_REST_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API",
+                                    "skillId": "43",
+                                    "description": "Publish_GRID_STATUS_APPLICATION_Results_Data_on_APPLICATION_REST_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "DATABASE_API",
+                    "deviceId": "7",
+                    "description": "DATABASE_API",
+                    "components": [
+                        {
+                            "componentName": "DATABASE_API_CREATE_to_DATABASE_CREATE",
+                            "componentId": "22",
+                            "description": "DATABASE_API_CREATE_to_DATABASE_CREATE",
+                            "skills": [
+                                {
+                                    "skillName": "CREATE_Database_Data",
+                                    "skillId": "11",
+                                    "description": "CREATE_Database_Data",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "DATABASE_API_READ_to_DATABASE_READ",
+                            "componentId": "9",
+                            "description": "DATABASE_API_READ_to_DATABASE_READ",
+                            "skills": [
+                                {
+                                    "skillName": "READ_Database_Data",
+                                    "skillId": "0",
+                                    "description": "READ_Database_Data",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "DATABASE_API_DELETE_to_DATABASE_DELETE",
+                            "componentId": "32",
+                            "description": "DATABASE_API_DELETE_to_DATABASE_DELETE",
+                            "skills": [
+                                {
+                                    "skillName": "DELETE_Database_Data",
+                                    "skillId": "42",
+                                    "description": "DELETE_Database_Data",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "DATABASE_API_UPDATE_to_DATABASE_UPDATE",
+                            "componentId": "10",
+                            "description": "DATABASE_API_UPDATE_to_DATABASE_UPDATE",
+                            "skills": [
+                                {
+                                    "skillName": "UPDATE_Database_Data",
+                                    "skillId": "6",
+                                    "description": "UPDATE_Database_Data",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "EM_API",
+                    "deviceId": "14",
+                    "description": "EM_API",
+                    "components": [
+                        {
+                            "componentName": "EM_API_to_EM_INFRASTRUCTURE",
+                            "componentId": "12",
+                            "description": "EM_API_to_EM_INFRASTRUCTURE",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_EM_Infrastructure_Measurements",
+                                    "skillId": "20",
+                                    "description": "Receives_EM_Infrastructure_Measurements",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "APPLICATION_REST_API",
+                    "deviceId": "13",
+                    "description": "APPLICATION_REST_API",
+                    "components": [
+                        {
+                            "componentName": "APPLICATION_REST_API_to_GUI",
+                            "componentId": "8",
+                            "description": "APPLICATION_REST_API_to_GUI",
+                            "skills": []
+                        },
+                        {
+                            "componentName": "APPLICATION_REST_API_to_MQTT",
+                            "componentId": "1",
+                            "description": "APPLICATION_REST_API_to_MQTT",
+                            "skills": [
+                                {
+                                    "skillName": "Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT",
+                                    "skillId": "7",
+                                    "description": "Publish_GRID_STATUS_APPLICATION_Results_Data_on_MQTT",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "APPLICATION_REST_API_to_SECURITY_RESILIENCE",
+                            "componentId": "13",
+                            "description": "APPLICATION_REST_API_to_SECURITY_RESILIENCE",
+                            "skills": []
+                        },
+                        {
+                            "componentName": "APPLICATION_REST_API_to_GRID_STATUS_APPLICATION",
+                            "componentId": "14",
+                            "description": "APPLICATION_REST_API_to_GRID_STATUS_APPLICATION",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION",
+                                    "skillId": "16",
+                                    "description": "Receives_GRID_STATUS_APPLICATION_Results_Data_from_GRID_STATUS_APPLICATION",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "INV_API",
+                    "deviceId": "16",
+                    "description": "INV_API",
+                    "components": [
+                        {
+                            "componentName": "INV_API_to_INV_INFRASTRUCTURE",
+                            "componentId": "3",
+                            "description": "INV_API_to_INV_INFRASTRUCTURE",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_INV_Infrastructure_PhotoVoltaic_Data",
+                                    "skillId": "37",
+                                    "description": "Receives_INV_Infrastructure_PhotoVoltaic_Data",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "GUI",
+                    "deviceId": "12",
+                    "description": "GUI",
+                    "components": [
+                        {
+                            "componentName": "GUI_to_User",
+                            "componentId": "11",
+                            "description": "GUI_to_User",
+                            "skills": [
+                                {
+                                    "skillName": "Show_Topology_Data_on_Map_to_User",
+                                    "skillId": "36",
+                                    "description": "Show_Topology_Data_on_Map_to_User",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Authentication",
+                                    "skillId": "23",
+                                    "description": "Authentication",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "GUI_to_APPLICATION_REST_API",
+                            "componentId": "0",
+                            "description": "GUI_to_APPLICATION_REST_API",
+                            "skills": []
+                        },
+                        {
+                            "componentName": "GUI_Subscribe_to_MQTT",
+                            "componentId": "4",
+                            "description": "GUI_Subscribe_to_MQTT",
+                            "skills": [
+                                {
+                                    "skillName": "Makes_Subscribe_Topic",
+                                    "skillId": "28",
+                                    "description": "Makes_Subscribe_Topic",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "GUI_to_MQTT_Notify",
+                            "componentId": "19",
+                            "description": "GUI_to_MQTT_Notify",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_OnLine_Message_of_ICT_GW_from_MQTT",
+                                    "skillId": "39",
+                                    "description": "Receives_OnLine_Message_of_ICT_GW_from_MQTT",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Receives_Anomalies_detected_from_MQTT",
+                                    "skillId": "1",
+                                    "description": "Receives_Anomalies_detected_from_MQTT",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Receives_OffLine_Message_of_ICT_GW_from_MQTT",
+                                    "skillId": "21",
+                                    "description": "Receives_OffLine_Message_of_ICT_GW_from_MQTT",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT",
+                                    "skillId": "18",
+                                    "description": "Receives_GRID_STATUS_APPLICATION_Results_Data_from_MQTT",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API",
+                            "componentId": "5",
+                            "description": "HTTP_GUI_REST_CLIENT_to_HTTP_GUI_REST_API",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_Topology_Data_from_GUI_REST_API",
+                                    "skillId": "33",
+                                    "description": "Receives_Topology_Data_from_GUI_REST_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "ICTGW",
+                    "deviceId": "17",
+                    "description": "ICTGW",
+                    "components": []
+                },
+                {
+                    "deviceName": "MQTT_BROKER",
+                    "deviceId": "10",
+                    "description": "MQTT_BROKER",
+                    "components": [
+                        {
+                            "componentName": "MQTT_Notify_to_GUI",
+                            "componentId": "2",
+                            "description": "MQTT_Notify_to_GUI",
+                            "skills": [
+                                {
+                                    "skillName": "Send_OnlineMessage_of_ICT_GW_to_GUI",
+                                    "skillId": "35",
+                                    "description": "Send_OnlineMessage_of_ICT_GW_to_GUI",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Send_OffLine_Message_of_ICT_GW_to_GUI",
+                                    "skillId": "17",
+                                    "description": "Send_OffLine_Message_of_ICT_GW_to_GUI",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Send_Anomalies_detected_to_GUI",
+                                    "skillId": "24",
+                                    "description": "Send_Anomalies_detected_to_GUI",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI",
+                                    "skillId": "26",
+                                    "description": "Send_GRID_STATUS_APPLICATION_Results_Data_to_GUI",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "MQTT_Publish_Interface",
+                            "componentId": "26",
+                            "description": "MQTT_Publish_Interface",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_Alert_Anomalies_from_SECURITY_RESILIENCE",
+                                    "skillId": "30",
+                                    "description": "Receives_Alert_Anomalies_from_SECURITY_RESILIENCE",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE",
+                                    "skillId": "14",
+                                    "description": "Receives_OnlineMessage_of_ICT_GW_from_SECURITY_RESILIENCE",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE",
+                                    "skillId": "34",
+                                    "description": "Receives_OffLine_Message_of_ICT_GW_from_SECURITY_RESILIENCE",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "skillName": "Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API",
+                                    "skillId": "8",
+                                    "description": "Receives_GRID_STATUS_APPLICATION_Results_Data_from_APPLICATION_REST_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "componentName": "MQTT_Suscribe_Interface",
+                            "componentId": "30",
+                            "description": "MQTT_Suscribe_Interface",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_Subscribe_from_GUI",
+                                    "skillId": "31",
+                                    "description": "Receives_Subscribe_from_GUI",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "GUI_REST_API",
+                    "deviceId": "1",
+                    "description": "GUI_REST_API",
+                    "components": [
+                        {
+                            "componentName": "HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT",
+                            "componentId": "20",
+                            "description": "HTTP_GUI_REST_API_to_HTTP_GUI_REST_CLIENT",
+                            "skills": [
+                                {
+                                    "skillName": "Provides_Topology_Data_JSON",
+                                    "skillId": "2",
+                                    "description": "Provides_Topology_Data_JSON",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "EM_INFRASTRUCTURE",
+                    "deviceId": "3",
+                    "description": "EM_INFRASTRUCTURE",
+                    "components": [
+                        {
+                            "componentName": "EM_INFRASTRUCTURE_to_EM_API",
+                            "componentId": "29",
+                            "description": "EM_INFRASTRUCTURE_to_EM_API",
+                            "skills": [
+                                {
+                                    "skillName": "Send_Measurements_to_EM_API",
+                                    "skillId": "10",
+                                    "description": "Send_Measurements_to_EM_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "INV_INFRASTRUCTURE",
+                    "deviceId": "8",
+                    "description": "INV_INFRASTRUCTURE",
+                    "components": [
+                        {
+                            "componentName": "INV_INFRASTRUCTURE_to_INV_API",
+                            "componentId": "16",
+                            "description": "INV_INFRASTRUCTURE_to_INV_API",
+                            "skills": [
+                                {
+                                    "skillName": "Send_PhotoVoltaic_Data_to_INV_API",
+                                    "skillId": "29",
+                                    "description": "Send_PhotoVoltaic_Data_to_INV_API",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "deviceName": "AMI_API",
+                    "deviceId": "5",
+                    "description": "AMI_API",
+                    "components": [
+                        {
+                            "componentName": "AMI_API_to_AMI_INFRASTRUCTURE",
+                            "componentId": "6",
+                            "description": "AMI_API_to_AMI_INFRASTRUCTURE",
+                            "skills": [
+                                {
+                                    "skillName": "Receives_AMI_Infrastructure_Electrical_Measurements",
+                                    "skillId": "25",
+                                    "description": "Receives_AMI_Infrastructure_Electrical_Measurements",
+                                    "rules": [
+                                        {
+                                            "welldefinedrule": " Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.",
+                                            "ruleType": "Standard",
+                                            "abstractrule": "Maximum number of established simultaneous connections",
+                                            "ruleName": "Name of Rule 1_2",
+                                            "description": "Description of Rule 1_2",
+                                            "ruleId": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
