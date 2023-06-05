@@ -1087,11 +1087,6 @@ public class OntologyManager {
 				
 				
 				
-				
-				
-				
-				
-				
 				dumpOntologyDatabase(sossArray);
 
 				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();

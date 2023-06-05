@@ -241,9 +241,6 @@ public class UC1Parser {
         document.getChildNodes().item(0);
 		
 		
-		
-		
-		
 		parseNode(document.getChildNodes().item(0));
 		
 		System.out.println("Attributes :: "+eCoreattributes);
