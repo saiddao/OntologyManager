@@ -410,7 +410,61 @@
 			<p>This is the section for updating ontologies.</p>
 
 
+			<form>
+				<h2>System of Systems</h2>
+				<label for="sos-name">Name:</label>
+				<input type="text" id="sos-name" name="sos-name" required>
+				<button type="button" onclick="addSos()">Add</button>
+				<button type="button" onclick="modifySos()">Modify</button>
+
+				<h2>Device</h2>
+				<label for="device-name">Name:</label>
+				<input type="text" id="device-name" name="device-name" required>
+				<label for="sos-selector">System of Systems:</label>
+				<select id="sos-selector" required>
+				</select>
+				<button type="button" onclick="addDevice()">Add</button>
+				<button type="button" onclick="modifyDevice()">Modify</button>
+
+				<h2>Component</h2>
+				<label for="component-name">Name:</label>
+				<input type="text" id="component-name" name="component-name" required>
+				<label for="device-selector">Device:</label>
+				<select id="device-selector" required>
+				</select>
+				<button type="button" onclick="addComponent()">Add</button>
+				<button type="button" onclick="modifyComponent()">Modify</button>
+
+				<h2>Skill</h2>
+				<label for="skill-name">Name:</label>
+				<input type="text" id="skill-name" name="skill-name" required>
+				<label for="component-selector">Component:</label>
+				<select id="component-selector" required>
+				</select>
+				<button type="button" onclick="addSkill()">Add</button>
+				<button type="button" onclick="modifySkill()">Modify</button>
+
+				<h2>Rule</h2>
+				<label for="rule-name">Name:</label>
+				<input type="text" id="rule-name" name="rule-name" required>
+				<label for="skill-selector">Skill:</label>
+				<select id="skill-selector" required>
+				</select>
+				<button type="button" onclick="addRule()">Add</button>
+				<button type="button" onclick="modifyRule()">Modify</button>
+			</form>
 		</section>
+		
+
+
+
+
+
+
+
+
+
+
 
 	
 		<section id="map-sos-blockly-section">
@@ -421,46 +475,70 @@
 			Please Upload the .ecore file exported from Blockly4SoS.</p>
 
 
+				<!-- <h2>Map AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology</h2>
+				<p>Select a file to import and map the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.</p> -->
+			  
 
-
-
-
-			<div class="container">
-				<form id="form1" action="http://localhost:8282/ontologymanager/biecointerface/" method="post">
-					<div class="form-control">
-						<label for="file-input1">Select AMADEOS SoS profile (ecore File):</label>
-						<input type="file" id="file-input1" name="file">
+				<div class="containerTwoColumns">
+					<div class="one">
+						<h2>Section 1</h2>
+						<p>This is the content of Section 1.</p>
 					</div>
-					<div class="form-control">
-						<label>ecore File content:</label>
-						<pre id="file-content1"></pre>
+					<div class="two">
+						<h2>Section 2</h2>
+						<p>This is the content of Section 2.</p>
 					</div>
-					<button type="submit" class="btn">Submit</button>
-				</form>
-			</div>
+				</div>
 
 
-			<script>
-				const form1 = document.getElementById('form1');
-				const fileInput1 = document.getElementById('file-input1');
-				const fileContent1 = document.getElementById('file-content1');
+				<div class="container">
+					<div class="row d-flex justify-content-between">
+					  <div class="col-md-6">
+						<h3>Select the AMADEOS SoS profile File  obtained from using Blockly4SoS</h3>
+						<div class="form-control">
+						  <label for="imported-file">Selected file:</label>
+						  <input type="file" id="imported-file" name="imported-file">
+						</div>
+						<div class="form-control">
+						  <label>Ecore File content:</label>	
+						  <pre id="imported-file-content"></pre>
+						</div>
+						<button id="upload-file" type="button" class="btn">Upload File</button>
+					  </div>
+					  <div class="col-md-6">
+						<h3>Analysis Result</h3>
+						<div class="form-control">
+						  <label for="analysis-result">Result of analysis:</label>
+						  <textarea id="analysis-result" name="analysis-result"></textarea>
+						</div>
+						<button id="upload-content" type="button" class="btn">Upload Content</button>
+					  </div>
+					</div>
+				  </div>
 
-				fileInput1.addEventListener('change', (event) => {
+
+				<script>
+				  const importedFileInput = document.getElementById('imported-file');
+				  const importedFileContent = document.getElementById('imported-file-content');
+				  const analysisResult = document.getElementById('analysis-result');
+			  
+				  importedFileInput.addEventListener('change', (event) => {
 					const file = event.target.files[0];
 					const reader = new FileReader();
 					reader.onload = (event) => {
-						fileContent1.textContent = event.target.result;
+					  importedFileContent.textContent = event.target.result;
 					};
 					reader.readAsText(file);
-				});
+				  });
 
-				form.addEventListener('submit', (event) => {
+
+				  importedFileInput.addEventListener('submit', (event) => {
 					event.preventDefault();
 					const file = fileInput.files[0];
 					const reader = new FileReader();
 					reader.onload = (event) => {
 						const content = event.target.result;
-						fileContent1.textContent = content;
+						fileContent.textContent = content;
 						const xhr = new XMLHttpRequest();
 						xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
 						xhr.setRequestHeader('Content-Type', 'application/json');
@@ -489,9 +567,42 @@
 					};
 					reader.readAsText(file);
 				});
-			</script>
-		</section>
 
+
+
+			  
+				  function analyzeImportedFile() {
+					// Analyze the imported file and update the analysisResult textarea
+					// with the result of the analysis.
+					// ...
+				  }
+			  
+				  function uploadFile() {
+					// Upload the selected file to the server.
+					// ...
+				  }
+			  
+				  function uploadContent() {
+					// Upload the content of the imported file preview area or the analysis result
+					// preview area to the server.
+					// ...
+				  }
+			  
+				  document.getElementById('upload-file').addEventListener('click', uploadFile);
+				  document.getElementById('upload-content').addEventListener('click', uploadContent);
+				</script>
+			  
+
+			  <div class="column">
+				<h2>Column 1</h2>
+				<button id="button1">Button 1</button>
+				<button id="button2">Button 2</button>
+			  </div>
+			  <div class="column">
+				<h2>Column 2</h2>
+				<button id="button3">Button 3</button>
+				<button id="button4">Button 4</button>
+			  </div>
 
 
 

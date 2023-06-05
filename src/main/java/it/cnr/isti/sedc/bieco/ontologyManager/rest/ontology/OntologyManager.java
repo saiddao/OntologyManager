@@ -33,6 +33,7 @@ import it.cnr.isti.sedc.bieco.ontologyManager.Rule;
 import it.cnr.isti.sedc.bieco.ontologyManager.Skill;
 import it.cnr.isti.sedc.bieco.ontologyManager.SoS;
 import it.cnr.isti.sedc.bieco.ontologyManager.Student;
+import it.cnr.isti.sedc.bieco.ontologyManager.rest.UC1.UC1Parser;
 import it.cnr.isti.sedc.bieco.ontologyManager.utils.BiecoMessageTypes;
 
 
@@ -1053,43 +1054,55 @@ public class OntologyManager {
 			
 			
 			
-			case "parseAMADEOSSoSProfile":
-			
-			
+		case "parseAMADEOSSoSProfile":
+
 			try {
+
+				String ecoreFileContent = (String) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);
+				System.out.println("Content of the ecore File -> " + ecoreFileContent);
+
+				System.out.println("parseAMADEOSSoSProfile -> :: ");
+
 				
-			String ontologyContent = (String) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);
-			System.out.println("Content of the Uploaded Ontology File -> "+ontologyContent);
-			
-			System.out.println("JSONObject jsonObjectSOSs = (JSONObject) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);");
-			
-			JSONParser parser = new JSONParser();
-			JSONObject content = (JSONObject) parser.parse(ontologyContent);
-			
-			
-			
-			JSONArray sossArray = (JSONArray) content.get(OntologyEntitiesNames.ONTOLOGY_SOSS); 
-			
-			if (sossArray == null) {
-				System.err.println("PLEASE see this:: SoSs Array is null"+sossArray);;
-			}
-			
-			System.out.println(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
-			
-			System.out.println(sossArray.toJSONString());
-			
-			dumpOntologyDatabase(sossArray);
-			
-			output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
-			
+				
+				
+				String ecore2daemonResult = UC1Parser.ecoreParser(ecoreFileContent);
+				
+				
+				
+				JSONParser parser = new JSONParser();
+				JSONObject content = (JSONObject) parser.parse(ecore2daemonResult);
+
+				JSONArray sossArray = (JSONArray) content.get(OntologyEntitiesNames.ONTOLOGY_SOSS);
+
+				if (sossArray == null) {
+					System.err.println("PLEASE see this:: SoSs Array is null" + sossArray);
+				}
+
+				System.out.println(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
+
+				System.out.println(sossArray.toJSONString());
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				dumpOntologyDatabase(sossArray);
+
+				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
+
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
-				
+
 			}
 
-			
 			break;
 			
 			

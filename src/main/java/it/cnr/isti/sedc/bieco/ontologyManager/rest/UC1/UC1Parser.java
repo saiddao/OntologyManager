@@ -184,8 +184,108 @@ public class UC1Parser {
 //			}
 //		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	 private static String convertXmlToString(Document doc) {
+	        DOMSource domSource = new DOMSource(doc);
+	        StringWriter writer = new StringWriter();
+	        StreamResult result = new StreamResult(writer);
+	        TransformerFactory tf = TransformerFactory.newInstance();
+	        Transformer transformer = null;
+	        try {
+	            transformer = tf.newTransformer();
+	            transformer.transform(domSource, result);
+	        } catch (TransformerException e) {
+	            throw new RuntimeException(e);
+	        }
+	        return writer.toString();
+	    }
 
-	private static void parseSoSs() {
+	    private static Document convertStringToXml(String xmlString) {
+
+	        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+	        try {
+
+	            // optional, but recommended
+	            // process XML securely, avoid attacks like XML External Entities (XXE)
+	            dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+	            DocumentBuilder builder = dbf.newDocumentBuilder();
+
+	            Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
+
+	            return doc;
+
+	        } catch (ParserConfigurationException | IOException | SAXException e) {
+	            throw new RuntimeException(e);
+	        }
+
+	    }
+	
+	
+	
+	
+	public static String ecoreParser(String ecoreFileContent) {
+		// TODO Auto-generated method stub
+		
+
+		Document document = convertStringToXml(ecoreFileContent);
+
+		
+        document.getChildNodes().item(0);
+		
+		
+		
+		
+		
+		parseNode(document.getChildNodes().item(0));
+		
+		System.out.println("Attributes :: "+eCoreattributes);
+		System.out.println(eCoreElements);
+		
+		System.out.println(eCoreattributesHashMap);
+		
+		
+		Set<String> keySet = eCoreattributesHashMap.keySet();
+		for (String key : keySet) {
+			System.out.println(key+" :: "+eCoreattributesHashMap.get(key).size()+ " :: "+eCoreattributesHashMap.get(key));
+		}
+		
+		System.out.println(elementsEClassifiersMap);
+		
+		System.out.println("Services -> "+ Service.size()+ "-> "+Service);
+		
+		
+		for (EClassifiers service : Service) {
+			System.out.println(service.getOMJson());
+		}
+		
+		
+		
+		parseRUMIS();
+		parseCSs();
+		String amadeosOntology = parseSoSs();
+		
+		
+		
+		return amadeosOntology;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+	private static String parseSoSs() {
 		// TODO Auto-generated method stub
 		
 		StringBuilder builder = new StringBuilder();
@@ -202,7 +302,11 @@ public class UC1Parser {
 		}
 		
 		builder.append("]}");
+		
 		System.err.println(builder.toString());
+		
+		
+		return builder.toString();
 	}
 
 	private static void parseCSs() {
