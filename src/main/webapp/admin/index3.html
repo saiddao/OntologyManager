@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Ontology Manager Administrator (CNR):: Admin</title>
+	<title>Ontology Manager Administrator  (CNR):: Admin</title>
 	<link rel="stylesheet" type="text/css" href="adminStyleUsable.css">
 </head>
 
@@ -204,22 +204,22 @@
 
 				const deviceSelectEl = document.getElementById('device-selector');
 				const deviceSelectButton = document.getElementById('device-selector-button');
-
+				
 				const componentSelectEl = document.getElementById('component-selector');
 				const componentSelectButton = document.getElementById('component-selector-button');
-
+				
 				const skillSelectEl = document.getElementById('skill-selector');
 				const skillSelectButton = document.getElementById('skill-selector-button');
-
+				
 				const ruleSelectEl = document.getElementById('rule-selector');
 				const ruleSelectButton = document.getElementById('rule-selector-button');
-
+				
 				// fetching data for SoSs :. think about adding specific button for performing this operation
 				fetchData('getsoss', 'sosId', 'sosName', sosSelectEl);
 
-
+				
 				sosSelectEl.addEventListener('change', () => {
-					//					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
+//					fetchData('getdevices', 'deviceId', 'deviceName', deviceSelectEl, 'sosId', sosSelectEl.value);
 					resetSelectorsRSCD();
 				});
 
@@ -230,7 +230,7 @@
 
 
 				deviceSelectEl.addEventListener('change', () => {
-					//					fetchData('getcomponents', 'componentId', 'componentName', componentSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value);
+//					fetchData('getcomponents', 'componentId', 'componentName', componentSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value);
 					resetSelectorsRSC();
 				});
 				deviceSelectButton.addEventListener('click', () => {
@@ -239,7 +239,7 @@
 				});
 
 				componentSelectEl.addEventListener('change', () => {
-					//					fetchData('getskills', 'skillId', 'skillName', skillSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value);
+//					fetchData('getskills', 'skillId', 'skillName', skillSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value);
 					resetSelectorsRS();
 				});
 
@@ -250,7 +250,7 @@
 
 
 				skillSelectEl.addEventListener('change', () => {
-					//					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
+//					fetchData('getrules', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, "skillId", skillSelectEl.value);
 					resetSelectorsR();
 				});
 
@@ -261,112 +261,35 @@
 
 
 				ruleSelectButton.addEventListener('click', () => {
-					//executePost();
-					fetchDataRule('sendRule', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, 'skillId', skillSelectEl.value, 'ruleID', ruleSelectEl.value);
-					executePostSaid();
-					executePost();
-					//resetSelectorsR();
+
+
+
+// Get the ruleSelectEl select element
+const ruleSelectEl = document.getElementById('ruleSelectEl');
+
+// Define the name of the option you want to select
+const optionName = 'InstantiatedRule';
+const instantiatedRuleValue = '';
+
+// Find the index of the option with the specified name
+let selectedIndex = -1;
+for (let i = 0; i < ruleSelectEl.options.length; i++) {
+  if (ruleSelectEl.options[i].text === optionName) {
+    selectedIndex = i;
+    break;
+  }
+}
+
+// Select the option if found
+if (selectedIndex !== -1) {
+//  ruleSelectEl.selectedIndex = selectedIndex;
+instantiatedRuleValue = ruleSelectEl.options[selectedIndex];
+}
+
+					fetchDataRule('getrulesForMonitoring', 'ruleId', 'ruleName', ruleSelectEl, 'sosId', sosSelectEl.value, 'deviceId', deviceSelectEl.value, 'componentId', componentSelectEl.value, 'skillId', skillSelectEl.value, 'ruleID', ruleSelectEl.value, 
+					'InstantiatedRule', ruleSelectEl.options[selectedIndex]);
+					resetSelectorsR();
 				});
-
-
-
-
-				var textarea; // Declare the textarea variable outside the functions to make it accessible to both functions
-
-				function executePost() {
-					var xhttp = new XMLHttpRequest();
-
-					xhttp.onreadystatechange = function () {
-						if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-							alert(xhttp.statusText);
-						}
-					};
-
-					console.log("sending the rule");
-					console.log(formattedData);
-
-
-
-					xhttp.open("POST", "http://localhost:4700/monitoring/biecointerface/loadrules", true);
-					xhttp.setRequestHeader("Content-type", "application/json");
-
-					xhttp.send(JSON.stringify({
-						"jobID": "1234",
-						"timestamp": "2023-01-18 08:29:30",
-						"messageType": "loadRules",
-						"sourceID": "4",
-						"event": formattedData,
-						"crc": 1234565
-					}));
-
-
-
-					window.alert("Rules sent to the Monitoring");
-					window.opener.location.reload(false);
-				}
-
-				function loadFileContent() {
-					var xhttp = new XMLHttpRequest();
-
-					xhttp.onreadystatechange = function () {
-						if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-							var fileContent = xhttp.responseText;
-							console.log(fileContent); // Log the fileContent in the console
-
-							textarea = fileContent; // Assign the response text to the textarea variable
-						}
-					};
-
-					xhttp.open("GET", "http://localhost:8282/ontologymanager/biecointerface/getrules", true);
-					xhttp.send();
-				}
-
-
-
-
-
-
-				function executePostSaid() {
-					const url = 'http://localhost:4700/monitoring/biecointerface/loadrules';
-
-					const requestData = {
-						jobID: '1234',
-						timestamp: '2023-01-18 08:29:30',
-						messageType: 'loadRules',
-						sourceID: '4',
-						event: formattedData,
-						crc: 1234565
-					};
-
-					console.log(formattedData);
-
-					const requestOptions = {
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json'
-						},
-						body: JSON.stringify(requestData)
-					};
-
-					fetch(url, requestOptions)
-						.then(response => {
-							if (response.ok) {
-								return response.text();
-							} else {
-								throw new Error('Error: ' + response.status);
-							}
-						})
-						.then(result => {
-							alert(result);
-							window.alert('Rules sent to the Monitoring');
-							window.opener.location.reload(false);
-						})
-						.catch(error => {
-							console.error('Error:', error);
-						});
-				}
-
-
 
 
 				function fetchData(operationName, valueKey, textKey, selectEl, ...args) {
@@ -429,32 +352,13 @@
 
 
 
-				fetch("http://localhost:8282/ontologymanager/biecointerface/getrules")
-					.then(function (response) {
-						if (response.ok) {
-							return response.text();
-						} else {
-							throw new Error("Error retrieving file content.");
-						}
-					})
-					.then(function (fileContent) {
-						console.log(fileContent); // Log the fileContent in the console
-						textarea = fileContent; // Assign the response text to the textarea variable
-					})
-					.catch(function (error) {
-						console.log("Error:", error.message);
-					});
-
-
-				let formattedData = "";
-
 				function fetchDataRule(operationName, valueKey, textKey, selectEl, ...args) {
 					const logArea = document.getElementById('logArea');
 
 					const payload = {
 						jobID: '1234',
 						timestamp: '',
-						messageType: 'Data',
+						messageType: 'loadRules',
 						sourceID: '4',
 						event: {
 							OntologyRequest: {
@@ -486,15 +390,11 @@
 						},
 						body: JSON.stringify(payload)
 					})
-						.then(response => response.text())
+						.then(response => response.json())
 						.then(data => {
 							// Remove previous options from the select element
 							selectEl.innerHTML = '';
 
-							console.log(data);
-
-							simulateInputChange(data);
-							console.log(formattedData);
 							// Concatenate payload and data and log in logArea
 							const logData = {
 								OM_Request: payload,
@@ -515,42 +415,7 @@
 						.catch(error => console.error(error));
 				}
 
-
-
-				// Simulate a file input change event
-				const simulateInputChange = (inputString) => {
-					const file = new Blob([inputString]);
-					const reader = new FileReader();
-					reader.onload = (e) => {
-						const fileContent = e.target.result;
-						const lines = fileContent.split(/\r\n|\n/);
-						formattedData = lines.join('\n');
-						// Use the textarea variable here or perform any further operations
-						console.log(formattedData);
-					};
-					reader.onerror = (e) => alert(e.target.error.name);
-					reader.readAsText(file);
-				};
-
-
-
-
 			</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -573,14 +438,13 @@
 
 		</section>
 
-
+	
 		<section id="map-sos-blockly-section">
 			<h2>Map SoS Blockly Profile</h2>
-
-
-			<p>Use this functionality for importing and mapping the AMADEOS SoS profile using Blockly4SoS to the DEAMON
-				Ontology.
-				Please Upload the .ecore file exported from Blockly4SoS.</p>
+			
+			
+			<p>Use this functionality for importing and mapping the AMADEOS SoS profile using Blockly4SoS to the DEAMON Ontology.
+			Please Upload the .ecore file exported from Blockly4SoS.</p>
 
 			<div class="container">
 				<form id="form1" action="http://localhost:8282/ontologymanager/biecointerface/" method="post">
@@ -601,52 +465,52 @@
 				const form1 = document.getElementById('form1');
 				const fileInput1 = document.getElementById('file-input1');
 				const fileContent1 = document.getElementById('file-content1');
-
+			  
 				fileInput1.addEventListener('change', (event) => {
-					const file = event.target.files[0];
-					const reader = new FileReader();
-					reader.onload = (event) => {
-						fileContent1.textContent = event.target.result;
-					};
-					reader.readAsText(file);
+				  const file = event.target.files[0];
+				  const reader = new FileReader();
+				  reader.onload = (event) => {
+					fileContent1.textContent = event.target.result;
+				  };
+				  reader.readAsText(file);
 				});
-
+			  
 				form1.addEventListener('submit', (event) => {
-					event.preventDefault();
-					const file = fileInput1.files[0];
-					const reader = new FileReader();
-					reader.onload = (event) => {
-						const content = event.target.result;
-						fileContent1.textContent = content;
-						const xhr = new XMLHttpRequest();
-						xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
-						xhr.setRequestHeader('Content-Type', 'application/json');
-						xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
-						xhr.onload = function () {
-							if (xhr.status === 200) {
-								status.textContent = 'Upload successful!';
-							} else {
-								status.textContent = 'Upload failed: ' + xhr.status;
-							}
-						};
-						const data = {
-							jobID: '1234',
-							timestamp: '',
-							messageType: 'Data',
-							sourceID: '4',
-							event: {
-								OntologyRequest: {
-									operationName: 'parseAMADEOSSoSProfile',
-									ontologyContent: content,
-								},
-							},
-							crc: 1234567,
-						};
-						xhr.send(JSON.stringify(data));
+				  event.preventDefault();
+				  const file = fileInput1.files[0];
+				  const reader = new FileReader();
+				  reader.onload = (event) => {
+					const content = event.target.result;
+					fileContent1.textContent = content;
+					const xhr = new XMLHttpRequest();
+					xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
+					xhr.setRequestHeader('Content-Type', 'application/json');
+					xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
+					xhr.onload = function () {
+					  if (xhr.status === 200) {
+						status.textContent = 'Upload successful!';
+					  } else {
+						status.textContent = 'Upload failed: ' + xhr.status;
+					  }
 					};
-					reader.readAsText(file);
+					const data = {
+					  jobID: '1234',
+					  timestamp: '',
+					  messageType: 'Data',
+					  sourceID: '4',
+					  event: {
+						OntologyRequest: {
+						  operationName: 'parseAMADEOSSoSProfile',
+						  ontologyContent: content,
+						},
+					  },
+					  crc: 1234567,
+					};
+					xhr.send(JSON.stringify(data));
+				  };
+				  reader.readAsText(file);
 				});
-			</script>
+			  </script>
 		</section>
 
 	</main>
@@ -662,7 +526,7 @@
 		const deleteSection = document.getElementById('delete-section');
 		const updateLink = document.getElementById('update-ontology');
 		const updateSection = document.getElementById('update-section');
-
+		
 		const mappingSoSblocklyLink = document.getElementById('map-sos-blockly-ontology');
 		const mappingSoSblocklySection = document.getElementById('map-sos-blockly-section');
 
@@ -718,7 +582,7 @@
 			updateSection.style.display = 'block';
 			mappingSoSblocklySection.style.display = 'none';
 		});
-
+		
 		mappingSoSblocklyLink.addEventListener('click', () => {
 			homeSection.style.display = 'none';
 			uploadSection.style.display = 'none';

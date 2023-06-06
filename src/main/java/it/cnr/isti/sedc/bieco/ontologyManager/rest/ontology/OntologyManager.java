@@ -1,5 +1,6 @@
 package it.cnr.isti.sedc.bieco.ontologyManager.rest.ontology;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -36,8 +37,6 @@ import it.cnr.isti.sedc.bieco.ontologyManager.Student;
 import it.cnr.isti.sedc.bieco.ontologyManager.rest.UC1.UC1Parser;
 import it.cnr.isti.sedc.bieco.ontologyManager.utils.BiecoMessageTypes;
 
-
-
 /**
  * Root resource (exposed at "myresource" path)
  */
@@ -57,7 +56,7 @@ public class OntologyManager {
 	 */
 
 	@GET
-	@Produces({MediaType.TEXT_HTML })
+	@Produces({ MediaType.TEXT_HTML })
 	public String getIt() {
 		return homePage();
 
@@ -65,35 +64,21 @@ public class OntologyManager {
 
 	private String homePage() {
 
-		
-		String result =  "<!DOCTYPE html><head><meta charset=\"utf-8\"><title>OntologyManager</title>" + "</head><style>\n"
-				+ "body {\n" + "  background-color: #ddebef;\n" + "}\n"
+		String result = "<!DOCTYPE html><head><meta charset=\"utf-8\"><title>OntologyManager</title>"
+				+ "</head><style>\n" + "body {\n" + "  background-color: #ddebef;\n" + "}\n"
 				+ "</style><body><h2>OntologyManager</h2><h3>Status: " + OntologyStatus() + "</h3>"
 				+ "<h4>Ontology logs:</h4><textarea id=\"logs\" name=\"debugLog\" rows=\"30\" cols=\"200\">\n"
 				+ getLoggerData() + "</textarea></body></html>";
-		
-		
-		
-		result = "<!DOCTYPE html>"
-		+ "<html lang=\"en\">"
-		+ "<head>"
-		+ "    <meta charset=\"UTF-8\">"
-		+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
-		+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-		+ "    <title>Form</title>"
-		+ "</head>"
-		+ "<body>"
-		+ "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
-		+ "        <button>Get SoSs</button>"
-		+ "    </form>"
-		+ "</body>"
-		+ "</html>";
-		
+
+		result = "<!DOCTYPE html>" + "<html lang=\"en\">" + "<head>" + "    <meta charset=\"UTF-8\">"
+				+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+				+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+				+ "    <title>Form</title>" + "</head>" + "<body>"
+				+ "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+				+ "        <button>Get SoSs</button>" + "    </form>" + "</body>" + "</html>";
+
 		return result;
-		
-		
-		
-		
+
 		/*
 		 * return
 		 * "<!DOCTYPE html><head><meta charset=\"utf-8\"><title>OntologyManager</title>"
@@ -105,59 +90,36 @@ public class OntologyManager {
 		 */
 
 	}
-	
-	
+
 	@GET
 	@Path("/getsossHTML")
 	@Produces({ MediaType.TEXT_HTML })
 	public String getSOSsHTML() {
 		List<SoS> soss = this.loadOntDatabaseSoSs();
-		
+
 		StringBuilder resultHTML = new StringBuilder();
-		resultHTML.append("<!DOCTYPE html>"
-				+ "<html lang=\"en\">"
-				+ "<head>"
-				+ "    <meta charset=\"UTF-8\">"
+		resultHTML.append("<!DOCTYPE html>" + "<html lang=\"en\">" + "<head>" + "    <meta charset=\"UTF-8\">"
 				+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
 				+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-				+ "    <title>Form</title>"
-				+ "</head>"
-				+ "<body>");
-			
-		
+				+ "    <title>Form</title>" + "</head>" + "<body>");
+
 		resultHTML.append("<form action=\"http://localhost:8282/ontologymanager/biecointerface/getComponentsHTML\">"
-		+"  <label for=\"soss\">Choose SoS:</label>"
-		+"  <select name=\"soss\" id=\"soss\">");
-		
+				+ "  <label for=\"soss\">Choose SoS:</label>" + "  <select name=\"soss\" id=\"soss\">");
+
 		for (SoS soS : soss) {
 			resultHTML.append(soS.getHTML());
-			
+
 		}
-		
-		 		  
-		resultHTML.append("</select>"
-		  +"  <br><br>"
-		  +"<input type=\"getcomponents\" value=\"GetComponents\">"
-		  +"</form>");
-		
-				
-				
-				
-		resultHTML.append( "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
-				+ "        <button>Get SoSs</button>"
-				+ "    </form>"
-				+ "</body>"
-				+ "</html>");
-		
-		
+
+		resultHTML.append(
+				"</select>" + "  <br><br>" + "<input type=\"getcomponents\" value=\"GetComponents\">" + "</form>");
+
+		resultHTML.append(
+				"    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+						+ "        <button>Get SoSs</button>" + "    </form>" + "</body>" + "</html>");
+
 		return resultHTML.toString();
 	}
-	
-	
-	
-	
-	
-	
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -231,16 +193,15 @@ public class OntologyManager {
 		} else {
 			output = Response.status(401).entity("invalid access token").build();
 		}
-		
-		//System.out.println(homePage().toString());
+
+		// System.out.println(homePage().toString());
 //		output = Response.status(401).entity(homePage()).build(); 
-		
+
 		System.out.println(output);
 		System.out.println(output.getEntity());
-		
+
 		System.out.println(System.getProperty("user.dir"));
-		
-		
+
 		return output;
 	}
 
@@ -354,7 +315,7 @@ public class OntologyManager {
 		List<SoS> soss = this.loadOntDatabaseSoSs();
 		return soss;
 	}
-	
+
 	private List<SoS> loadOntDatabaseSoSs() {
 		List<SoS> soSs = new ArrayList<SoS>();
 		JSONParser parser = new JSONParser();
@@ -509,14 +470,14 @@ public class OntologyManager {
 									System.out.println(componentsJson.toJSONString()); // for each Device associated
 																						// with the SoS
 									for (Object componentObject : componentsJson) {
-										Component currentComponent = Component.fromJSON((JSONObject) componentObject); 
-										// retrieve component with id  "componentID"
+										Component currentComponent = Component.fromJSON((JSONObject) componentObject);
+										// retrieve component with id "componentID"
 										if (currentComponent.getComponentId().equals(componentID)) {
 											JSONArray skillsJson = (JSONArray) ((JSONObject) componentObject)
 													.get(OntologyEntitiesNames.SKILLS);
 
 											if (skillsJson != null) {
-												System.out.println(skillsJson.toJSONString()); 
+												System.out.println(skillsJson.toJSONString());
 												// for each Device associated with the SoS
 												for (Object skillObject : skillsJson) {
 													skills.add(Skill.fromJSON((JSONObject) skillObject));
@@ -541,15 +502,11 @@ public class OntologyManager {
 		}
 		return skills;
 	}
-	
+
 	/**
 	 * 
-	 * "OntologyRequest" :{ 
-	 * 		"operationName": "getrules", 
-	 * 		"sosId" : "", 
-	 * 		"deviceId" : "", 
-	 * 		"componentId" : "", 
-	 * 		"skillId":""} 
+	 * "OntologyRequest" :{ "operationName": "getrules", "sosId" : "", "deviceId" :
+	 * "", "componentId" : "", "skillId":""}
 	 * 
 	 * @param sosID
 	 * @param deviceID
@@ -563,10 +520,10 @@ public class OntologyManager {
 	public List<Rule> getRules(@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
 			@QueryParam(OntologyEntitiesNames.DEVICE_ID) String deviceID,
 			@QueryParam(OntologyEntitiesNames.COMPONENT_ID) String componentID,
-			@QueryParam(OntologyEntitiesNames.SKILL_ID) String skillID){
+			@QueryParam(OntologyEntitiesNames.SKILL_ID) String skillID) {
 
 		List<Rule> rules = new ArrayList<Rule>();
-		
+
 		JSONParser parser = new JSONParser();
 		System.out.println("########### Start ###########");
 		try (FileReader registro = new FileReader("ontology.json");) {
@@ -588,43 +545,43 @@ public class OntologyManager {
 								JSONArray componentsJson = (JSONArray) ((JSONObject) deviceObject)
 										.get(OntologyEntitiesNames.COMPONENTS);
 								if (componentsJson != null) {
-									System.out.println(componentsJson.toJSONString()); 
+									System.out.println(componentsJson.toJSONString());
 									// for each Device associated with the SoS
 									for (Object componentObject : componentsJson) {
-										Component currentComponent = Component.fromJSON((JSONObject) componentObject); 
+										Component currentComponent = Component.fromJSON((JSONObject) componentObject);
 										// retrieve the component with id "componentID"
 										if (currentComponent.getComponentId().equals(componentID)) {
 											JSONArray skillsJson = (JSONArray) ((JSONObject) componentObject)
 													.get(OntologyEntitiesNames.SKILLS);
 
 											if (skillsJson != null) {
-												System.out.println(skillsJson.toJSONString()); 
+												System.out.println(skillsJson.toJSONString());
 												// for each Skill associated with the component
 												for (Object skillObject : skillsJson) {
-													
+
 													Skill currentSkill = Skill.fromJSON((JSONObject) skillObject);
 													// retreive the Skill with ID "skillID"
-													if(currentSkill.getSkillId().equals(skillID)) {
+													if (currentSkill.getSkillId().equals(skillID)) {
 														JSONArray rulesJson = (JSONArray) ((JSONObject) skillObject)
 																.get(OntologyEntitiesNames.RULES);
-														
-														
+
 														System.err.println(rulesJson.toJSONString());
-														
+
 														if (rulesJson != null) {
 															for (Object ruleObject : rulesJson) {
-																//Rule currentRule = Rule.fromJSON((JSONObject) ruleObject);
-																
-																
-																
-																Rule currentRule = Rule.fromJSONAbstractRule((JSONObject) ruleObject, currentSkill.getSkillId());
-																
-																
+																// Rule currentRule = Rule.fromJSON((JSONObject)
+																// ruleObject);
+
+																Rule currentRule = Rule.fromJSONAbstractRule(
+																		(JSONObject) ruleObject,
+																		currentSkill.getSkillId());
+
 																rules.add(currentRule);
 																System.out.println(rules.get(rules.size() - 1));
-																System.out.println(rules.get(rules.size() - 1).toJson());
+																System.out
+																		.println(rules.get(rules.size() - 1).toJson());
 															}
-														}												
+														}
 													}
 												}
 											}
@@ -645,8 +602,7 @@ public class OntologyManager {
 		}
 		return rules;
 	}
-	
-	
+
 	/**
 	 * 
 	 * @param sosID
@@ -658,105 +614,108 @@ public class OntologyManager {
 	@GET
 	@Path("/getabstractrules")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Object getAbstractRules (@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
+	public Object getAbstractRules(@DefaultValue("") @QueryParam(OntologyEntitiesNames.SOS_ID) String sosID,
 			@QueryParam(OntologyEntitiesNames.DEVICE_ID) String deviceID,
 			@QueryParam(OntologyEntitiesNames.COMPONENT_ID) String componentID,
 			@QueryParam(OntologyEntitiesNames.SKILL_IDS) String skillIDsAsString) {
-	
-	//(
-	//	String sosID,
-	//	String deviceID,
-	//	String componentID,
-	//	JSONArray skillIDs){
 
-	List<Rule> rules = new ArrayList<Rule>();
-	
-	ArrayList<String> arrayListSkillsIDs = new ArrayList<String>();
-	
-	JSONParser parserSkills = new JSONParser();
-	JSONArray skillIDs;
-	try {
-		skillIDs = (JSONArray) parserSkills.parse(skillIDsAsString);
-	
-	for (Object skillObject : skillIDs) {
-		System.out.println("skillIDs -> "+skillObject);
-		if (skillObject instanceof String) {
-	        String skillID = (String) skillObject;
-	        arrayListSkillsIDs.add(skillID);
-	    }
-		System.out.println("arrayListSkillsIDs -> "+arrayListSkillsIDs);
-	}
-	} catch (ParseException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
-	
-	//System.out.println("Array -> "+(String[]) skillIDs.toArray());
-	
-	//String[] skillsAsStringArray = (String[]) skillIDs.toArray();
-	
-	System.out.println("############### HERE ###################");
-	
+		// (
+		// String sosID,
+		// String deviceID,
+		// String componentID,
+		// JSONArray skillIDs){
+
+		List<Rule> rules = new ArrayList<Rule>();
+
+		ArrayList<String> arrayListSkillsIDs = new ArrayList<String>();
+
+		JSONParser parserSkills = new JSONParser();
+		JSONArray skillIDs;
+		try {
+			skillIDs = (JSONArray) parserSkills.parse(skillIDsAsString);
+
+			for (Object skillObject : skillIDs) {
+				System.out.println("skillIDs -> " + skillObject);
+				if (skillObject instanceof String) {
+					String skillID = (String) skillObject;
+					arrayListSkillsIDs.add(skillID);
+				}
+				System.out.println("arrayListSkillsIDs -> " + arrayListSkillsIDs);
+			}
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		// System.out.println("Array -> "+(String[]) skillIDs.toArray());
+
+		// String[] skillsAsStringArray = (String[]) skillIDs.toArray();
+
+		System.out.println("############### HERE ###################");
+
 //	ArrayList<String> arrayListSkillsIDs = new ArrayList<String>(Arrays.asList(skillsAsStringArray));
-	
 
-	JSONParser parser = new JSONParser();
-	System.out.println("########### Start ###########");
-	try (FileReader registro = new FileReader("ontology.json");) {
-		JSONArray array = (JSONArray) parser.parse(registro);
-		// for each SoS
-		for (Object joSoS : array) {
-			SoS currentSoS = SoS.fromJSON((JSONObject) joSoS);
-			// if the currentSoS is the one we search
+		JSONParser parser = new JSONParser();
+		System.out.println("########### Start ###########");
+		try (FileReader registro = new FileReader("ontology.json");) {
+			JSONArray array = (JSONArray) parser.parse(registro);
+			// for each SoS
+			for (Object joSoS : array) {
+				SoS currentSoS = SoS.fromJSON((JSONObject) joSoS);
+				// if the currentSoS is the one we search
 
-			if (currentSoS.getSosId().equals(sosID)) {
-				JSONArray devicesJson = (JSONArray) ((JSONObject) joSoS).get(OntologyEntitiesNames.DEVICES);
-				if (devicesJson != null) {
-					System.out.println(devicesJson.toJSONString());
-					// for each Device associated with the SoS
-					for (Object deviceObject : devicesJson) {
-						Device currentDevice = Device.fromJSON((JSONObject) deviceObject);
-						// if current device is the one we search
-						if (currentDevice.getDeviceId().equals(deviceID)) {
-							JSONArray componentsJson = (JSONArray) ((JSONObject) deviceObject)
-									.get(OntologyEntitiesNames.COMPONENTS);
-							if (componentsJson != null) {
-								System.out.println(componentsJson.toJSONString()); 
-								// for each Device associated with the SoS
-								for (Object componentObject : componentsJson) {
-									Component currentComponent = Component.fromJSON((JSONObject) componentObject); 
-									// retrieve the component with id "componentID"
-									if (currentComponent.getComponentId().equals(componentID)) {
-										JSONArray skillsJson = (JSONArray) ((JSONObject) componentObject)
-												.get(OntologyEntitiesNames.SKILLS);
+				if (currentSoS.getSosId().equals(sosID)) {
+					JSONArray devicesJson = (JSONArray) ((JSONObject) joSoS).get(OntologyEntitiesNames.DEVICES);
+					if (devicesJson != null) {
+						System.out.println(devicesJson.toJSONString());
+						// for each Device associated with the SoS
+						for (Object deviceObject : devicesJson) {
+							Device currentDevice = Device.fromJSON((JSONObject) deviceObject);
+							// if current device is the one we search
+							if (currentDevice.getDeviceId().equals(deviceID)) {
+								JSONArray componentsJson = (JSONArray) ((JSONObject) deviceObject)
+										.get(OntologyEntitiesNames.COMPONENTS);
+								if (componentsJson != null) {
+									System.out.println(componentsJson.toJSONString());
+									// for each Device associated with the SoS
+									for (Object componentObject : componentsJson) {
+										Component currentComponent = Component.fromJSON((JSONObject) componentObject);
+										// retrieve the component with id "componentID"
+										if (currentComponent.getComponentId().equals(componentID)) {
+											JSONArray skillsJson = (JSONArray) ((JSONObject) componentObject)
+													.get(OntologyEntitiesNames.SKILLS);
 
-										if (skillsJson != null) {
-											System.out.println(skillsJson.toJSONString()); 
-											// for each Skill associated with the component
-											for (Object skillObject : skillsJson) {
-												
-												Skill currentSkill = Skill.fromJSON((JSONObject) skillObject);
-												// retreive the Skill with ID "skillID"
-												
-												if(arrayListSkillsIDs.contains(currentSkill.getSkillId())) {
-												
-//												if(currentSkill.getSkillId().equals(skillID)) {
-													JSONArray rulesJson = (JSONArray) ((JSONObject) skillObject)
-															.get(OntologyEntitiesNames.RULES);
-													
-													
-													System.err.println(rulesJson.toJSONString());
-													
-													if (rulesJson != null) {
-														for (Object ruleObject : rulesJson) {
-															Rule currentRule = Rule.fromJSONAbstractRule((JSONObject) ruleObject, currentSkill.getSkillId());
-															
-															rules.add(currentRule);
-															System.out.println(rules.get(rules.size() - 1));
-															System.out.println(rules.get(rules.size() - 1).toString());
-															System.out.println("OntologyManager.getAbstractRules()");
+											if (skillsJson != null) {
+												System.out.println(skillsJson.toJSONString());
+												// for each Skill associated with the component
+												for (Object skillObject : skillsJson) {
+
+													Skill currentSkill = Skill.fromJSON((JSONObject) skillObject);
+													// retreive the Skill with ID "skillID"
+
+													if (arrayListSkillsIDs.contains(currentSkill.getSkillId())) {
+
+														// if(currentSkill.getSkillId().equals(skillID)) {
+														JSONArray rulesJson = (JSONArray) ((JSONObject) skillObject)
+																.get(OntologyEntitiesNames.RULES);
+
+														System.err.println(rulesJson.toJSONString());
+
+														if (rulesJson != null) {
+															for (Object ruleObject : rulesJson) {
+																Rule currentRule = Rule.fromJSONAbstractRule(
+																		(JSONObject) ruleObject,
+																		currentSkill.getSkillId());
+
+																rules.add(currentRule);
+																System.out.println(rules.get(rules.size() - 1));
+																System.out.println(
+																		rules.get(rules.size() - 1).toString());
+																System.out
+																		.println("OntologyManager.getAbstractRules()");
+															}
 														}
-													}												
+													}
 												}
 											}
 										}
@@ -767,48 +726,20 @@ public class OntologyManager {
 					}
 				}
 			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
 		}
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	} catch (ParseException e) {
-		e.printStackTrace();
-	} catch (Exception e) {
-		// TODO: handle exception
-		e.printStackTrace();
+		return rules;
+
 	}
-	return rules;
-		
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	private static List<SoS> loadOntDatabase() {
 		List<SoS> soSs = new ArrayList<SoS>();
 		JSONParser parser = new JSONParser();
@@ -915,10 +846,10 @@ public class OntologyManager {
 
 		JSONObject ontologyRequest = (JSONObject) event.get(OntologyEntitiesNames.ONTOLOGY_REQUEST);
 
-		System.out.println(ontologyRequest.toJSONString());
+		System.out.println("ontologyRequest -> " + ontologyRequest.toJSONString());
 
 		String operationName = (String) ontologyRequest.get(OntologyEntitiesNames.OPERATION_NAME);
-		System.out.println(operationName);
+		System.out.println("Operation Name -> " + operationName);
 
 		String result;
 		String sosID;
@@ -968,9 +899,9 @@ public class OntologyManager {
 
 			output = Response.status(200).entity(result).build();
 			break;
-			
+
 		case "getrules":
-			
+
 			sosID = (String) ontologyRequest.get(OntologyEntitiesNames.SOS_ID);
 			System.out.println(sosID);
 
@@ -979,19 +910,18 @@ public class OntologyManager {
 
 			componentID = (String) ontologyRequest.get(OntologyEntitiesNames.COMPONENT_ID);
 			System.out.println(componentID);
-			
+
 			skillID = (String) ontologyRequest.get(OntologyEntitiesNames.SKILL_ID);
 			System.out.println(skillID);
 
 			result = getRules(sosID, deviceID, componentID, skillID).toString();
 
 			output = Response.status(200).entity(result).build();
-			
+
 			break;
-			
+
 		case "getabstractrules":
-			
-			
+
 			sosID = (String) ontologyRequest.get(OntologyEntitiesNames.SOS_ID);
 			System.out.println(sosID);
 
@@ -1000,7 +930,7 @@ public class OntologyManager {
 
 			componentID = (String) ontologyRequest.get(OntologyEntitiesNames.COMPONENT_ID);
 			System.out.println(componentID);
-			
+
 			JSONArray skillIDs = (JSONArray) ontologyRequest.get(OntologyEntitiesNames.SKILL_IDS);
 			System.out.println(skillIDs.toJSONString());
 
@@ -1008,52 +938,46 @@ public class OntologyManager {
 			result = getAbstractRules(sosID, deviceID, componentID, skillIDs.toJSONString()).toString();
 
 			output = Response.status(200).entity(result).build();
-			
-			
-			
+
 			break;
-			
+
 		case "uploadontology":
-			
-			
+
 			try {
-				
-			String ontologyContent = (String) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);
-			System.out.println("Content of the Uploaded Ontology File -> "+ontologyContent);
-			
-			System.out.println("JSONObject jsonObjectSOSs = (JSONObject) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);");
-			
-			JSONParser parser = new JSONParser();
-			JSONObject content = (JSONObject) parser.parse(ontologyContent);
-			
-			
-			
-			JSONArray sossArray = (JSONArray) content.get(OntologyEntitiesNames.ONTOLOGY_SOSS); 
-			
-			if (sossArray == null) {
-				System.err.println("PLEASE see this:: SoSs Array is null"+sossArray);;
-			}
-			
-			System.out.println(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
-			
-			System.out.println(sossArray.toJSONString());
-			
-			dumpOntologyDatabase(sossArray);
-			
-			output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
-			
+
+				String ontologyContent = (String) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);
+				System.out.println("Content of the Uploaded Ontology File -> " + ontologyContent);
+
+				System.out.println(
+						"JSONObject jsonObjectSOSs = (JSONObject) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);");
+
+				JSONParser parser = new JSONParser();
+				JSONObject content = (JSONObject) parser.parse(ontologyContent);
+
+				JSONArray sossArray = (JSONArray) content.get(OntologyEntitiesNames.ONTOLOGY_SOSS);
+
+				if (sossArray == null) {
+					System.err.println("PLEASE see this:: SoSs Array is null" + sossArray);
+					;
+				}
+
+				System.out.println(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
+
+				System.out.println(sossArray.toJSONString());
+
+				dumpOntologyDatabase(sossArray);
+
+				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
+
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
-				
+
 			}
 
-			
 			break;
-			
-			
-			
+
 		case "parseAMADEOSSoSProfile":
 
 			try {
@@ -1063,13 +987,8 @@ public class OntologyManager {
 
 				System.out.println("parseAMADEOSSoSProfile -> :: ");
 
-				
-				
-				
 				String ecore2daemonResult = UC1Parser.ecoreParser(ecoreFileContent);
-				
-				
-				
+
 				JSONParser parser = new JSONParser();
 				JSONObject content = (JSONObject) parser.parse(ecore2daemonResult);
 
@@ -1083,13 +1002,12 @@ public class OntologyManager {
 
 				System.out.println(sossArray.toJSONString());
 
-				
-				
-				
-				
 				dumpOntologyDatabase(sossArray);
 
-				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
+				// output = Response.status(404).entity("Uploading Ontology: " +
+				// ontologyRequest).build();
+
+				output = Response.status(200).entity("Uploading Ontology: ").build();
 
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1099,161 +1017,152 @@ public class OntologyManager {
 			}
 
 			break;
-			
-			
-			
+
+		case "sendRule":
+
+			System.out.println("Sending rule to \"146.48.81.167:8181/monitoring/biecointerface/loadrules\"");
+
+			output = Response.status(200).entity("Sending rule: " + ontologyRequest).build();
+
+			System.out.println("OntologyManager.getRules()");
+			String fileContent = null;
+			try {
+				fileContent = readFileContent();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			output = Response.status(200).entity(fileContent).build();
+
+			break;
+
 		default:
 			output = Response.status(404).entity("Invalid data request: " + ontologyRequest).build();
 		}
 		return output;
 	}
 
-
 	private void dumpOntologyDatabase(JSONArray jsonSos) {
 		System.out.println("START ::::::::: Upload Entire Database");
-		
+
 		try (FileWriter registro = new FileWriter("ontology.json");) {
 			jsonSos.writeJSONString(registro);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("END ::::::::: Upload Entire Database");
 	}
-	
-	
-	
+
 	@Path("/omadmin")
 	public class MyResource {
-	    @GET
-	    @Produces(MediaType.TEXT_HTML)
-	    public String getHtml() {
-	        // return HTML page here
-	    	
-	    	String result = "<!DOCTYPE html>"
-			+ "<html lang=\"en\">"
-			+ "<head>"
-			+ "    <meta charset=\"UTF-8\">"
-			+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
-			+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-			+ "    <title>Ontology Manager Administrator</title>"
-			+ "</head>"
-			+ "<body>"
-			+ "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
-			+ "        <button>Get SoSs</button>"
-			+ "    </form>"
-			+ "</body>"
-			+ "</html>";
-			
+		@GET
+		@Produces(MediaType.TEXT_HTML)
+		public String getHtml() {
+			// return HTML page here
+
+			String result = "<!DOCTYPE html>" + "<html lang=\"en\">" + "<head>" + "    <meta charset=\"UTF-8\">"
+					+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+					+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+					+ "    <title>Ontology Manager Administrator</title>" + "</head>" + "<body>"
+					+ "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+					+ "        <button>Get SoSs</button>" + "    </form>" + "</body>" + "</html>";
+
 			return result;
-	    }
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
+
 	@GET
 	@Path("/admin")
 	@Produces({ MediaType.TEXT_HTML })
 	public Response getAdminHTML() {
 		List<SoS> soss = this.loadOntDatabaseSoSs();
-		
+
 		StringBuilder resultHTML = new StringBuilder();
-		resultHTML.append("<!DOCTYPE html>"
-				+ "<html lang=\"en\">"
-				+ "<head>"
-				+ "    <meta charset=\"UTF-8\">"
+		resultHTML.append("<!DOCTYPE html>" + "<html lang=\"en\">" + "<head>" + "    <meta charset=\"UTF-8\">"
 				+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
 				+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-				+ "    <title>Form</title>"
-				+ "</head>"
-				+ "<body>");
-			
-		
+				+ "    <title>Form</title>" + "</head>" + "<body>");
+
 		resultHTML.append("<form action=\"http://localhost:8282/ontologymanager/biecointerface/getComponentsHTML\">"
-		+"  <label for=\"soss\">Choose SoS:</label>"
-		+"  <select name=\"soss\" id=\"soss\">");
-		
+				+ "  <label for=\"soss\">Choose SoS:</label>" + "  <select name=\"soss\" id=\"soss\">");
+
 		for (SoS soS : soss) {
 			resultHTML.append(soS.getHTML());
-			
+
 		}
-		
-		 		  
-		resultHTML.append("</select>"
-		  +"  <br><br>"
-		  +"<input type=\"getcomponents\" value=\"GetComponents\">"
-		  +"</form>");
-		
-				
-				
-				
-		resultHTML.append( "    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
-				+ "        <button>Get SoSs</button>"
-				+ "    </form>"
-				+ "</body>"
-				+ "</html>");
-		
-		
-		
-		
-		
+
+		resultHTML.append(
+				"</select>" + "  <br><br>" + "<input type=\"getcomponents\" value=\"GetComponents\">" + "</form>");
+
+		resultHTML.append(
+				"    <form action=\"http://localhost:8282/ontologymanager/biecointerface/getsossHTML\" method=\"SET\">"
+						+ "        <button>Get SoSs</button>" + "    </form>" + "</body>" + "</html>");
+
 		String currentDir = System.getProperty("user.dir");
 
-        // Create a File object representing the current directory
-        File directory = new File(currentDir);
+		// Create a File object representing the current directory
+		File directory = new File(currentDir);
 
-        // Get all files in the directory
-        File[] files = directory.listFiles();
+		// Get all files in the directory
+		File[] files = directory.listFiles();
 
-        // Loop through the files and print their names and paths
-        for (File file : files) {
-            if (file.isFile()) {
-                System.out.println(file.getAbsolutePath());
-            }
-        }
-		
-		
-		
-        return Response.ok("").build();
+		// Loop through the files and print their names and paths
+		for (File file : files) {
+			if (file.isFile()) {
+				System.out.println(file.getAbsolutePath());
+			}
+		}
 
+		return Response.ok("").build();
 
-		
-		
-		
-		
-		
-		
-		
 //		return resultHTML.toString();
 	}
 
-private String cleanDocPath(String docPath)
-{
-    if (docPath.startsWith("/"))
-    {
-        return docPath.substring(1);
-    }
-    else
-    {
-        return docPath;
-    }
-}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	private String cleanDocPath(String docPath) {
+		if (docPath.startsWith("/")) {
+			return docPath.substring(1);
+		} else {
+			return docPath;
+		}
+	}
+
+	private String readFileContent() throws FileNotFoundException, IOException {
+
+		String fileContent = "";
+		File file = new File("checkEventSequenceICTGW.drl");
+		if (file.exists()) {
+			StringBuilder contentBuilder = new StringBuilder();
+			try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+				String line;
+				while ((line = reader.readLine()) != null) {
+					contentBuilder.append(line);
+					contentBuilder.append(System.lineSeparator());
+				}
+			}
+			fileContent = contentBuilder.toString();
+		}
+		return fileContent;
+
+	}
+
+	@GET
+	@Path("/getrules")
+	@Produces({ MediaType.TEXT_HTML })
+	public Response getRules() {
+
+		System.out.println("OntologyManager.getRules()");
+		String fileContent = null;
+		try {
+			fileContent = readFileContent();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return Response.status(200).entity(fileContent).build();
+
+	}
+
 }

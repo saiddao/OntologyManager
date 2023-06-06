@@ -160,7 +160,7 @@ public class EClassifiers extends ECoreUC1{
 			elementAsJson = "{"
 				+ "\"skillName\": \""
 				+ getName()+"\","
-						+ "\"skillId\": \""+getMyID()+"\",\"description\": \""+ getName()+"\",\"rules\": ["+getRules()+" ]}";		
+						+ "\"skillId\": \""+getMyID()+"\",\"description\": \""+ getName()+"\",\"rules\": ["+getRules(getName())+" ]}";		
 			break;
 		
 		case UtilsUC1.RUMI:
@@ -250,9 +250,41 @@ public class EClassifiers extends ECoreUC1{
 		builder.append("    \"ruleName\": \"Name of Rule 1_2\", ");
 		builder.append("    \"description\": \"Description of Rule 1_2\", ");
 		builder.append("    \"ruleId\": \"1\" ");
+		
+		
+		builder.append(" InstantiatedRule\": \""+MoniitoringInstantiatedRules.getInstantieatedRules()+" \" ");
+		
 		builder.append("} ");
+		
+		
+		
 		return builder.toString();
 	}
+	
+	private String getRules(String ruleName) {
+		// TODO Auto-generated method stub
+		
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append("{");
+		builder.append("    \"welldefinedrule\": \" Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.\", ");
+		builder.append("    \"ruleType\": \"Standard\", ");
+		builder.append("    \"abstractrule\": \"Maximum number of established simultaneous connections\", ");
+		builder.append("    \"ruleName\": \"Rule_"+ruleName+"\", ");
+		builder.append("    \"description\": \"Description of Rule 1_2\", ");
+		builder.append("    \"ruleId\": \"1\" ");
+		
+		
+//		builder.append(" InstantiatedRule\": \""+Rules.getInstantieatedRules()+" \" ");
+		
+		builder.append("} ");
+		
+		
+		
+		return builder.toString();
+	}
+	
+	
 	public HashSet<EClassifiers> getMyRUMIS() {
 		return myRUMIS;
 	}

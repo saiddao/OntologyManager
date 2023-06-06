@@ -269,15 +269,10 @@ public class UC1Parser {
 		parseCSs();
 		String amadeosOntology = parseSoSs();
 		
-		
+		System.err.println("Risultato: : :  "+amadeosOntology);
 		
 		return amadeosOntology;
 	}
-	
-	
-	
-	
-	
 	
 	
 	
