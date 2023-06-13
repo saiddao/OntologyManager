@@ -989,6 +989,11 @@ public class OntologyManager {
 
 				String ecore2daemonResult = UC1Parser.ecoreParser(ecoreFileContent);
 
+				
+				
+				
+//				dumpOntologyDatabase(ecore2daemonResult);
+				
 				JSONParser parser = new JSONParser();
 				JSONObject content = (JSONObject) parser.parse(ecore2daemonResult);
 
@@ -1002,7 +1007,8 @@ public class OntologyManager {
 
 				System.out.println(sossArray.toJSONString());
 
-				dumpOntologyDatabase(sossArray);
+				dumpOntologyDatabase(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
+
 
 				// output = Response.status(404).entity("Uploading Ontology: " +
 				// ontologyRequest).build();
@@ -1054,6 +1060,22 @@ public class OntologyManager {
 
 		System.out.println("END ::::::::: Upload Entire Database");
 	}
+	
+	
+	private void dumpOntologyDatabase(String jsonSos) {
+	    System.out.println("START ::::::::: Upload Entire Database");
+
+	    try (FileWriter registro = new FileWriter("ontology.json")) {
+	        registro.write(jsonSos);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    System.out.println("END ::::::::: Upload Entire Database");
+	}
+	
+	
+	
 
 	@Path("/omadmin")
 	public class MyResource {

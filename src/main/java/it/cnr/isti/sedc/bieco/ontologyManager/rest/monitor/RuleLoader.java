@@ -54,7 +54,7 @@ public class RuleLoader {
                     System.out.println(responseStr);
                     reader.close();
                 } else {
-                    System.out.println("Error: " + connection.getResponseCode() + " - " + connection.getResponseMessage());
+                    System.err.println("Error: " + connection.getResponseCode() + " - " + connection.getResponseMessage());
                 }
             } else {
                 System.out.println("File does not exist.");

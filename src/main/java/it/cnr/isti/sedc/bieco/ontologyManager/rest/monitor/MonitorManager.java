@@ -14,6 +14,7 @@ public class MonitorManager {
     	try {
             // Create the URL object with the endpoint URL
             URL url = new URL("http://localhost:4700/monitoring/biecointerface/loadrules");
+            url = new URL("http://146.48.81.167:8181/monitoring/biecointerface");
 
             // Open a connection to the URL
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -46,20 +47,20 @@ public class MonitorManager {
             outputStream.close();
 
             // Get the response code
-           // int responseCode = connection.getResponseCode();
+            int responseCode = connection.getResponseCode();
 
             // Read the response from the server
-            //BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            //StringBuilder response = new StringBuilder();
-            //String line;
-            //while ((line = reader.readLine()) != null) {
-             //   response.append(line);
-            //}
-            //reader.close();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+               response.append(line);
+            }
+            reader.close();
 
             // Print the response
-            //System.out.println("Response Code: " + responseCode);
-            //System.out.println("Response Body: " + response.toString());
+            System.out.println("Response Code: " + responseCode);
+            System.out.println("Response Body: " + response.toString());
 
             // Close the connection
             connection.disconnect();
