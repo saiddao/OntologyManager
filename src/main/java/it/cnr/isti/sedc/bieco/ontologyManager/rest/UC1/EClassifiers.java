@@ -258,6 +258,16 @@ public class EClassifiers extends ECoreUC1{
 		
 		
 		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return builder.toString();
 	}
 	
@@ -266,18 +276,83 @@ public class EClassifiers extends ECoreUC1{
 		
 		StringBuilder builder = new StringBuilder();
 		
-		builder.append("{");
+		
+		
+		
+		
+		
+		 builder.append("  {");
+		 builder.append("       \"welldefinedrule\": \"Strictly Followed Sequence of Events Rule (#NumOfEvents, {#Events})\",");
+		 builder.append("       \"ruleType\": \"Standard\",");
+		 builder.append("       \"abstractrule\": \"Strictly Followed Sequence of Events Rule\",");
+		 builder.append("       \"ruleName\": \"Strictly Followed Sequence of Events Rule\",");
+		 builder.append("       \"description\": \"This is a Standard Rule that allows monitoring the execution of a Strictly Followed Sequence of Events.\",");
+		 builder.append("       \"ruleId\": \"1\"");
+		 builder.append("   }");
+
+		 builder.append(",");
+		 
+		 builder.append("  {");
+		 builder.append("       \"welldefinedrule\": \"Sequence of Events Rule (#NumOfEvents, {#Events})\",");
+		 builder.append("       \"ruleType\": \"Standard\",");
+		 builder.append("       \"abstractrule\": \"Sequence of Events Rule\",");
+		 builder.append("       \"ruleName\": \"Sequence of Events Rule\",");
+		 builder.append("       \"description\": \"This is a Standard Rule that allows monitoring the execution of a (unordered) Sequence of Events.\",");
+		 builder.append("       \"ruleId\": \"2\"");
+		 builder.append("   }");
+		 
+		 builder.append(",");
+		 
+		 builder.append("  {");
+		 builder.append("      \"welldefinedrule\": \"Time Contrained between two Events Rule (#IntervalInHours, Starting Event (#StartingEvent), Ending Event (#EndingEvent))\",");
+		 builder.append("       \"ruleType\": \"Standard\",");
+		 builder.append("       \"abstractrule\": \"Time Contrained between two Events Rule\",");
+		 builder.append("       \"ruleName\": \"Time Contrained between two Events Rule\",");
+		 builder.append("       \"description\": \"This is a Standard Rule that allows monitoring the minimum interval time between two events.\",");
+		 builder.append("       \"ruleId\": \"3\"");
+		 builder.append("   }");
+
+		 
+		 
+			/*
+			
+			
+					builder.append("{");
 		builder.append("    \"welldefinedrule\": \" Note: Rule To be Defined -> #PAR_1, #PAR_2, #PAR_3.\", ");
 		builder.append("    \"ruleType\": \"Standard\", ");
 		builder.append("    \"abstractrule\": \"Maximum number of established simultaneous connections\", ");
 		builder.append("    \"ruleName\": \"Rule_"+ruleName+"\", ");
 		builder.append("    \"description\": \"Description of Rule 1_2\", ");
 		builder.append("    \"ruleId\": \"1\" ");
-		
-		
 //		builder.append(" InstantiatedRule\": \""+Rules.getInstantieatedRules()+" \" ");
-		
 		builder.append("} ");
+
+		 builder.append(",");
+			
+			builder.append("{");
+			builder.append("    \"welldefinedrule\": \"Maximum number of established simultaneous connections #MAX_Connections_Num\",");
+			builder.append("    \"ruleType\": \"Standard\",");
+			builder.append("    \"abstractrule\": \"Maximum number of established simultaneous connections\",");
+			builder.append("    \"ruleName\": \"Maximum number of established simultaneous connections\",");
+			builder.append("    \"description\": \"This is a Standard Rule that allows monitoring the Maximum Number of of established simultaneous connections a Component should have.\",");
+			builder.append("    \"ruleId\": \"1\"");
+			builder.append("}");
+			 
+			/*
+			builder.append(",");
+	        
+			 builder.append("{");
+			 builder.append("   \"welldefinedrule\": \"Maximum number of established simultaneous connections #PAR_1\",");
+			 builder.append("   \"ruleType\": \"Standard\",");
+			 builder.append("   \"abstractrule\": \"Maximum number of established simultaneous connections\",");
+			 builder.append("   \"ruleName\": \"Minimum number of established simultaneous connections\",");
+			 builder.append("   \"description\": \"This is a Standard Rule that allows monitoring the Minimum Number of of established simultaneous connections a Component should have.\",");
+			 builder.append("   \"ruleId\": \"2\"");
+			 builder.append("}");
+			*/
+		 
+		 
+		
 		
 		
 		

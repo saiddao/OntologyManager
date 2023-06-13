@@ -1006,7 +1006,8 @@ public class OntologyManager {
 				System.out.println(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
 
 				System.out.println(sossArray.toJSONString());
-
+				
+				// upodated 2023.06.13
 				dumpOntologyDatabase(content.get(OntologyEntitiesNames.ONTOLOGY_SOSS).toString());
 
 
