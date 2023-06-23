@@ -3,42 +3,24 @@
  */
 package it.cnr.isti.sedc.bieco.ontologyManager.rest.UC1;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
-import javax.swing.JEditorPane;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -234,7 +216,8 @@ public class UC1Parser {
 	public static String ecoreParser(String ecoreFileContent) {
 		// TODO Auto-generated method stub
 		
-
+		init();
+		
 		Document document = convertStringToXml(ecoreFileContent);
 
 		
@@ -276,6 +259,36 @@ public class UC1Parser {
 	
 	
 	
+
+	private static void init() {
+		// TODO Auto-generated method stub
+		
+		
+		eCoreattributes = new HashSet<String>();
+		eCoreElements = new HashSet<String>();
+		
+		eCoreattributesHashMap = new HashMap<String, HashSet<String>>();
+		
+		SOSs = new HashSet<EClassifiers>();
+		CSs = new HashSet<EClassifiers>();
+		RUMI = new HashSet<EClassifiers>();
+		Service = new HashSet<EClassifiers>();
+		Message = new HashSet<EClassifiers>();
+		
+		HMI = new HashSet<EClassifiers>();
+		Prime_Mover = new HashSet<EClassifiers>();
+		
+		elementsEClassifiersMap = new HashMap<String, EClassifiers>();
+		
+		servicessMap = new HashMap<String, EClassifiers>();
+		rumisMap = new HashMap<String, EClassifiers>();
+		cssMap = new HashMap<String, EClassifiers>();
+
+		sossMap = new HashMap<String, EClassifiers>();
+		messagesMap = new HashMap<String, EClassifiers>();
+		
+		
+	}
 
 	private static String parseSoSs() {
 		// TODO Auto-generated method stub

@@ -573,88 +573,85 @@
 			</script>
 
 
-<script>
-	function updateOntologyAjax() {
-	  const ontoContent = document.getElementById('jsonContent');
-	  const status = document.getElementById('status');
-  
-	  const content = ontoContent.value;
-	  const xhr = new XMLHttpRequest();
-	  xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
-	  xhr.setRequestHeader('Content-Type', 'application/json');
-	  xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
-	  xhr.onload = function () {
-		if (xhr.status === 200) {
-		  status.textContent = 'Upload successful!';
-		} else {
-		  status.textContent = 'Upload failed: ' + xhr.status;
-		}
-	  };
-	  const data = {
-		jobID: '1234',
-		timestamp: '',
-		messageType: 'Data',
-		sourceID: '4',
-		event: {
-		  OntologyRequest: {
-			operationName: 'uploadontology',
-			ontologyContent: content
-		  }
-		},
-		crc: 1234567
-	  };
-	  xhr.send(JSON.stringify(data));
-	}
-  </script>
-  
+			<script>
+				function updateOntologyAjax() {
+					const ontoContent = document.getElementById('jsonContent');
+					const status = document.getElementById('status');
+
+					const content = ontoContent.value;
+					const xhr = new XMLHttpRequest();
+					xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
+					xhr.setRequestHeader('Content-Type', 'application/json');
+					xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
+					xhr.onload = function () {
+						if (xhr.status === 200) {
+							status.textContent = 'Upload successful!';
+						} else {
+							status.textContent = 'Upload failed: ' + xhr.status;
+						}
+					};
+					const data = {
+						jobID: '1234',
+						timestamp: '',
+						messageType: 'Data',
+						sourceID: '4',
+						event: {
+							OntologyRequest: {
+								operationName: 'uploadontology',
+								ontologyContent: content
+							}
+						},
+						crc: 1234567
+					};
+					xhr.send(JSON.stringify(data));
+				}
+			</script>
 
 
 
-<script>
-	function updateOntologyFetch() {
-	  const ontoContent = document.getElementById('jsonContent');
-	  const status = document.getElementById('status');
-  
-	  const content = ontoContent.value;
-	  const url = 'http://localhost:8282/ontologymanager/biecointerface/';
-	  const headers = {
-		'Content-Type': 'application/json',
-		'Authorization': 'qJACs1J0apruOOJCg'
-	  };
-	  const data = {
-		jobID: '1234',
-		timestamp: '',
-		messageType: 'Data',
-		sourceID: '4',
-		event: {
-		  OntologyRequest: {
-			operationName: 'uploadontology',
-			ontologyContent: content
-		  }
-		},
-		crc: 1234567
-	  };
-  
-	  fetch(url, {
-		method: 'POST',
-		headers: headers,
-		body: JSON.stringify(data)
-	  })
-		.then(response => {
-		  if (response.ok) {
-			status.textContent = 'Upload successful!';
-		  } else {
-			status.textContent = 'Upload failed: ' + response.status;
-		  }
-		})
-		.catch(error => {
-		  status.textContent = 'Upload failed: ' + error.message;
-		});
-	}
-  </script>
 
+			<script>
+				function updateOntologyFetch() {
+					const ontoContent = document.getElementById('jsonContent');
+					const status = document.getElementById('status');
 
+					const content = ontoContent.value;
+					const url = 'http://localhost:8282/ontologymanager/biecointerface/';
+					const headers = {
+						'Content-Type': 'application/json',
+						'Authorization': 'qJACs1J0apruOOJCg'
+					};
+					const data = {
+						jobID: '1234',
+						timestamp: '',
+						messageType: 'Data',
+						sourceID: '4',
+						event: {
+							OntologyRequest: {
+								operationName: 'uploadontology',
+								ontologyContent: content
+							}
+						},
+						crc: 1234567
+					};
 
+					fetch(url, {
+						method: 'POST',
+						headers: headers,
+						body: JSON.stringify(data)
+					})
+						.then(response => {
+							if (response.ok) {
+								status.textContent = 'Upload successful!';
+							} else {
+								status.textContent = 'Upload failed: ' + response.status;
+							}
+						})
+						.catch(error => {
+							status.textContent = 'Upload failed: ' + error.message;
+						});
+				}
+			</script>
 
 			<script src="script.js"></script>
 
@@ -665,16 +662,16 @@
 		// Get menu links and sections
 		const homeLink = document.getElementById('home');
 		const homeSection = document.getElementById('home-section');
-		
+
 		const uploadLink = document.getElementById('upload-ontology');
 		const uploadSection = document.getElementById('upload-section');
-		
+
 		const navigateLink = document.getElementById('navigate-ontology');
 		const navigateSection = document.getElementById('navigate-section');
-		
+
 		const deleteLink = document.getElementById('delete-ontology');
 		const deleteSection = document.getElementById('delete-section');
-		
+
 		const updateLink = document.getElementById('update-ontology');
 		const updateSection = document.getElementById('update-section');
 
@@ -684,10 +681,10 @@
 		// Hide all sections except the home section on page load
 		uploadSection.style.display = 'none';
 		navigateSection.style.display = 'none';
-		
+
 		deleteSection.style.display = 'none';
 		updateSection.style.display = 'none';
-		
+
 		mappingSoSblocklySection.style.display = 'none';
 
 		// Add event listeners to menu links to show their respective sections
