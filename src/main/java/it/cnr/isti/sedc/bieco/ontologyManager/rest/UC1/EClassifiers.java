@@ -304,10 +304,10 @@ public class EClassifiers extends ECoreUC1{
 		 builder.append(",");
 		 
 		 builder.append("  {");
-		 builder.append("      \"welldefinedrule\": \"Time Contrained between two Events Rule (#IntervalInHours, Starting Event (#StartingEvent), Ending Event (#EndingEvent))\",");
+		 builder.append("      \"welldefinedrule\": \"Time Constrained between two Events Rule (#IntervalInHours, Starting Event (#StartingEvent), Ending Event (#EndingEvent))\",");
 		 builder.append("       \"ruleType\": \"Standard\",");
-		 builder.append("       \"abstractrule\": \"Time Contrained between two Events Rule\",");
-		 builder.append("       \"ruleName\": \"Time Contrained between two Events Rule\",");
+		 builder.append("       \"abstractrule\": \"Time Constrained between two Events Rule\",");
+		 builder.append("       \"ruleName\": \"Time Constrained between two Events Rule\",");
 		 builder.append("       \"description\": \"This is a Standard Rule that allows monitoring the minimum interval time between two events.\",");
 		 builder.append("       \"ruleId\": \"3\"");
 		 builder.append("   }");

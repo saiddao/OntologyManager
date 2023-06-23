@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trasformatore XML in JSON</title>
+  <style>
+    /* Stili CSS per il layout */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      padding: 20px;
+    }
+  
+    .grid-item {
+      background-color: #f9f9f9;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    /* Stili CSS per l'area di lavoro e l'area di visualizzazione */
+    #xmlContent {
+      width: 100%;
+      height: 200px;
+      font-family: monospace;
+    }
+  
+    #jsonContent {
+      width: 100%;
+      height: 200px;
+      flex: 1;
+    }
+  </style>
+  
+  
+</head>
+<body>
+    <body>
+        <h1>Trasformatore XML in JSON</h1>
+        <div class="grid-container">
+          <div class="grid-item">
+            <h2>Carica e visualizza XML</h2>
+            <form id="xmlForm">
+              <input type="file" id="xmlFileInput" accept=".ecore">
+              <input type="button" value="Carica" onclick="loadXML()">
+            </form>
+        </p>
+        <textarea id="xmlContent" readonly></textarea>
+
+
+        
+          </div>
+          <div class="grid-item">
+            <h2>JSON risultante</h2>
+          </p>
+            <form id="jsonForm">
+            </p> 
+             <textarea id="jsonContent" readonly></textarea>
+            </form>
+          </div>
+        </div>
+      
+        <script src="script.js"></script>
+      </body>
+      
+</body>
+</html>

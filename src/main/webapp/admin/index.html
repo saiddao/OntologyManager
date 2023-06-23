@@ -17,7 +17,8 @@
 			<li><a href="#navigate" id="navigate-ontology">Navigate</a></li>
 			<li><a href="#delete" id="delete-ontology">Delete</a></li>
 			<li><a href="#update" id="update-ontology">Update</a></li>
-			<li><a href="#sosBlockly" id="map-sos-blockly-ontology">Map SoS Blockly Profile</a></li>
+			<li><a href="#sosBlockly" id="map-sos-blockly-ontology">Map&Transform SoS Amadeos Blockly Profile</a></li>
+			<!-- Map SoS Blockly Profile-->
 		</ul>
 	</nav>
 	<main>
@@ -140,7 +141,7 @@
 			</select>
 
 			<div id="rule-selectorDiv">
-				<button id="rule-selector-button">Send Selected Rule To Runtime Monitor</button>
+				<button id="rule-selector-button">Get&Save Selected Rule for Runtime Monitoring</button>
 			</div>
 
 			<h1>Log Area</h1>
@@ -414,10 +415,6 @@
 					});
 
 
-
-
-
-					
 				let formattedData = "";
 
 				function fetchDataRule(operationName, valueKey, textKey, selectEl, ...args) {
@@ -525,20 +522,170 @@
 
 
 		<section id="map-sos-blockly-section">
-			<h2>Map SoS Blockly Profile</h2>
-
+			<h2>Map&Transform SoS Amadeos Blockly Profile</h2>
 			<p>Use this functionality for importing and mapping the AMADEOS SoS profile using Blockly4SoS to the DEAMON
 				Ontology.
 				Please Upload the .ecore file exported from Blockly4SoS.</p>
 
+			<div class="grid-container">
+				<div class="grid-item">
+					<h2>Select AMADEOS SoS profile (.ecore File)</h2>
+					<form id="xmlForm">
+						<input type="file" id="xmlFileInput" accept=".ecore">
+						<input type="button" value="Load .ecore file" onclick="loadXML()">
+					</form>
+					</p>
+					<textarea id="xmlContent" readonly></textarea>
+				</div>
+
+				<div class="grid-item">
+					<h2>Daemon-based JSON Instance</h2>
+					<form id="jsonForm">
+						<input type="button" value="Generate Deamon Instance" onclick="transform()">
+						<input type="button" value="Populate Ontology" onclick="updateOntologyAjax()">
+					</form>
+					</p>
+					<textarea id="jsonContent" readonly></textarea>
+				</div>
+			</div>
+
+
+
+
+			<script>
+				function transform() {
+					const xhr = new XMLHttpRequest();
+					xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
+					xhr.setRequestHeader('Content-Type', 'application/json');
+					xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
+					xhr.onload = function () {
+						if (xhr.status === 200) {
+							status.textContent = 'Upload successful!';
+							const response = JSON.parse(xhr.responseText);
+							const result = JSON.stringify(response, null, 2); // Beautify the response JSON
+							console.log(result);
+							const textarea = document.getElementById('jsonContent');
+							textarea.value = result;
+						} else {
+							status.textContent = 'Upload failed: ' + xhr.status;
+						}
+					};
+					const data = {
+						jobID: '1234',
+						timestamp: '',
+						messageType: 'Data',
+						sourceID: '4',
+						event: {
+							OntologyRequest: {
+								operationName: 'parseAMADEOSSoSProfileNew',
+								ontologyContent: document.getElementById('xmlContent').value,
+							},
+						},
+						crc: 1234567,
+					};
+					xhr.send(JSON.stringify(data));
+				}
+
+			</script>
+
+
+<script>
+	function updateOntologyAjax() {
+	  const ontoContent = document.getElementById('jsonContent');
+	  const status = document.getElementById('status');
+  
+	  const content = ontoContent.value;
+	  const xhr = new XMLHttpRequest();
+	  xhr.open('POST', 'http://localhost:8282/ontologymanager/biecointerface/', true);
+	  xhr.setRequestHeader('Content-Type', 'application/json');
+	  xhr.setRequestHeader('Authorization', 'qJACs1J0apruOOJCg');
+	  xhr.onload = function () {
+		if (xhr.status === 200) {
+		  status.textContent = 'Upload successful!';
+		} else {
+		  status.textContent = 'Upload failed: ' + xhr.status;
+		}
+	  };
+	  const data = {
+		jobID: '1234',
+		timestamp: '',
+		messageType: 'Data',
+		sourceID: '4',
+		event: {
+		  OntologyRequest: {
+			operationName: 'uploadontology',
+			ontologyContent: content
+		  }
+		},
+		crc: 1234567
+	  };
+	  xhr.send(JSON.stringify(data));
+	}
+  </script>
+  
+
+
+
+<script>
+	function updateOntologyFetch() {
+	  const ontoContent = document.getElementById('jsonContent');
+	  const status = document.getElementById('status');
+  
+	  const content = ontoContent.value;
+	  const url = 'http://localhost:8282/ontologymanager/biecointerface/';
+	  const headers = {
+		'Content-Type': 'application/json',
+		'Authorization': 'qJACs1J0apruOOJCg'
+	  };
+	  const data = {
+		jobID: '1234',
+		timestamp: '',
+		messageType: 'Data',
+		sourceID: '4',
+		event: {
+		  OntologyRequest: {
+			operationName: 'uploadontology',
+			ontologyContent: content
+		  }
+		},
+		crc: 1234567
+	  };
+  
+	  fetch(url, {
+		method: 'POST',
+		headers: headers,
+		body: JSON.stringify(data)
+	  })
+		.then(response => {
+		  if (response.ok) {
+			status.textContent = 'Upload successful!';
+		  } else {
+			status.textContent = 'Upload failed: ' + response.status;
+		  }
+		})
+		.catch(error => {
+		  status.textContent = 'Upload failed: ' + error.message;
+		});
+	}
+  </script>
+
+
+
+
+			<script src="script.js"></script>
+
+
+<!--
+			<h2>Map&Transform SoS Amadeos Blockly Profile</h2>
+
 			<div class="container">
 				<form id="form1" action="http://localhost:8282/ontologymanager/biecointerface/" method="post">
 					<div class="form-control">
-						<label for="file-input1">Select AMADEOS SoS profile (ecore File):</label>
+						<label for="file-input1">Select AMADEOS SoS profile (.ecore File):</label>
 						<input type="file" id="file-input1" name="file">
 					</div>
 					<div class="form-control">
-						<label>ecore File content:</label>
+						<label>.ecore File content:</label>
 						<pre id="file-content1"></pre>
 					</div>
 					<button type="submit" class="btn">Submit</button>
@@ -596,6 +743,9 @@
 					reader.readAsText(file);
 				});
 			</script>
+
+
+-->
 		</section>
 
 	</main>

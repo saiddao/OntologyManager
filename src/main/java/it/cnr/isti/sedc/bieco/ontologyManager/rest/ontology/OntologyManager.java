@@ -1024,6 +1024,27 @@ public class OntologyManager {
 			}
 
 			break;
+		case "parseAMADEOSSoSProfileNew":
+
+			try {
+
+				String ecoreFileContent = (String) ontologyRequest.get(OntologyEntitiesNames.ONTOLOGY_CONTENT);
+				System.out.println("Content of the ecore File -> " + ecoreFileContent);
+
+				System.out.println("parseAMADEOSSoSProfile -> :: ");
+
+				String ecore2daemonResult = UC1Parser.ecoreParser(ecoreFileContent);
+
+
+				output = Response.status(200).entity(ecore2daemonResult).build();
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				output = Response.status(404).entity("Uploading Ontology: " + ontologyRequest).build();
+			}
+
+			break;
 
 		case "sendRule":
 
